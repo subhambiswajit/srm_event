@@ -1,0 +1,109 @@
+<html>
+
+  <head>
+       <title>Profile</title>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+
+
+
+  <body>
+
+   <!--navbar-->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;SRM UNIVERSITY</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">HOME&nbsp;&nbsp;|</a></li>
+        <li><a href="#">WEB MAIL&nbsp;&nbsp;|</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!--navbar ends-->
+  <img src="/media/images/srm.jpg" height="100" width="100">
+  
+     <div class="container">
+        <!--forms-->
+       
+        <div class="input-field col s6">
+          <i class="fa fa-user prefix"></i>
+          <input id="name" type="text" name="candidate_name" class="validate" autocomplete="off" required>
+          <label for="name">Name</label>
+        </div>
+        
+        <div class="input-field col s12">
+        <i class="fa fa-graduation-cap prefix"></i>
+    <select>
+      <option value="Student">Student</option>
+      <option value="Faculty">Faculty</option>
+    </select>
+  </div>
+
+
+        <div class="input-field col s6">
+           <i class="fa fa-calendar prefix"></i>
+          <input id="date" name="candidate_date" id="date" type="date" class="datepicker" required>
+           <label for="date">Date</label>
+        </div>
+
+        <div class="input-field col s6">
+          <i class="fa fa-500px prefix"></i>
+          <input  name="candidate_regno" id="reg" type="text" class="validate" autocomplete="off" required>
+          <label for="last_name">Reg. number</label>
+        </div>
+        <!--forms ends-->
+
+     </div>
+ 
+     <br><br>
+
+     <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+
+       <br><br><br><br>
+       <!--footer-->
+          <nav>
+    <div class="nav-wrapper">
+      <center>@ SRM University,India. All rights reserved.</center>
+  </nav>
+        <!--footer-->
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <script>
+       $(document).ready(function(){
+          $('.btn_send').click(function(event){
+          	event.preventDefault();
+              var name=$('#name').val();
+              var type=$('#Candidatetype').val();
+              var date=$('#date').val();
+              var reg=$('#reg').val();
+              alert(reg);
+              $.ajax ({
+                    type: 'GET',
+                    url:'personal_details/',
+                    data:{candidate_name:name, candidate_type:type, candidate_date:date, candidate_regno:reg },              
+                    success: function(response) {
+                             alert('success');
+                             },
+                    error: function() { 
+                             alert("Error"); 
+                             }       
+
+
+                      });
+
+          });
+       });
+    </script>
+
+  </body>
+
+
+
+</html>
