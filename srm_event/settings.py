@@ -71,6 +71,14 @@ ROOT_URLCONF = 'srm_event.urls'
 
 WSGI_APPLICATION = 'srm_event.wsgi.application'
 
+AUTHENTICATION_BACKENDS = (
+
+
+    'custombackends.backends.SrmEventBackend',
+    'django.contrib.auth.backends.ModelBackend',
+
+
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -90,6 +98,15 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
+
+EMPLATED_EMAIL_BACKEND = 'templated_email.backends.vanilla_django.TemplateBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'digu35@gmail.com'
+EMAIL_HOST_PASSWORD = 'digu13533'
+EMAIL_PORT = 587
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/

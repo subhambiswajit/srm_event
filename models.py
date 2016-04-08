@@ -105,11 +105,11 @@ class CandidateConferences(models.Model):
 
 class CandidateMaster(models.Model):
     candidate_id = models.IntegerField(primary_key=True)
-    candidate_name = models.CharField(max_length=100)
-    candidate_type = models.CharField(max_length=30)
-    candidate_year = models.CharField(max_length=30)
-    candidate_date = models.DateTimeField()
-    candidate_reg_number = models.CharField(unique=True, max_length=100)
+    candidate_name = models.CharField(max_length=100, blank=True)
+    candidate_type = models.CharField(max_length=30, blank=True)
+    candidate_year = models.CharField(max_length=30, blank=True)
+    candidate_date = models.DateTimeField(blank=True, null=True)
+    candidate_reg_number = models.CharField(unique=True, max_length=100, blank=True)
 
     class Meta:
         managed = False
@@ -194,3 +194,22 @@ class EducationProfileMaster(models.Model):
     class Meta:
         managed = False
         db_table = 'education_profile_master'
+
+
+class GlobalUsers(models.Model):
+    gus_userid = models.IntegerField(primary_key=True)
+    gus_username = models.CharField(max_length=100, blank=True)
+    gus_name = models.CharField(max_length=100, blank=True)
+    gus_password = models.CharField(max_length=100, blank=True)
+    gus_lastlogin = models.DateTimeField(blank=True, null=True)
+    gus_type = models.CharField(max_length=30, blank=True)
+    gus_createdby = models.CharField(max_length=40, blank=True)
+    gus_dob = models.DateTimeField(blank=True, null=True)
+    gus_email = models.CharField(max_length=50, blank=True)
+    gus_isused = models.IntegerField(blank=True, null=True)
+    gus_modifiedon = models.DateTimeField(blank=True, null=True)
+    gus_verify = models.CharField(max_length=10, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'global_users'

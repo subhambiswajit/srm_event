@@ -36,7 +36,7 @@
         
         <div class="input-field col s12">
         <i class="fa fa-graduation-cap prefix"></i>
-    <select>
+    <select id="candidatetype">
       <option value="Student">Student</option>
       <option value="Faculty">Faculty</option>
     </select>
@@ -80,7 +80,8 @@
           $('.btn_send').click(function(event){
           	event.preventDefault();
               var name=$('#name').val();
-              var type=$('#Candidatetype').val();
+              var type=$('#candidatetype').val();
+              alert(type);
               var date=$('#date').val();
               var reg=$('#reg').val();
               alert(reg);
