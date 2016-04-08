@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2016 at 09:33 PM
+-- Generation Time: Apr 08, 2016 at 10:07 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `u203675318_srm`
+-- Database: `srm_master`
 --
 
 -- --------------------------------------------------------
@@ -159,12 +159,29 @@ CREATE TABLE IF NOT EXISTS `candidate_conferences` (
 
 CREATE TABLE IF NOT EXISTS `candidate_master` (
 `candidate_id` int(100) NOT NULL,
-  `candidate_name` varchar(100) NOT NULL,
-  `candidate_type` varchar(30) NOT NULL,
-  `candidate_year` varchar(30) NOT NULL,
-  `candidate_date` datetime NOT NULL,
-  `candidate_reg_number` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `candidate_name` varchar(100) DEFAULT NULL,
+  `candidate_type` varchar(30) DEFAULT NULL,
+  `candidate_year` varchar(30) DEFAULT NULL,
+  `candidate_date` datetime DEFAULT NULL,
+  `candidate_reg_number` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `candidate_master`
+--
+
+INSERT INTO `candidate_master` (`candidate_id`, `candidate_name`, `candidate_type`, `candidate_year`, `candidate_date`, `candidate_reg_number`) VALUES
+(1, NULL, '', NULL, '2016-04-06 15:18:27', NULL),
+(2, NULL, '', '2016-04-06 20:59:59.404000', '2016-04-06 15:29:59', NULL),
+(3, NULL, '', '2016-04-06 21:02:13.695000', '2016-04-06 15:32:13', NULL),
+(4, NULL, '', '2016-04-06 21:03:18.564000', '2016-04-06 15:33:18', NULL),
+(5, 'subham', 'male', '2016-04-06 21:07:41.364000', '2016-04-06 15:37:41', '363'),
+(7, 'subham', '', '2016-04-07 00:36:52.023000', '2016-04-06 19:06:52', '360'),
+(8, 'subham', '', '2016-04-07 00:41:00.697000', '2016-04-06 19:11:00', ''),
+(21, 'subham', '', '', NULL, '99'),
+(22, 'anusha', '', '2016-04-07 23:04:57.198000', '2016-04-07 17:34:57', '72'),
+(23, 'subham', '', '2016-04-08 00:58:14.633000', '2016-04-07 19:28:14', '1031310363'),
+(25, 'akash aggarwall', 'Faculty', '2016-04-08 01:33:38.684000', '2016-04-07 20:03:38', '1111');
 
 -- --------------------------------------------------------
 
@@ -289,6 +306,34 @@ CREATE TABLE IF NOT EXISTS `education_profile_master` (
   `edu_courses` varchar(1000) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `global_users`
+--
+
+CREATE TABLE IF NOT EXISTS `global_users` (
+`gus_userid` int(11) NOT NULL,
+  `gus_username` varchar(100) DEFAULT NULL,
+  `gus_name` varchar(100) DEFAULT NULL,
+  `gus_password` varchar(100) DEFAULT NULL,
+  `gus_lastlogin` datetime DEFAULT NULL,
+  `gus_type` varchar(30) DEFAULT NULL,
+  `gus_createdby` varchar(40) DEFAULT NULL,
+  `gus_dob` datetime DEFAULT NULL,
+  `gus_email` varchar(50) DEFAULT NULL,
+  `gus_isused` int(2) DEFAULT NULL,
+  `gus_modifiedon` datetime DEFAULT NULL,
+  `gus_verify` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `global_users`
+--
+
+INSERT INTO `global_users` (`gus_userid`, `gus_username`, `gus_name`, `gus_password`, `gus_lastlogin`, `gus_type`, `gus_createdby`, `gus_dob`, `gus_email`, `gus_isused`, `gus_modifiedon`, `gus_verify`) VALUES
+(1, '1031310363', 'subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', NULL, 'Student', NULL, '2016-04-11 18:30:00', 'digu35@gmail.com', 1, '2016-04-08 07:49:45', '22225');
+
 --
 -- Indexes for dumped tables
 --
@@ -390,6 +435,12 @@ ALTER TABLE `education_profile_master`
  ADD PRIMARY KEY (`profile_id`), ADD KEY `fk_edu_reg_no` (`edu_reg_no`);
 
 --
+-- Indexes for table `global_users`
+--
+ALTER TABLE `global_users`
+ ADD PRIMARY KEY (`gus_userid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -437,7 +488,7 @@ MODIFY `conf_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `candidate_master`
 --
 ALTER TABLE `candidate_master`
-MODIFY `candidate_id` int(100) NOT NULL AUTO_INCREMENT;
+MODIFY `candidate_id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `candidate_paper_publish`
 --
@@ -468,6 +519,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 ALTER TABLE `education_profile_master`
 MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `global_users`
+--
+ALTER TABLE `global_users`
+MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
