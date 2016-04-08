@@ -35,10 +35,10 @@ def personal_details(request):
 def user_signup(request):
 	verify_code = ''
 		# print request.POST['candidate_name']
-	global_check = GlobalUsers.objects.filter(gus_email= request.POST['email']).values_list('gus_email', flat=True)
-	email_check = global_check.values_list('gus_email', flat=True)
+	global_check = GlobalUsers.objects.filter(gus_username= request.POST['username']).values_list('gus_email', flat=True)
 	username_check = global_check.values_list('gus_username', flat=True)
-	if request.method == 'POST' and request.POST['email'] not in email_check and request.POST['username'] not in username_check:
+	if request.method == 'POST' and request.POST['username'] not in username_check:
+		messages.warning(request,"Profile added succesfully")
 		verify_code = str(random.randint(10000,99999))
 		hasher = PBKDF2PasswordHasher()
 		global_user = GlobalUsers()
@@ -62,10 +62,7 @@ def user_signup(request):
 		message = "please verify your email by typing the following code to activate your account" + verify_code
 		sender = "digu35@gmail.com"
 		send_mail(subject, message, sender, [request.POST['email']])
-        # messages.warning(request,"Profile signed up successfully")
 	else:
-		if request.POST['email'] in email_check:
-			messages.warning(request,"Email id already registered")
 		if request.POST['username'] in username_check:
 			messages.warning(request,"Registration Id already added")
 
@@ -73,16 +70,33 @@ def user_signup(request):
 	return render(request,'home/homepage.html')
 
 def user_login(request):
-    if request.method == 'POST':
-        username = request.POST['registration_number']
-        password = request.POST['password']
-        try:
-            user = authenticate(username=username, password= password)
-            if user is not None:
-                login(request,user)
-            else:
-                messages.warning(request,"Wrong Id or password")
-                return render(request,'home/homepage.html')
-        except ObjectDoesNotExist:
-            pass
-    return HttpResponse("user logged in")
+	if request.method == 'POST':
+		username = request.POST['registration_number']
+		password = request.POST['password']
+		try:
+			user = authenticate(username=username, password= password)
+			if user is not None:
+				login(request,user)
+			else:
+				messages.warning(request,"Wrong Id or password")
+				return render(request,'home/homepage.html')
+		except ObjectDoesNotExist:
+			pass
+	return HttpResponse("user logged in")
+
+
+def reset_password(request):
+	verify_code = ''
+	if request.method =='POST':
+		user_check = GlobalUsers.objects.get(gus_username= username)
+		email = user_check.gus_email
+		verify_code = str(random.randint(10000,99999))
+		hasher = PBKDF2PasswordHasher()
+		user_check.gus_password = hasher.encode(password= verify_code , salt='salt',iterations= 50000)
+		user_check.save()
+		subject = "Password reset mail SRM university profile portal"            
+		message = "Please consider the new password for your profile" + verify_code + "You can change the password in your profile after signing in"
+		sender = "digu35@gmail.com"
+		send_mail(subject, message, sender, [email])
+	return HttpResponse("success")
+
