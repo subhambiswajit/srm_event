@@ -5,6 +5,8 @@ from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import EmailMessage
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
+from django.contrib.auth import authenticate, login
+from django.core.exceptions import ObjectDoesNotExist
 import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
@@ -60,6 +62,7 @@ def user_signup(request):
 		message = "please verify your email by typing the following code to activate your account" + verify_code
 		sender = "digu35@gmail.com"
 		send_mail(subject, message, sender, [request.POST['email']])
+        # messages.warning(request,"Profile signed up successfully")
 	else:
 		if request.POST['email'] in email_check:
 			messages.warning(request,"Email id already registered")
@@ -69,3 +72,17 @@ def user_signup(request):
 
 	return render(request,'home/homepage.html')
 
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['registration_number']
+        password = request.POST['password']
+        try:
+            user = authenticate(username=username, password= password)
+            if user is not None:
+                login(request,user)
+            else:
+                messages.warning(request,"Wrong Id or password")
+                return render(request,'home/homepage.html')
+        except ObjectDoesNotExist:
+            pass
+    return HttpResponse("user logged in")

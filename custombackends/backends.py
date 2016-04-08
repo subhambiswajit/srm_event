@@ -11,7 +11,7 @@ class SrmEventBackend:
         try:
             # Try to find a user matching your username
             print 'inside authenticate'
-            user = GlobalUsers.objects.get(gus_username=username, gus_isused=0)
+            user = GlobalUsers.objects.get(gus_username=username, gus_isused=1)
             print ">>>>>>>>>>>>>>>"
             print user.gus_email
             print user.gus_password

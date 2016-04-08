@@ -195,18 +195,18 @@
       <h4>&nbsp;&nbsp;Login</h4>
       <div class="divider"></div>
        <br>
-      <form>
-
+      <form method="post" action="{%url 'user_login' %}">
+          {% csrf_token %}
           <div class="input-field">
           <i class="fa fa-user prefix"></i>
-          <input id="name" type="text" class="validate" autocomplete="off" required>
-          <label for="name">Name</label>
+          <input id="registration_number" name="registration_number" type="text" class="validate" autocomplete="off" required>
+          <label for="">Registration number</label>
           </div>
 
           <div class="input-field col l6 s12">
           <i class="fa fa-key prefix"></i>
-          <input id="password" type="password" class="validate" autocomplete="off" required>
-          <label for="password">Password</label>
+          <input id="login_password" name="password"  type="password" class="validate" autocomplete="off" required>
+          <label for="login_password">Password</label>
           </div>
 
           <div class="row">
@@ -314,10 +314,14 @@ $('.datepicker').pickadate({
         
 
 </script>
+
 {%if messages %}
           {% for message in messages %}
           <script>
-          Materialize.toast('{{message}}', 4000)
+          $(document).ready(function(){
+          Materialize.toast('{{message}}', 5000)
+
+          })
           </script>
           {%endfor%}
         {%endif%}
