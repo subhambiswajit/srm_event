@@ -82,8 +82,10 @@ class AuthUserUserPermissions(models.Model):
 
 class CandidateActivity(models.Model):
     candidate_id = models.IntegerField(primary_key=True)
+    cand_act_name = models.TextField(blank=True)
     cand_act_gusid = models.ForeignKey('GlobalUsers', db_column='cand_act_gusid', blank=True, null=True)
     cand_act_date = models.DateTimeField(blank=True, null=True)
+    cand_act_prize = models.TextField(blank=True)
     cand_act_nature = models.TextField(blank=True)
     cand_act_year = models.DateTimeField(blank=True, null=True)
 

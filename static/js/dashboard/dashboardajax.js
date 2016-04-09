@@ -1,17 +1,19 @@
 $(document).ready(function(){
-   $('.formone').click(function(){
-   	var param1=$('.name of event').val();
-   	var param2=$('.date').val();
-   	var param3=$('.nature of participation').val();
-   	var param4=$('.prize').val();
-   	var param5=$('.year').val();
+   $('.activity_button').click(function(){
+    alert('clicked');
+   	var activity_name=$('#nameofevent').val();
+   	var activity_date=$('#dateofevent').val();
+   	var activity_nature=$('#natureofparticipation').val();
+   	var activity_prize=$('#prize').val();
+   	var activity_year=$('#year').val();
           $.ajax ({
                        type: 'POST',
-                       url:'your url',
-                       data:{p1: param1,p2: param2,p3: param3,p4: param4,p5: param5},              
+                       url:'candidate_activity/',
+                       data:{activity_name: activity_name,activity_date: activity_date,activity_nature: activity_nature,activity_prize: activity_prize,activity_year: activity_year},              
                        success: function(data) 
                        {
-                        //your statements
+                        Materialize.toast('Activity details succesfully added', 5000)
+
                        },
                     error: function() 
                     { 

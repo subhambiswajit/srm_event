@@ -7,6 +7,7 @@ from django.core.mail import EmailMessage
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
 from django.contrib.auth import authenticate, login
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth.decorators import login_required
 import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
@@ -100,3 +101,24 @@ def reset_password(request):
 		send_mail(subject, message, sender, [email])
 	return HttpResponse("success")
 
+@csrf_exempt
+def cand_activity(request):
+	if request.user:
+		print "user authentication worked"
+	if request.method == 'POST':
+		candidate_activity = CandidateActivity()
+		print request.user.gus_userid
+		candidate_activity.cand_act_gusid = request.user
+		if 'activity_name' in request.POST:
+			candidate_activity.cand_act_name = request.POST['activity_name']
+		if 'activity_date' in request.POST:
+			candidate_activity.cand_act_date = request.POST['activity_date']
+		if 'activity_nature' in request.POST:
+			candidate_activity.cand_act_nature = request.POST['activity_nature']
+		if 'activity_year' in request.POST:
+			candidate_activity.cand_act_year = request.POST['activity_year']
+		if  'activity_prize' in request.POST:
+			candidate_activity.cand_act_prize = request.POST['activity_prize']
+		candidate_activity.save()
+		messages.warning(request,"Activity Details succesfully saved")
+	return HttpResponse('Details added')

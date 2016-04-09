@@ -47,18 +47,17 @@
      
     <div id="test1" class="col s12">
          <div class="input-field col s12">
-          <input id="name of event" type="text" class="validate" autocomplete="off" required>
-           <label for="name of event">name of event</label>
+          <input id="nameofevent" type="text" class="validate" autocomplete="off" required>
+           <label for="nameofevent">name of event</label>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="date" type="text" class="datepicker" autocomplete="off" required>
-           <label for="date of event">date of event</label>
+          <input id="dateofevent" type="date" class="" autocomplete="off" required>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="nature of participation" type="text" class="validate" autocomplete="off" required>
-           <label for="nature of participation">nature of participation</label>
+          <input id="natureofparticipation" type="text" class="validate" autocomplete="off" required>
+           <label for="natureofparticipation">nature of participation</label>
         </div>
         <br><br>
          <div class="input-field col s12">
@@ -71,7 +70,7 @@
            <label for="year">year/section</label>
         </div>
         <br><br>
-             <center> <button class="btn waves-effect waves-light btn_send formone" type="submit" name="action">Submit
+             <center> <button class="btn waves-effect waves-light btn_send activity_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
         </div>
@@ -353,6 +352,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script src="/static/js/dashboard/dashboard.js"></script>
     <script src="/static/js/dashboard/dashboardajax.js"></script>
+    {%if messages %}
+          {% for message in messages %}
+          <script>
+          $(document).ready(function(){
+          Materialize.toast('{{message}}', 5000)
+
+          })
+          </script>
+          {%endfor%}
+        {%endif%}
    
 
   </body>
