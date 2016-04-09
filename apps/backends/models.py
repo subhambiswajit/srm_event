@@ -32,3 +32,39 @@ class CandidateActivity(models.Model):
     class Meta:
         managed = False
         db_table = 'candidate_activity'
+
+class CandidatePerformance(models.Model):
+    cand_per_id = models.IntegerField(primary_key=True)
+    cand_per_gusid = models.ForeignKey('GlobalUsers', db_column='cand_per_gusid', blank=True, null=True)
+    cand_per_exam = models.CharField(max_length=100, blank=True)
+    cand_per_ypass = models.CharField(max_length=30, blank=True)
+    cand_per_marks = models.CharField(max_length=30, blank=True)
+    cand_per_year = models.CharField(max_length=30, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_performance'
+
+class CandidateNationalRecognition(models.Model):
+    cand_nat_reg_id = models.IntegerField(primary_key=True)
+    cand_nat_reg_gus = models.ForeignKey('GlobalUsers', db_column='cand_nat_reg_gus_id', blank=True, null=True)
+    cand_nat_reg_details = models.TextField(blank=True)
+    cand_nat_reg_year = models.CharField(max_length=30, blank=True)
+    cand_nat_reg_isused = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_national_recognition'
+
+class CandidateInitiatives(models.Model):
+    cand_ini_id = models.IntegerField(primary_key=True)
+    cand_ini_gusid = models.ForeignKey('GlobalUsers', db_column='cand_ini_gusid', blank=True, null=True)
+    cand_ini_level = models.CharField(max_length=100, blank=True)
+    cand_ini_name = models.CharField(max_length=100, blank=True)
+    cand_ini_venue = models.CharField(max_length=100, blank=True)
+    cand_ini_date = models.DateTimeField(blank=True, null=True)
+    cand_ini_isused = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_initiatives'

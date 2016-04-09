@@ -120,5 +120,53 @@ def cand_activity(request):
 		if  'activity_prize' in request.POST:
 			candidate_activity.cand_act_prize = request.POST['activity_prize']
 		candidate_activity.save()
-		messages.warning(request,"Activity Details succesfully saved")
+		messages.warning(request,"Activity Details successfully saved")
 	return HttpResponse('Details added')
+
+@csrf_exempt
+def cand_performance(request):
+	if request.method == 'POST':
+		candidate_performance = CandidatePerformance()
+		candidate_performance.cand_per_gusid = request.user
+		if 'performance_exam' in request.POST:
+			candidate_performance.cand_per_exam = request.POST['performance_exam'] 
+		if 'performance_pass' in request.POST:
+			candidate_performance.cand_per_ypass = request.POST['performance_pass']
+		if 'performance_marks' in request.POST:
+			candidate_performance.cand_per_marks = request.POST['performance_marks']
+		if 'performance_year' in request.POST:
+			candidate_performance.cand_per_year = request.POST['performance_year']
+		candidate_performance.save()
+		messages.warning(request,"performance details successfully saved")
+	return HttpResponse("details added")
+
+@csrf_exempt
+def cand_nat_recog(request):
+	if request.method == 'POST':
+		candidate_nat_reg = CandidateNationalRecognition()
+		candidate_nat_reg.cand_nat_reg_gus = request.user
+		if 'recognition_recognitions' in request.POST:
+			candidate_nat_reg.cand_nat_reg_details = request.POST['recognition_recognitions']
+		if 'recognition_year' in request.POST:
+			candidate_nat_reg.cand_nat_reg_year = request.POST['recognition_year']
+		candidate_nat_reg.cand_nat_reg_isused = 0
+		candidate_nat_reg.save()
+		# messages.warning(request,"National Recognition details updated")
+	return HttpResponse("details added")
+	
+@csrf_exempt
+def cand_initiatives(request):
+	if request.method == 'POST':
+		candidate_initiatives = CandidateInitiatives()
+		candidate_initiatives.cand_ini_gusid = request.user
+		if 'initiatives_univ' in request.POST:
+			candidate_initiatives.cand_ini_level = request.POST['initiatives_univ']
+		if 'initiatives_seminar' in request.POST:
+			candidate_initiatives.cand_ini_name = request.POST['initiatives_seminar']
+		if 'initiatives_place' in request.POST:
+			candidate_initiatives.cand_ini_venue = request.POST['initiatives_place']
+		if 'initiatives_d' in request.POST:
+			candidate_initiatives.cand_ini_date = request.POST['initiatives_d']
+		candidate_initiatives.cand_ini_isused = 0
+		candidate_initiatives.save()
+	return HttpResponse('details added')

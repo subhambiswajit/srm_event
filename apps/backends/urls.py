@@ -13,6 +13,9 @@ urlpatterns = patterns('',
 	url(r'user_signup/$',views.user_signup, name='user_signup'),
 	url(r'user_login/$',views.user_login, name='user_login'),
 	url(r'candidate_activity/$',views.cand_activity, name='candidate_activity'),
+	url(r'candidate_performance/$',views.cand_performance, name='candidate_performance'),
+	url(r'candidate_nat_reg/$',views.cand_nat_recog, name='candidate_nat_reg'),
+	url(r'candidate_initiatives/$',views.cand_initiatives, name='candidate_initiatives'),
 
 
 	# url(r'^blog/', include('blog.urls')),
