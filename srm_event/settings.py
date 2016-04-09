@@ -77,7 +77,7 @@ AUTHENTICATION_BACKENDS = (
 
 
     'custombackends.backends.SrmEventBackend',
-    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend'
 
 
 )
