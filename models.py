@@ -80,63 +80,16 @@ class AuthUserUserPermissions(models.Model):
         db_table = 'auth_user_user_permissions'
 
 
-class CandidateAchievementsAwards(models.Model):
-    ach_id = models.IntegerField(primary_key=True)
-    ach_reg_no = models.ForeignKey('CandidateMaster', db_column='ach_reg_no', blank=True, null=True)
-    ach_name = models.CharField(max_length=1000, blank=True)
-    ach_date = models.DateTimeField(blank=True, null=True)
-    ach_type = models.CharField(max_length=30, blank=True)
-
-    class Meta:
-        managed = False
-        db_table = 'candidate_achievements_awards'
-
-
-class CandidateConferences(models.Model):
-    conf_id = models.IntegerField(primary_key=True)
-    conf_can_reg_no = models.ForeignKey('CandidateMaster', db_column='conf_can_reg_no', blank=True, null=True)
-    conf_name = models.CharField(max_length=1000, blank=True)
-    conf_venue = models.CharField(max_length=100, blank=True)
-
-    class Meta:
-        managed = False
-        db_table = 'candidate_conferences'
-
-
-class CandidateMaster(models.Model):
+class CandidateActivity(models.Model):
     candidate_id = models.IntegerField(primary_key=True)
-    candidate_name = models.CharField(max_length=100, blank=True)
-    candidate_type = models.CharField(max_length=30, blank=True)
-    candidate_year = models.CharField(max_length=30, blank=True)
-    candidate_date = models.DateTimeField(blank=True, null=True)
-    candidate_reg_number = models.CharField(unique=True, max_length=100, blank=True)
+    cand_act_gusid = models.ForeignKey('GlobalUsers', db_column='cand_act_gusid', blank=True, null=True)
+    cand_act_date = models.DateTimeField(blank=True, null=True)
+    cand_act_nature = models.TextField(blank=True)
+    cand_act_year = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         managed = False
-        db_table = 'candidate_master'
-
-
-class CandidatePaperPublish(models.Model):
-    paper_id = models.IntegerField(primary_key=True)
-    paper_can_reg_no = models.ForeignKey(CandidateMaster, db_column='paper_can_reg_no', blank=True, null=True)
-    paper_title = models.CharField(max_length=1000, blank=True)
-    paper_first_author = models.CharField(max_length=100, blank=True)
-    paper_other_author = models.CharField(max_length=100, blank=True)
-
-    class Meta:
-        managed = False
-        db_table = 'candidate_paper_publish'
-
-
-class CandidateResearch(models.Model):
-    res_id = models.IntegerField(primary_key=True)
-    res_reg_no = models.ForeignKey(CandidateMaster, db_column='res_reg_no', blank=True, null=True)
-    res_name = models.CharField(max_length=1000, blank=True)
-    res_date = models.DateTimeField(blank=True, null=True)
-
-    class Meta:
-        managed = False
-        db_table = 'candidate_research'
+        db_table = 'candidate_activity'
 
 
 class DjangoAdminLog(models.Model):
@@ -184,16 +137,6 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
-
-
-class EducationProfileMaster(models.Model):
-    profile_id = models.IntegerField(primary_key=True)
-    edu_reg_no = models.ForeignKey(CandidateMaster, db_column='edu_reg_no', blank=True, null=True)
-    edu_courses = models.CharField(max_length=1000, blank=True)
-
-    class Meta:
-        managed = False
-        db_table = 'education_profile_master'
 
 
 class GlobalUsers(models.Model):

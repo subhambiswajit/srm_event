@@ -82,7 +82,7 @@ def user_login(request):
 				return render(request,'home/homepage.html')
 		except ObjectDoesNotExist:
 			pass
-	return HttpResponse("user logged in")
+	return render(request,'dashboard/dashboard.html')
 
 
 def reset_password(request):
