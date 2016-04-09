@@ -52,7 +52,8 @@
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="dateofevent" type="date" class="" autocomplete="off" required>
+          <input id="date" type="text" class="datepicker" autocomplete="off" required>
+           <label for="dateofevent">date of event</label>
         </div>
       <br><br>
          <div class="input-field col s12">
@@ -83,13 +84,13 @@
     <div id="test2" class="col s12">
        
         <div class="input-field col s12">
-          <input id="name of exam" type="text" class="validate" autocomplete="off" required>
+          <input id="nameofexam" type="text" class="validate" autocomplete="off" required>
            <label for="name of exam">name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
 )</label>
         </div>
       <br><br>
        <div class="input-field col s12">
-          <input id="year of passing" type="text" class="validate" autocomplete="off" required>
+          <input id="yearofpassing" type="text" class="validate" autocomplete="off" required>
            <label for="year of passing">year of passing</label>
         </div>
       <br><br>
@@ -103,7 +104,7 @@
            <label for="y">year/section</label>
         </div>
       <br><br>
-       <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+       <center> <button class="btn waves-effect waves-light btn_send performance_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
     </div>
@@ -122,7 +123,7 @@
            <label for="yr">year/section</label>
         </div>
       <br><br>
-       <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+       <center> <button class="btn waves-effect waves-light btn_send recognition_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
     </div>
@@ -156,7 +157,7 @@
            <label for="d">date</label>
         </div>
          <br><br>
-             <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+             <center> <button class="btn waves-effect waves-light btn_send initiatives_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
     </div>
@@ -185,8 +186,8 @@
           <input id="stipend" type="text" class="validate" autocomplete="off" required>
            <label for="stipend">stipend</label>
         </div>
-        <br><br>
-             <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+        <br><br> 
+             <center> <button class="btn waves-effect waves-light btn_send internship_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
     </div>
@@ -239,8 +240,8 @@
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="Citation index " type="text" class="datepicker" autocomplete="off" required>
-           <label for="Citation index ">Citation index </label>
+          <input id="Citationindex" type="text" class="datepicker" autocomplete="off" required>
+           <label for="Citationindex">Citation index </label>
         </div>
          <br><br>
                <div class="input-field col s12">
@@ -248,7 +249,7 @@
            <label for="Indexed">Indexed or not/Hyperlink</label>
         </div>
     
-          <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+          <center> <button class="btn waves-effect waves-light btn_send journels_button" type="submit" name="action">Submit
           <i class="fa fa-paper-plane right"></i>
           </button></center>
           <hr>
@@ -287,10 +288,6 @@
            <label for="dr">duration</label>
         </div>
         <div class="input-field col s12">
-          <input id="cname" type="text" class="validate" autocomplete="off" required>
-           <label for="cname">conference name</label>
-        </div>
-        <div class="input-field col s12">
           <input id="ins" type="text" class="validate" autocomplete="off" required>
            <label for="ins">institute organizing</label>
         </div>
@@ -302,7 +299,7 @@
           <input id="opt" type="text" class="validate" autocomplete="off" required>
            <label for="opt">Presented /Published/ Accepted</label>
         </div>
-          <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+          <center> <button class="btn waves-effect waves-light btn_send conferences_button" type="submit" name="action">Submit
           <i class="fa fa-paper-plane right"></i>
           </button></center>
           <hr>
@@ -326,7 +323,7 @@
           <input id="mentor" type="text" class="validate" autocomplete="off" required>
            <label for="mentor">Faculty mentor</label>
         </div>
-          <center> <button class="btn waves-effect waves-light btn_send" type="submit" name="action">Submit
+          <center> <button class="btn waves-effect waves-light btn_send Journel_button" type="submit" name="action">Submit
           <i class="fa fa-paper-plane right"></i>
           </button></center>
 
@@ -352,16 +349,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script src="/static/js/dashboard/dashboard.js"></script>
     <script src="/static/js/dashboard/dashboardajax.js"></script>
-    {%if messages %}
-          {% for message in messages %}
-          <script>
-          $(document).ready(function(){
-          Materialize.toast('{{message}}', 5000)
-
-          })
-          </script>
-          {%endfor%}
-        {%endif%}
    
 
   </body>
