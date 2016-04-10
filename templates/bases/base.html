@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+	<html lang="en">
+		{% load staticfiles %}
+		<head>
+			<title>{% block page_title %}                  {% endblock %}</title>
+			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+			<link rel="stylesheet" href="/static/css/materialize.min.css">
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="/static/css/dashboard/dashboard.css">
+			<link rel="stylesheet" href="/static/css/dashboard/dashboard_index.css">
+			{% block extracss %}		{% endblock %}
+
+
+		</head>
+		<body>
+
+			 <nav>
+				<div class="nav-wrapper">
+				  <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;SRM UNIVERSITY</a>
+				  <ul id="nav-mobile" class="right hide-on-med-and-down">
+				    <li><a href="#">Welcome {{request.user.gus_name}}&nbsp;&nbsp;|</a></li>
+				    <li><a href="{%url 'dashboard' %}">HOME&nbsp;&nbsp;|</a></li>
+				    <li><a href="{% url 'view_details' %}">MY PROFILE&nbsp;&nbsp;|</a></li>
+				    <li><a href="#">CONTACT US</a></li>
+				    <li><a href="{%url 'user_logout' %}">LOG OUT</a></li>
+				  </ul>
+				</div>
+				</nav>
+
+			{% block base_content   %}	{% endblock %}
+
+
+
+
+
+
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	    <script src="/static/js/materialize.min.js" type="text/javascript"></script>
+	    <script src="/static/js/dashboard/dashboard.js"></script>
+	    <script src="/static/js/dashboard/dashboardajax.js"></script>
+	    {% block extrajs %}			{% endblock %}
+
+		</body>
+	</html>
