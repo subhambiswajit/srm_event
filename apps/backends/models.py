@@ -68,3 +68,33 @@ class CandidateInitiatives(models.Model):
     class Meta:
         managed = False
         db_table = 'candidate_initiatives'
+
+class CandidateInternship(models.Model):
+    cand_int_id = models.IntegerField(primary_key=True)
+    cand_int_gusid = models.ForeignKey('GlobalUsers', db_column='cand_int_gusid', blank=True, null=True)
+    cand_int_name = models.CharField(max_length=100, blank=True)
+    cand_int_start = models.DateTimeField()
+    cand_int_end = models.DateTimeField()
+    cand_int_stipend = models.CharField(max_length=100)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_internship'
+
+
+class CandidateJournals(models.Model):
+    cand_jour_id = models.IntegerField(primary_key=True)
+    cand_jour_gusid = models.ForeignKey('GlobalUsers', db_column='cand_jour_gusid', blank=True, null=True)
+    cand_jour_title = models.CharField(max_length=500, blank=True)
+    cand_jour_fauthor = models.CharField(max_length=100, blank=True)
+    cand_jour_oauthor = models.CharField(max_length=500, blank=True)
+    cand_jour_name = models.CharField(max_length=100, blank=True)
+    cand_jour_date = models.DateTimeField(blank=True, null=True)
+    cand_jour_vol = models.CharField(max_length=100, blank=True)
+    cand_jour_impact = models.CharField(max_length=100, blank=True)
+    cand_jour_citation = models.CharField(max_length=100, blank=True)
+    cand_jour_indexed = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_journals'

@@ -97,27 +97,27 @@
 
    // //form 5
 
-   //  $('.internship_button').click(function(){
-   //  alert('clicked');
-   //  var internship_comp=$('#comp').val();
-   //  var internship_sdate=$('#sdate').val();
-   //  var internship_edate=$('#edate').val();
-   //  var internship_stipend=$('#stipend').val();
-   //        $.ajax ({
-   //                     type: 'POST',
-   //                     url:'',
-   //                     data:{internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
-   //                     success: function(data) 
-   //                     {
-   //                      Materialize.toast('internship details succesfully added', 5000)
+    $('.internship_button').click(function(){
+    alert('clicked');
+    var internship_comp=$('#comp').val();
+    var internship_sdate=$('#sdate').val();
+    var internship_edate=$('#edate').val();
+    var internship_stipend=$('#stipend').val();
+          $.ajax ({
+                       type: 'POST',
+                       url:'candidate_internship/',
+                       data:{internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
+                       success: function(data) 
+                       {
+                        Materialize.toast('internship details succesfully added', 5000);
 
-   //                     },
-   //                  error: function() 
-   //                  { 
-   //                        alert("Error"); 
-   //                   }   
-   //               });
-   // });
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });
 
 
 
@@ -125,36 +125,36 @@
 
 
    // //form 6.1
-   //  $('.journels_button').click(function(){
-   //  alert('clicked');
-   //  var journels_title=$('#title').val();
-   //  var journels_Fauthor=$('#Fauthor').val();
-   //  var journels_oauthors=$('#oauthors').val();
-   //  var journels_jname=$('#jname').val();
-   //  var journels_dt=$('#dt').val();
-   //  var journels_vol=$('#vol').val();
-   //  var journels_ifactor=$('#ifactor').val();
-   //  var journels_Citationindex=$('#Citationindex').val();
-   //  var journels_Indexed=$('#Indexed').val();
+    $('.journels_button').click(function(){
+    alert('clicked');
+    var journels_title=$('#title').val();
+    var journels_Fauthor=$('#Fauthor').val();
+    var journels_oauthors=$('#oauthors').val();
+    var journels_jname=$('#jname').val();
+    var journels_dt=$('#dt').val();
+    var journels_vol=$('#vol').val();
+    var journels_ifactor=$('#ifactor').val();
+    var journels_Citationindex=$('#Citationindex').val();
+    var journels_Indexed=$('#Indexed').val();
 
-   //        $.ajax ({
-   //                     type: 'POST',
-   //                     url:'',
-   //                     data:{journels_title: journels_title,journels_Fauthor: journels_Fauthor,journels_oauthors: journels_oauthors
-   //                      journels_jname: journels_jname,journels_dt: journels_dt,journels_vol: journels_vol,
-   //                      journels_ifactor: journels_ifactor,journels_Citationindex: journels_Citationindex,
-   //                      journels_Indexed: journels_Indexed},              
-   //                     success: function(data) 
-   //                     {
-   //                      Materialize.toast('Journel details succesfully added', 5000)
+          $.ajax ({
+                       type: 'POST',
+                       url:'',
+                       data:{journels_title: journels_title,journels_Fauthor: journels_Fauthor,journels_oauthors: journels_oauthors
+                        journels_jname: journels_jname,journels_dt: journels_dt,journels_vol: journels_vol,
+                        journels_ifactor: journels_ifactor,journels_Citationindex: journels_Citationindex,
+                        journels_Indexed: journels_Indexed},              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Journel details succesfully added', 5000);
 
-   //                     },
-   //                  error: function() 
-   //                  { 
-   //                        alert("Error"); 
-   //                   }   
-   //               });
-   // });
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });
    // //form 6.1 ends
 
    // //form 6.2

@@ -170,3 +170,47 @@ def cand_initiatives(request):
 		candidate_initiatives.cand_ini_isused = 0
 		candidate_initiatives.save()
 	return HttpResponse('details added')
+
+@csrf_exempt
+def cand_internship(request):
+	if request.method == 'POST':
+		candidate_internship = CandidateInternship()
+		candidate_internship.cand_int_gusid = request.user
+		if 'internship_comp' in request.POST:
+			candidate_internship.cand_int_name = request.POST['internship_comp']
+		if 'internship_sdate' in request.POST:
+			candidate_internship.cand_int_start = request.POST['internship_sdate']
+		if 'internship_edate' in request.POST:
+			candidate_internship.cand_int_end = request.POST['internship_edate']
+		if 'internship_stipend' in request.POST:
+			candidate_internship.cand_int_stipend = request.POST['internship_stipend']
+		candidate_internship.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def cand_journals(request):
+	if request.method == 'POST':
+		candidate_journals = CandidateJournals()
+		candidate_journals.cand_jour_gusid = request.user
+		if 'journels_title' in request.POST:
+			candidate_journals.cand_jour_title = request.POST['journels_title']
+		if 'journels_Fauthor' in request.POST:
+			candidate_journals.cand_jour_fauthor = request.POST['journels_Fauthor']
+		if 'journels_oauthors' in request.POST:
+			candidate_journals.cand_jour_oauthor = request.POST['journels_oauthors']
+		if 'journels_jname' in request.POST:
+			candidate_journals.cand_jour_name = request.POST['journels_jname']
+		if 'journels_dt' in request.POST:
+			candidate_journals.cand_jour_date = request.POST['journels_dt']
+		if 'journels_vol' in request.POST:
+			candidate_journals.cand_jour_vol = request.POST['journels_vol']
+		if 'journels_ifactor' in request.POST:
+			candidate_journals.cand_jour_impact = request.POST['journels_ifactor']
+		if 'journels_Citationindex' in request.POST:
+			candidate_journals.cand_jour_citation = request.POST['journels_Citationindex']
+		if 'journels_Indexed' in request.POST:
+			candidate_journals.cand_jour_indexed = request.POST['journels_Indexed']
+		candidate_jornals.save()
+	return HttpResponse('details saved')
+
+

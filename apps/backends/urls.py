@@ -16,6 +16,8 @@ urlpatterns = patterns('',
 	url(r'candidate_performance/$',views.cand_performance, name='candidate_performance'),
 	url(r'candidate_nat_reg/$',views.cand_nat_recog, name='candidate_nat_reg'),
 	url(r'candidate_initiatives/$',views.cand_initiatives, name='candidate_initiatives'),
+	url(r'candidate_internship/$',views.cand_internship, name='candidate_internship'),
+	url(r'candidate_journals/$',views.cand_journals, name='candidate_journals'),
 
 
 	# url(r'^blog/', include('blog.urls')),
