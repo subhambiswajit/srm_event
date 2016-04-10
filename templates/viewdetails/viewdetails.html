@@ -18,37 +18,40 @@
 <h4>ACTIVITIES</h4>
 <hr>
 {% if activity %}
+<div class="row">
 {%for activity in activity%}
-<div class="row card">
-   <div class="col l6">
-      <b>Name of event</b> : {{activity.cand_act_name}}
-      
-   </div>
-   <div class="col l6">
-      
-      <b>Date of event</b> : {{activity.cand_act_date}}
-   </div>
-</div>
+  <div class="col s12 m12 l12 card">
+      <div class="row">
+         <div class="col l6">
+            <b>Name of event</b> : {{activity.cand_act_name}}
+            
+         </div>
+         <div class="col l6">
+            
+            <b>Date of event</b> : {{activity.cand_act_date}}
+         </div>
+      </div>
 
-<div class="row">
-   <div class="col l12">
-      <b> nature of participation</b> : {{activity.cand_act_nature}}
-</div>
-</div>
+      <div class="row">
+         <div class="col l12">
+            <b> nature of participation</b> : {{activity.cand_act_nature}}
+      </div>
+      </div>
 
-<div class="row">
-   <div class="col l12">
-      <b> Details of award/prizes won if any</b> : {{activity.cand_act_prize}}
-</div>
-</div>
+      <div class="row">
+         <div class="col l12">
+            <b> Details of award/prizes won if any</b> : {{activity.cand_act_prize}}
+      </div>
+      </div>
 
-<div class="row">
-   <div class="col l12">
-      <b> year/section </b> : {{activity.cand_act_year}}
-</div>
-</div>
-
+      <div class="row">
+         <div class="col l12">
+            <b> year/section </b> : {{activity.cand_act_year}}
+      </div>
+      </div>
+  </div>
 {% endfor %}
+</div>
 {%else%}
 <p> No records found </p>
 
