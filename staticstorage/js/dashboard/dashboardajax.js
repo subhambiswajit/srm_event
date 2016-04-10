@@ -199,7 +199,7 @@
           $.ajax ({
                        type: 'POST',
                        url:'candidate_development/',
-                       data:{Journel_soft: activity_soft,Journel_mentor: activity_mentor},              
+                       data:{Journel_soft: Journel_soft,Journel_mentor: Journel_mentor},              
                        success: function(data) 
                        {
                         Materialize.toast('Development work details successfully added', 5000)

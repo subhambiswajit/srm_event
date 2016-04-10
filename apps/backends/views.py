@@ -191,6 +191,7 @@ def cand_internship(request):
 def cand_journals(request):
 	if request.method == 'POST':
 		candidate_journals = CandidateJournals()
+		print request.POST['journels_title']
 		candidate_journals.cand_jour_gusid = request.user
 		if 'journels_title' in request.POST:
 			candidate_journals.cand_jour_title = request.POST['journels_title']
@@ -210,12 +211,14 @@ def cand_journals(request):
 			candidate_journals.cand_jour_citation = request.POST['journels_Citationindex']
 		if 'journels_Indexed' in request.POST:
 			candidate_journals.cand_jour_indexed = request.POST['journels_Indexed']
-		candidate_jornals.save()
+		candidate_journals.save()
 	return HttpResponse('details saved')
 
 @csrf_exempt
 def cand_paper_conference(request):
 	if request.method == 'POST':
+		print request.POST['conferences_tt']
+		print request.POST['conferences_a']
 		candidate_paper_conference = CandidatePaperConference()
 		candidate_paper_conference.cand_pap_conf_gusid = request.user
 		if 'conferences_tt' in request.POST:
