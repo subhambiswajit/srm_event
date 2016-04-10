@@ -115,3 +115,14 @@ class CandidatePaperConference(models.Model):
         managed = False
         db_table = 'candidate_paper_conference'
 
+class CandidateDevelopment(models.Model):
+    cand_dev_id = models.IntegerField(primary_key=True)
+    cand_dev_gusid = models.ForeignKey('GlobalUsers', db_column='cand_dev_gusid', blank=True, null=True)
+    cand_dev_name = models.TextField()
+    cand_dev_faculty = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_development'
+
+

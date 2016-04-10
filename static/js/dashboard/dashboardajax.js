@@ -11,7 +11,7 @@
                        data:{activity_name: activity_name,activity_date: activity_date,activity_nature: activity_nature,activity_prize: activity_prize,activity_year: activity_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Activity details succesfully added', 5000);
+                        Materialize.toast('Activity details successfully added', 5000);
 
                        },
                     error: function() 
@@ -34,7 +34,7 @@
                        data:{performance_exam: performance_exam,performance_pass: performance_pass,performance_marks: performance_marks,performance_year: performance_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Performance details succesfully added', 5000);
+                        Materialize.toast('Performance details successfully added', 5000);
                        },
                     error: function() 
                     { 
@@ -55,7 +55,7 @@
                        data:{recognition_recognitions: recognition_recognitions,recognition_year: recognition_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Recognition details succesfully added', 5000);
+                        Materialize.toast('Recognition details successfully added', 5000);
 
                        },
                     error: function() 
@@ -83,7 +83,7 @@
                        data:{initiatives_univ: initiatives_univ, initiatives_seminar:  initiatives_seminar,initiatives_event: initiatives_event,initiatives_place: initiatives_place,initiatives_d: initiatives_d},              
                        success: function(data) 
                        {
-                        Materialize.toast('initiatives details succesfully added', 5000);
+                        Materialize.toast('initiatives details successfully added', 5000);
 
                        },
                     error: function() 
@@ -109,7 +109,7 @@
                        data:{internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
                        success: function(data) 
                        {
-                        Materialize.toast('internship details succesfully added', 5000);
+                        Materialize.toast('internship details successfully added', 5000);
 
                        },
                     error: function() 
@@ -146,7 +146,7 @@
                         journels_Indexed: journels_Indexed},              
                        success: function(data) 
                        {
-                        Materialize.toast('Journel details succesfully added', 5000);
+                        Materialize.toast('Journel details successfully added', 5000);
 
                        },
                     error: function() 
@@ -178,7 +178,7 @@
                          conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
                        success: function(data) 
                        {
-                        Materialize.toast('Paper conference details succesfully added', 5000);
+                        Materialize.toast('Paper conference details successfully added', 5000);
 
                        },
                     error: function() 
@@ -191,25 +191,25 @@
    // //form 6.2 ends
 
    // //form 6.3
-   //  $('.Journel_button').click(function(){
-   //  alert('clicked');
-   //  var activity_soft=$('#soft').val();
-   //  var activity_mentor=$('#mentor').val();
+    $('.soft_dev_button').click(function(){
+    alert('clicked');
+    var activity_soft=$('#soft').val();
+    var activity_mentor=$('#mentor').val();
     
-   //        $.ajax ({
-   //                     type: 'POST',
-   //                     url:'',
-   //                     data:{Journel_soft: Journel_soft,Journel_mentor: Journel_mentor},              
-   //                     success: function(data) 
-   //                     {
-   //                      Materialize.toast('Journel details succesfully added', 5000)
+          $.ajax ({
+                       type: 'POST',
+                       url:'candidate_development/',
+                       data:{Journel_soft: Journel_soft,Journel_mentor: Journel_mentor},              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Development work details successfully added', 5000)
 
-   //                     },
-   //                  error: function() 
-   //                  { 
-   //                        alert("Error"); 
-   //                   }   
-   //               });
-   // });
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });
 
    //form 6.3 ends

@@ -94,6 +94,17 @@ class CandidateActivity(models.Model):
         db_table = 'candidate_activity'
 
 
+class CandidateDevelopment(models.Model):
+    cand_dev_id = models.IntegerField(primary_key=True)
+    cand_dev_gusid = models.ForeignKey('GlobalUsers', db_column='cand_dev_gusid', blank=True, null=True)
+    cand_dev_name = models.TextField()
+    cand_dev_faculty = models.TextField()
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_development'
+
+
 class CandidateInitiatives(models.Model):
     cand_ini_id = models.IntegerField(primary_key=True)
     cand_ini_gusid = models.ForeignKey('GlobalUsers', db_column='cand_ini_gusid', blank=True, null=True)

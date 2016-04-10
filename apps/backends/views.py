@@ -237,5 +237,16 @@ def cand_paper_conference(request):
 		candidate_paper_conference.save()
 	return HttpResponse('details saved')
 
+@csrf_exempt
+def cand_development(request):
+	if request.method == 'POST':
+		candidate_development = CandidateDevelopment()
+		candidate_development.cand_dev_gusid = request.user
+		if 'Journel_soft' in request.POST:
+			candidate_development.cand_dev_name = request.POST['Journel_soft']
+		if 'Journel_mentor' in request.POST:
+			candidate_development.cand_dev_faculty = request.POST['Journel_mentor']
+		candidate_development.save()
+	return HttpResponse('details saved')
 
 

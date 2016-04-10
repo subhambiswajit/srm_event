@@ -19,6 +19,7 @@ urlpatterns = patterns('',
 	url(r'candidate_internship/$',views.cand_internship, name='candidate_internship'),
 	url(r'candidate_journals/$',views.cand_journals, name='candidate_journals'),
 	url(r'candidate_paper_conference/$',views.cand_paper_conference, name='candidate_paper_conference'),
+	url(r'candidate_development/$',views.cand_development, name='candidate_development'),
 
 
 	# url(r'^blog/', include('blog.urls')),
