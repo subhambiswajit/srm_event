@@ -20,6 +20,12 @@ class GlobalUsers(models.Model):
     class Meta:
         managed = False
         db_table = 'global_users'
+    def is_authenticated(user):
+        return True
+    def is_active(self):
+        return True
+    def is_staff(self):
+        return True
 
 class CandidateActivity(models.Model):
     candidate_id = models.IntegerField(primary_key=True)

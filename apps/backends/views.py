@@ -1,13 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import *
+from django.shortcuts import resolve_url
 from apps.backends.models import *
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import EmailMessage
 from django.contrib.auth.hashers import PBKDF2PasswordHasher
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,  logout
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
@@ -67,10 +69,13 @@ def user_signup(request):
 		if request.POST['username'] in username_check:
 			messages.warning(request,"Registration Id already added")
 
-
 	return render(request,'home/homepage.html')
 
 def user_login(request):
+
+	redirect_to =resolve_url(settings.LOGIN_REDIRECT_URL)
+	if request.user.is_authenticated():
+		return HttpResponseRedirect(redirect_to)
 	if request.method == 'POST':
 		username = request.POST['registration_number']
 		password = request.POST['password']
@@ -78,12 +83,33 @@ def user_login(request):
 			user = authenticate(username=username, password= password)
 			if user is not None:
 				login(request,user)
+				redirect_to = resolve_url(settings.LOGIN_REDIRECT_URL)
 			else:
 				messages.warning(request,"Wrong Id or password")
 				return render(request,'home/homepage.html')
 		except ObjectDoesNotExist:
 			pass
-	return render(request,'dashboard/dashboard.html')
+	return HttpResponseRedirect(redirect_to)
+
+def user_logout(request):
+	logout(request)
+	return HttpResponseRedirect('/')
+
+def dashboard(request):
+	if request.user.is_authenticated():
+		return render (request,'dashboard/dashboard.html')
+	else:
+		return HttpResponseRedirect('/')
+	return render (request,'dashboard/dashboard.html')
+
+def home(request):
+	redirect_to =resolve_url(settings.LOGIN_REDIRECT_URL)
+	if request.user.is_authenticated():
+		return HttpResponseRedirect(redirect_to)
+	else:
+		return render(request,'home/homepage.html')
+	return render (request,'home/homepage.html')
+
 
 
 def reset_password(request):
@@ -252,4 +278,24 @@ def cand_development(request):
 		candidate_development.save()
 	return HttpResponse('details saved')
 
-
+@login_required
+def user_details(request):
+	render_data ={}
+	if request.user.is_authenticated():
+		activity = CandidateActivity.objects.filter(cand_act_gusid = request.user)
+		render_data['activity'] = activity
+		performance = CandidatePerformance.objects.filter(cand_per_gusid= request.user)
+		render_data['performance'] = performance
+		nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus= request.user)
+		render_data['nationalrecognition'] = nationalrecognition
+		initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid= request.user)
+		render_data['initiatives'] = initiatives
+		internship = CandidateInternship.objects.filter(cand_int_gusid= request.user)
+		render_data['internship'] = internship
+		candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid= request.user)
+		render_data['candidatejournals'] = candidatejournals
+		candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid = request.user)
+		render_data['candidatepaperconference'] = candidatepaperconference
+		candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid= request.user)
+		render_data['candidatedev'] = candidatedev
+	return render (request,'viewdetails/viewdetails.html',render_data)

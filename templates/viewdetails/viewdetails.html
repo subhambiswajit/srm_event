@@ -4,8 +4,8 @@
        <title>View details</title>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-       <link rel="stylesheet" href="../css/index.css">
-       <link rel="stylesheet" href="../css/details.css">
+       <link rel="stylesheet" href="/static/css/dashboard/dashboard.css">
+       <link rel="stylesheet" href="/static/css/dashboard/dashboard_index.css">
   </head>
 
 
@@ -31,128 +31,171 @@
 <!--activities-->
 <h4>ACTIVITIES</h4>
 <hr>
-
-<div class="row">
+{% if activity %}
+{%for activity in activity%}
+<div class="row card">
    <div class="col l6">
-      <b>Name of event</b> : event1
+      <b>Name of event</b> : {{activity.cand_act_name}}
       
    </div>
    <div class="col l6">
       
-      <b>Date of event</b> : 25/02/2001
+      <b>Date of event</b> : {{activity.cand_act_date}}
    </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> nature of participation</b> : xyz
+      <b> nature of participation</b> : {{activity.cand_act_nature}}
 </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> Details of award/prizes won if any</b> : xyz
+      <b> Details of award/prizes won if any</b> : {{activity.cand_act_prize}}
 </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> year/section </b> : xyz
+      <b> year/section </b> : {{activity.cand_act_year}}
 </div>
 </div>
+
+{% endfor %}
+{%else%}
+<p> No records found </p>
+
+{% endif %}
 <!--activities ends-->
 <br><br>
 <!--performance-->
 <h4>PERFORMANCE</h4>
 <hr>
-
+{% if performance %}
+ <div class="row">
+ {%for performance in performance %}
+    <div class="col s12 m12 l12  card">
 <div class="row">
    <div class="col l12">
-      <b>Name of exam</b> : event1
+      <b>Name of exam</b> : {{performance.cand_per_exam}}
    </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> year of passing </b> : xyz
+      <b> year of passing </b> : {{performance.cand_per_ypass}}
 </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> marks obtained </b> : xyz
+      <b> marks obtained </b> : {{performance.cand_per_marks}}
 </div>
 </div>
 
 <div class="row">
    <div class="col l12">
-      <b> year/section </b> : xyz
+      <b> year/section </b> : {{performance.cand_per_year}}
 </div>
 </div>
+</div>
+{% endfor %}
+</div>
+{% else %}
+<p> No records found </p>
+{% endif %}
 <!--performance ends-->
 <br><br>
 <!--national recognition-->
 <h4>NATIONAL RECOGNITION</h4>
 <hr>
-
+{% if nationalrecognition %}
 <div class="row">
-   <div class="col l12">
-      <b> International/national recognitions recieved </b> : xyz
+    {%for nationalrecognition in nationalrecognition %}
+   <div class="col s12 m12 l12 card">
+      <div class="row">
+         <div class="col l12">
+            <b> International/national recognitions recieved </b> : {{nationalrecognition.cand_nat_reg_details}}
+      </div>
+      </div>
+      <div class="row">
+         <div class="col l12">
+            <b> year/section </b> : {{nationalrecognition.cand_nat_reg_year}}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
 </div>
-</div>
-<div class="row">
-   <div class="col l12">
-      <b> year/section </b> : xyz
-</div>
-</div>
-
+{% else %}
+<p> No records found </p>
+{% endif %}
 <!--national recognition ends-->
 <br><br>
 <!--initiatives-->
 <h4>INITIATIVES</h4>
 <hr>
+{%if initiatives %}
 <div class="row">
-   <div class="col l6">
-      <b> International/national/state/university </b> : xyz
+  {%for initiatives in initiatives %}
+  <div class="col s12 m12 l12 card">
+      <div class="row">
+         <div class="col l6">
+            <b> International/national/state/university </b> : {{initiatives.cand_ini_level}}
+      </div>
+      <div class="col l6">
+            <b> Date </b> : {{initiatives.cand_ini_date}}
+      </div>
+      </div>
+      <div class="row">
+         <div class="col l12">
+            <b> seminar/exhibition/compitetion </b> : {{initiatives.cand_ini_name}}
+      </div>
+      </div>
+      <div class="row">
+         <div class="col l12">
+            <b> event </b> : {{initiatives.cand_ini_name}}
+      </div>
+      </div>
+      <div class="row">
+         <div class="col l12">
+            <b> place </b> : {{initiatives.cand_ini_venue}}
+      </div>
+      </div>
+      {% endfor %}
 </div>
-<div class="col l6">
-      <b> Date </b> : 2/5/2016
-</div>
-</div>
-<div class="row">
-   <div class="col l12">
-      <b> seminar/exhibition/compitetion </b> : xyz
-</div>
-</div>
-<div class="row">
-   <div class="col l12">
-      <b> event </b> : xyz
-</div>
-</div>
-<div class="row">
-   <div class="col l12">
-      <b> place </b> : xyz
-</div>
-</div>
-
+{% else %}
+<p> No records found </p>
+{% endif %}
 <!--initiatives ends-->
 <br><br>
 
 <h4>INTERNSHIP</h4>
 <hr>
+ {%if internship %}
 <div class="row">
-   <div class="col l6">
-      <b> company name </b> : xyz
+   {%for internships in internship %}
+  <div class="col s12 m12 l12 card">
+     
+    <div class="row">
+       <div class="col l6">
+          <b> Company name </b> : {{internships.cand_int_name}}
+    </div>
+    <div class="col l6">
+          <b>Date </b> : {{internships.cand_int_start}} to {{internships.cand_int_end}}
+    </div>
+    </div>
+    <div class="row">
+       <div class="col l12">
+          <b> Stipend </b> :{{internships.cand_int_stipend}}
+    </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-<div class="col l6">
-      <b>date </b> : start date-end date
-</div>
-</div>
-<div class="row">
-   <div class="col l12">
-      <b> stipend </b> :1200
-</div>
-</div>
+{% else %}
+<p> No records found </p>
+{% endif %}
 <!--internship ends-->
 <br><br>
 <!--journel/conference-->
@@ -160,97 +203,129 @@
 <hr>
 Papers Published in National/ International Journals<hr>
 <br>
+{%if candidatejournals %}
 <div class="row">
- <div class="col l6">
-   <b>Title of paper</b> : paper
- </div>
- <div class="col l6">
-   <b>Date of publication</b> : paper
- </div>
+  {%for candidatejournals in candidatejournals %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+     <div class="col l6">
+       <b>Title of paper</b> : {{candidatejournals.cand_jour_title}}
+     </div>
+     <div class="col l6">
+       <b>Date of publication</b> : {{candidatejournals.cand_jour_date}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>First author</b> : {{candidatejournals.cand_jour_fauthor}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Other authors</b> : {{candidatejournals.cand_jour_oauthor}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Volume/page number</b> : {{candidatejournals.cand_jour_vol}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Impact factor</b> : {{candidatejournals.cand_jour_impact}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Citation index</b> : {{candidatejournals.cand_jour_citation}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Indexed or not/hyperlinked</b> : {{candidatejournals.cand_jour_indexed}}
+     </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-<div class="row">
- <div class="col l12">
-   <b>First author</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Other authors</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Volume/page number</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Impact factor</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Citation index</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Indexed or not/hyperlinked</b> : paper
- </div>
-</div>
+{%else%}
+<p> No records found </p>
+{% endif %}
+
 
 <br><br>
 
 Papers Presented in in National/ International Conferences<hr>
 <br>
+{%if candidatepaperconference %}
 <div class="row">
- <div class="col l6">
-   <b>Title of paper</b> : paper
- </div>
- <div class="col l6">
-   <b>Date</b> : paper
- </div>
+  {% for candidatepaperconference in candidatepaperconference %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+     <div class="col l6">
+       <b>Title of paper</b> : {{candidatepaperconference.cand_pap_conf_title}}
+     </div>
+     <div class="col l6">
+       <b>Date</b> : {{candidatepaperconference.cand_pap_conf_date}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Author</b> : {{candidatepaperconference.cand_pap_conf_author}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Conference name</b> : {{candidatepaperconference.cand_pap_conf_cname}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Institute organizing</b> : {{candidatepaperconference.cand_pap_conf_org}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Place</b> : {{candidatepaperconference.cand_pap_conf_venue}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Presented/Published/Accepted</b> : {{candidatepaperconference.cand_pap_conf_status}}
+     </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-<div class="row">
- <div class="col l12">
-   <b>author</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Conference name</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Institute organizing</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>place</b> : paper
- </div>
-</div>
-<div class="row">
- <div class="col l12">
-   <b>Presented/Published/Accepted</b> : paper
- </div>
-</div>
+{% else %}
+<p> No records found </p>
+{% endif %}
 
 <br><br>
 
 Software Developed<hr>
 <br>
+{% if candidatedev %}
 <div class="row">
- <div class="col l12">
-   <b>Name of software</b> : paper
- </div>
+  {% for candidatedev in candidatedev %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+     <div class="col l12">
+       <b>Name of software</b> : {{candidatedev.cand_dev_name}}
+     </div>
+    </div>
+    <div class="row">
+     <div class="col l12">
+       <b>Faculty mentor</b> : {{candidatedev.cand_dev_faculty}}
+     </div>
+    </div>
+  </div>
+  {% endfor %}
 </div>
-<div class="row">
- <div class="col l12">
-   <b>Faculty mentor</b> : paper
- </div>
-</div>
+
+{% else %}
+<p> No records found </p>
+{% endif %}
 
 <!--journel / conference ends-->
 
