@@ -139,7 +139,7 @@
 
           $.ajax ({
                        type: 'POST',
-                       url:'',
+                       url:'candidate_journals/',
                        data:{journels_title: journels_title,journels_Fauthor: journels_Fauthor,journels_oauthors: journels_oauthors
                         journels_jname: journels_jname,journels_dt: journels_dt,journels_vol: journels_vol,
                         journels_ifactor: journels_ifactor,journels_Citationindex: journels_Citationindex,
@@ -159,34 +159,34 @@
 
    // //form 6.2
 
-   //  $('.conferences_button').click(function(){
-   //  alert('clicked');
-   //  var conferences_tt=$('#tt').val();
-   //  var conferences_a=$('#a').val();
-   //  var conferences_cname=$('#cname').val();
-   //  var conferences_dd=$('#dd').val();
-   //  var conferences_dr=$('#dr').val();
-   //  var conferences_ins=$('#ins').val();
-   //  var conferences_pl=$('#pl').val();
-   //  var conferences_opt=$('#opt').val();
+    $('.conferences_button').click(function(){
+    alert('clicked');
+    var conferences_tt=$('#tt').val();
+    var conferences_a=$('#a').val();
+    var conferences_cname=$('#cname').val();
+    var conferences_dd=$('#dd').val();
+    var conferences_dr=$('#dr').val();
+    var conferences_ins=$('#ins').val();
+    var conferences_pl=$('#pl').val();
+    var conferences_opt=$('#opt').val();
 
-   //        $.ajax ({
-   //                     type: 'POST',
-   //                     url:'',
-   //                     data:{conferences_tt: conferences_tt,conferences_a:conferences_a,conferences_cname:conferences_cname,
-   //                      conferences_dd: conferences_dd,conferences_dr: conferences_dr,conferences_ins: conferences_ins,
-   //                       conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
-   //                     success: function(data) 
-   //                     {
-   //                      Materialize.toast('Journel details succesfully added', 5000)
+          $.ajax ({
+                       type: 'POST',
+                       url:'candidate_paper_conference/',
+                       data:{conferences_tt: conferences_tt,conferences_a:conferences_a,conferences_cname:conferences_cname,
+                        conferences_dd: conferences_dd,conferences_dr: conferences_dr,conferences_ins: conferences_ins,
+                         conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Paper conference details succesfully added', 5000);
 
-   //                     },
-   //                  error: function() 
-   //                  { 
-   //                        alert("Error"); 
-   //                   }   
-   //               });
-   // });
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });
 
    // //form 6.2 ends
 

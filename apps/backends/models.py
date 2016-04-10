@@ -98,3 +98,20 @@ class CandidateJournals(models.Model):
     class Meta:
         managed = False
         db_table = 'candidate_journals'
+
+class CandidatePaperConference(models.Model):
+    cand_pap_conf_id = models.IntegerField(primary_key=True)
+    cand_pap_conf_gusid = models.ForeignKey('GlobalUsers', db_column='cand_pap_conf_gusid', blank=True, null=True)
+    cand_pap_conf_title = models.CharField(max_length=100, blank=True)
+    cand_pap_conf_author = models.CharField(max_length=100, blank=True)
+    cand_pap_conf_cname = models.CharField(max_length=100, blank=True)
+    cand_pap_conf_date = models.DateTimeField(blank=True, null=True)
+    cand_pap_conf_duration = models.CharField(max_length=50, blank=True)
+    cand_pap_conf_org = models.CharField(max_length=100, blank=True)
+    cand_pap_conf_venue = models.CharField(max_length=50, blank=True)
+    cand_pap_conf_status = models.CharField(max_length=50, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'candidate_paper_conference'
+

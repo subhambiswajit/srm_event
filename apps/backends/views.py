@@ -213,4 +213,29 @@ def cand_journals(request):
 		candidate_jornals.save()
 	return HttpResponse('details saved')
 
+@csrf_exempt
+def cand_paper_conference(request):
+	if request.method == 'POST':
+		candidate_paper_conference = CandidatePaperConference()
+		candidate_paper_conference.cand_pap_conf_gusid = request.user
+		if 'conferences_tt' in request.POST:
+			candidate_paper_conference.cand_pap_conf_title = request.POST['conferences_tt']
+		if 'conferences_a' in request.POST:
+			candidate_paper_conference.cand_pap_conf_author = request.POST['conferences_a']
+		if 'conferences_cname' in request.POST:
+			candidate_paper_conference.cand_pap_conf_cname = request.POST['conferences_cname']
+		if 'conferences_dd' in request.POST:
+			candidate_paper_conference.cand_pap_conf_date = request.POST['conferences_dd']
+		if 'conferences_dr' in request.POST:
+			candidate_paper_conference.cand_pap_conf_duration = request.POST['conferences_dr']
+		if 'conferences_ins' in request.POST:
+			candidate_paper_conference.cand_pap_conf_org = request.POST['conferences_ins']
+		if 'conferences_pl' in request.POST:
+			candidate_paper_conference.cand_pap_conf_venue = request.POST['conferences_pl']
+		if 'conferences_opt' in request.POST:
+			candidate_paper_conference.cand_pap_conf_status = request.POST['conferences_opt']
+		candidate_paper_conference.save()
+	return HttpResponse('details saved')
+
+
 
