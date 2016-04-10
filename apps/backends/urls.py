@@ -9,7 +9,6 @@ from apps.backends import views
 
 urlpatterns = patterns('',
     # Examples:
-	url(r'personal_details/$',views.personal_details, name='personal_details'),
 	url(r'user_signup/$',views.user_signup, name='user_signup'),
 	url(r'user_login/$',views.user_login, name='user_login'),
 	url(r'user_logout/$',views.user_logout, name='user_logout'),

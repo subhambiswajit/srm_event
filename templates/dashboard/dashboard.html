@@ -1,7 +1,7 @@
 <html>
 
   <head>
-       <title>My profile</title>
+       <title>My Dashboard</title>
        <link rel="stylesheet" href="/static/css/materialize.min.css">
        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
        <link rel="stylesheet" href="/static/css/dashboard/dashboard.css">
@@ -19,7 +19,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Welcome {{request.user.gus_name}}&nbsp;&nbsp;|</a></li>
         <li><a href="#">HOME&nbsp;&nbsp;|</a></li>
-        <li><a href="#">WEB MAIL&nbsp;&nbsp;|</a></li>
+        <li><a href="{% url 'view_details' %}">MY PROFILE&nbsp;&nbsp;|</a></li>
         <li><a href="#">CONTACT US</a></li>
         <li><a href="{%url 'user_logout' %}">LOG OUT</a></li>
       </ul>
