@@ -299,3 +299,8 @@ def user_details(request):
 		candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid= request.user)
 		render_data['candidatedev'] = candidatedev
 	return render (request,'viewdetails/viewdetails.html',render_data)
+
+
+def user_details_search(request):
+	if 
+
