@@ -64,11 +64,21 @@
 	    <script src="/static/js/dashboard/dashboard.js"></script>
 	    <script src="/static/js/dashboard/dashboardajax.js"></script>
 	    <script>
+<<<<<<< HEAD
 	   
 	    function myFunction() {
+=======
+>>>>>>> 7bca59386f0d60ad0566d33e0ea0b1c44b8e38cc
         //$("#panel").slideDown();
-        var x = document.getElementById("myInput").value;
-        
+        $(document).on('input','#myInput',function(e){
+        var x = $('#myInput').val();
+        if (x == "")
+        {
+        	$('#panel').slideUp();
+        }
+        else
+        {
+        $('#panel').slideDown();
         $.ajax({
         	  type: 'POST',
               url:'user_profile_search/',
@@ -78,16 +88,18 @@
 		        var arr=JSON.parse(data1);
 		        var len=arr.searchdata.length;
                 var inc;
-                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a href="abc">'+arr.searchdata[0].name+'</a></div>';
+                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[0].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[0].name+'-'+arr.searchdata[0].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[0].type+'</div>'+'</a></div>';
                 for(inc=1;inc<len;inc++)
                 {
-                	results+='<div class="row" style="margin-bottom:0px;height:40px;"><a href="abc">'+arr.searchdata[inc].name+'</a></div>';
+                	results+='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[inc].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[inc].name+'-'+arr.searchdata[inc].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[inc].type+'</div>'+'</a></div>';
                 }
+                results+='<div class="row" style="margin-bottom:0px;height:10px;">&nbsp;</div>';
                 document.getElementById("panel").innerHTML =results;
               }
             
         });
-  }
+}
+  });
 	    </script>
 	    {% block extrajs %}			{% endblock %}
 
