@@ -22,26 +22,33 @@
       </ul>
     </div>
 
-    <div class="container">
+<!--search bar-->
+<br><br>
+<div class="row">
+<div class="col offset-l9 l3">
+ <input type="text" placeholder="search details" class="search_input">
+ <div class="result"></div>
+</div>
+</div>
+<!--search bar ends-->
 
-    <br><br>
+    <div class="container">
 
     <!--form one-->
      
     <div id="test1" class="col s12">
          <div class="input-field col s12">
           <input id="nameofevent" type="text" class="validate" autocomplete="off" required>
-           <label for="nameofevent">name of event</label>
+           <label for="nameofevent">Name of event</label>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="date" type="text" class="datepicker" autocomplete="off" required>
-           <label for="dateofevent">date of event</label>
+          <input id="date" type="date" autocomplete="off" required>
         </div>
       <br><br>
          <div class="input-field col s12">
           <input id="natureofparticipation" type="text" class="validate" autocomplete="off" required>
-           <label for="natureofparticipation">nature of participation</label>
+           <label for="natureofparticipation">Nature of participation</label>
         </div>
         <br><br>
          <div class="input-field col s12">
@@ -68,23 +75,23 @@
        
         <div class="input-field col s12">
           <input id="nameofexam" type="text" class="validate" autocomplete="off" required>
-           <label for="nameofexam">name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
+           <label for="nameofexam">Name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
 )</label>
         </div>
       <br><br>
        <div class="input-field col s12">
           <input id="yearofpassing" type="text" class="validate" autocomplete="off" required>
-           <label for="yearofpassing">year of passing</label>
+           <label for="yearofpassing">Year of passing</label>
         </div>
       <br><br>
       <div class="input-field col s12">
           <input id="marks" type="text" class="validate" autocomplete="off" required>
-           <label for="marks">marks obtained</label>
+           <label for="marks">Marks obtained</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="y" type="text" class="validate" autocomplete="off" required>
-           <label for="y">year/section</label>
+           <label for="y">Year/section</label>
         </div>
       <br><br>
        <center> <button class="btn waves-effect waves-light btn_send performance_button" type="submit" name="action">Submit
@@ -95,7 +102,7 @@
 
     <!--form 3-->
     <div id="test3" class="col s12">
-        <br><br>
+        
          <div class="input-field col s12">
           <input id="recognitions" type="text" class="validate" autocomplete="off" required>
            <label for="recognitions">International/ National recognitions received details</label>
@@ -103,7 +110,7 @@
         <br><br>
          <div class="input-field col s12">
           <input id="yr" type="text" class="validate" autocomplete="off" required>
-           <label for="yr">year/section</label>
+           <label for="yr">Year/section</label>
         </div>
       <br><br>
        <center> <button class="btn waves-effect waves-light btn_send recognition_button" type="submit" name="action">Submit
@@ -114,7 +121,7 @@
 
     <!--form 4-->
     <div id="test4" class="col s12">
-        <br><br>
+        
          <div class="input-field col s12">
           <input id="univ" type="text" class="validate" autocomplete="off" required>
            <label for="univ">International/National/ State / university</label>
@@ -127,17 +134,16 @@
         <br><br>
          <div class="input-field col s12">
           <input id="event" type="text" class="validate" autocomplete="off" required>
-           <label for="event">event</label>
+           <label for="event">Event</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="place" type="text" class="validate" autocomplete="off" required>
-           <label for="place">place</label>
+           <label for="place">Place</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="d" type="date"  autocomplete="off" required>
-           <label for="d">date</label>
         </div>
          <br><br>
              <center> <button class="btn waves-effect waves-light btn_send initiatives_button" type="submit" name="action">Submit
@@ -149,25 +155,30 @@
 
      <!--form 5 starts-->
     <div id="test5" class="col s12">
-         <br><br>
+       
          <div class="input-field col s12">
           <input id="comp" type="text" class="validate" autocomplete="off" required>
-           <label for="comp">company name</label>
+           <label for="comp">Company name</label>
         </div>
          <br><br>
          <div class="input-field col s12">
-          <input id="sdate" type="date"  autocomplete="off" required>
-           <label for="sdate">start date</label>
+          <input id="sdate" type="date"  autocomplete="off"  required>
+          <label for="sdate">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          start date</label> 
         </div>
-         <br><br>
          <div class="input-field col s12">
           <input id="edate" type="date"  autocomplete="off" required>
-           <label for="edate">end date</label>
+          <label for="sdate">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          end date</label> 
         </div>
          <br><br>
          <div class="input-field col s12">
           <input id="stipend" type="text" class="validate" autocomplete="off" required>
-           <label for="stipend">stipend</label>
+           <label for="stipend">Stipend</label>
         </div>
         <br><br> 
              <center> <button class="btn waves-effect waves-light btn_send internship_button" type="submit" name="action">Submit
@@ -185,41 +196,40 @@
 
         <!--form 6.1-->
                 
-               <div id="test6" class="col s12">
-               <br><br>
+              
                <div class="input-field col s12">
           <input id="title" type="text"  autocomplete="off" required>
-           <label for="title">title of paper</label>
+           <label for="title">Title of paper</label>
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="Fauthor" type="text"  autocomplete="off" required>
-           <label for="Fauthor">first author</label>
+           <label for="Fauthor">First author</label>
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="oauthors" type="text" autocomplete="off" required>
-           <label for="oauthors">other authors</label>
+           <label for="oauthors">Other authors</label>
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="jname" type="text"  autocomplete="off" required>
-           <label for="jname">journal name</label>
+           <label for="jname">Journal name</label>
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="dt" type="date"  autocomplete="off" required>
-           <label for="dt">date of publication</label>
+           
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="vol" type="text" autocomplete="off" required>
-           <label for="vol">volume/page number</label>
+           <label for="vol">Volume/page number</label>
         </div>
          <br><br>
                <div class="input-field col s12">
           <input id="ifactor" type="text" autocomplete="off" required>
-           <label for="ifactor">impact factor</label>
+           <label for="ifactor">Impact factor</label>
         </div>
          <br><br>
                <div class="input-field col s12">
@@ -236,7 +246,7 @@
           <i class="fa fa-paper-plane right"></i>
           </button></center>
           <hr>
-      </div>
+      
 
         <!--form-->
 
@@ -246,37 +256,36 @@
       <div class="collapsible-header">Papers Presented in in National/ International Conferences</div>
       <div class="collapsible-body">
 
-<!--form 6.2-->   
-                <div id="test7" class="col s12">
+<!--form 6.2-->  
                <div class="input-field col s12">
           <input id="tt" type="text" class="validate" autocomplete="off" required>
-           <label for="tt">title of paper</label>
+           <label for="tt">Title of paper</label>
         </div>
        <br><br>
                <div class="input-field col s12">
           <input id="a" type="text" class="validate" autocomplete="off" required>
-           <label for="a">author</label>
+           <label for="a">Author</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="cname" type="text" class="validate" autocomplete="off" required>
-           <label for="cname">conference name</label>
+           <label for="cname">Conference name</label>
         </div>
         <div class="input-field col s12">
           <input id="dd" type="date"  autocomplete="off" required>
-           <label for="dd">date</label>
+           
         </div>
         <div class="input-field col s12">
           <input id="dr" type="text" class="validate" autocomplete="off" required>
-           <label for="dr">duration</label>
+           <label for="dr">Duration</label>
         </div>
         <div class="input-field col s12">
           <input id="ins" type="text" class="validate" autocomplete="off" required>
-           <label for="ins">institute organizing</label>
+           <label for="ins">Institute organizing</label>
         </div>
          <div class="input-field col s12">
           <input id="pl" type="text" class="validate" autocomplete="off" required>
-           <label for="pl">place</label>
+           <label for="pl">Place</label>
         </div>
          <div class="input-field col s12">
           <input id="opt" type="text" class="validate" autocomplete="off" required>
@@ -286,7 +295,7 @@
           <i class="fa fa-paper-plane right"></i>
           </button></center>
           <hr>
-<!--form 6.2 ends--></div><br><br>
+<!--form 6.2 ends--><br><br>
       </div>
 
 
@@ -300,7 +309,7 @@
       <!--last form-->
  <div class="input-field col s12">
           <input id="soft" type="text" class="validate" autocomplete="off" required>
-           <label for="soft">name of software developed</label>
+           <label for="soft">Name of software developed</label>
         </div>
         <div class="input-field col s12">
           <input id="mentor" type="text" class="validate" autocomplete="off" required>
