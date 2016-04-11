@@ -325,5 +325,32 @@ def user_details_search(request):
 			print render_data
 	return HttpResponse(json.dumps(render_data),content_type='application/json')
 
+@csrf_exempt
+def foreign_profile_generation(request, user_id):
+	user_check_id = user_id
+	print user_check_id
+	render_data ={}
+	if request.method == 'GET':
+		activity = CandidateActivity.objects.filter(cand_act_gusid__gus_userid = user_check_id)
+		render_data['activity'] = activity
+		performance = CandidatePerformance.objects.filter(cand_per_gusid__gus_userid= user_check_id)
+		render_data['performance'] = performance
+		nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus__gus_userid= user_check_id)
+		render_data['nationalrecognition'] = nationalrecognition
+		initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid__gus_userid= user_check_id)
+		render_data['initiatives'] = initiatives
+		internship = CandidateInternship.objects.filter(cand_int_gusid__gus_userid= user_check_id)
+		render_data['internship'] = internship
+		candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid__gus_userid= user_check_id)
+		render_data['candidatejournals'] = candidatejournals
+		candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid__gus_userid = user_check_id)
+		render_data['candidatepaperconference'] = candidatepaperconference
+		candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid__gus_userid= user_check_id)
+		render_data['candidatedev'] = candidatedev
+	return render (request,'viewdetails/viewdetails.html',render_data)
+
+
+
+
 
 
