@@ -65,10 +65,10 @@ def user_signup(request):
 		global_user.gus_isused = 1
 		global_user.gus_verify = verify_code
 		global_user.save()
-		# subject = "email verification for profile generation in SRM portal"            
-		# message = "please verify your email by typing the following code to activate your account" + verify_code
-		# sender = "digu35@gmail.com"
-		# send_mail(subject, message, sender, [request.POST['email']])
+		subject = "email verification for profile generation in SRM portal"            
+		message = "please verify your email by typing the following code to activate your account" + verify_code
+		sender = "digu35@gmail.com"
+		send_mail(subject, message, sender, [request.POST['email']])
 	else:
 		if request.POST['username'] in username_check:
 			messages.warning(request,"Registration Id already added")
