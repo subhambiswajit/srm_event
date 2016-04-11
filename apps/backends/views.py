@@ -326,6 +326,7 @@ def user_details_search(request):
 	return HttpResponse(json.dumps(render_data),content_type='application/json')
 
 @csrf_exempt
+@login_required
 def foreign_profile_generation(request, user_id):
 	user_check_id = user_id
 	print user_check_id
