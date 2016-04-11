@@ -23,6 +23,7 @@ urlpatterns = patterns('',
 	url(r'candidate_development/$',views.cand_development, name='candidate_development'),
 
 	url(r'user_profile_search/$',views.user_details_search, name='user_profile_search'),
+	url(r'faculty/$',TemplateView.as_view(template_name='faculty/faculty.html')),
 	# url(r'^blog/', include('blog.urls')),
 	# url(r'^signup/$', views.signup, name="signup"),
 	# url(r'signin/$', views.login_user, name="auth_login"),
