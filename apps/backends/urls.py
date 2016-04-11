@@ -23,7 +23,6 @@ urlpatterns = patterns('',
 	url(r'candidate_development/$',views.cand_development, name='candidate_development'),
 
 	url(r'user_profile_search/$',views.user_details_search, name='user_profile_search'),
-
 	url(r'foreign_profile/(\d+)$',views.foreign_profile_generation, name='foreign_profile'),
 
 	# url(r'^blog/', include('blog.urls')),
