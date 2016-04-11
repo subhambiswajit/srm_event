@@ -10,6 +10,10 @@ from django.contrib.auth import authenticate, login,  logout
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.db.models import Q
+from django.core import serializers
+
+import json
 import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
@@ -302,5 +306,23 @@ def user_details(request):
 
 
 def user_details_search(request):
-	if 
+	search_data = ''
+	render_data ={}
+	user_data ={}
+	filter_data =[]
+	if request.method == 'POST':
+		if 'searchdata' in request.POST:
+			searchdata = request.POST['searchdata']
+			user_data = GlobalUsers.objects.filter(Q(gus_username__icontains = searchdata) | Q(gus_name__icontains = searchdata))
+			for t in user_data:
+				dat = {}
+				dat['id'] = t.gus_userid
+				dat['name'] = t.gus_name
+				dat['username'] = t.gus_username
+				filter_data.append(dat)
+			render_data['searchdata'] = filter_data
+			print render_data
+	return HttpResponse(json.dumps(render_data),content_type='application/json')
+
+
 

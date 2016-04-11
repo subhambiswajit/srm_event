@@ -22,7 +22,7 @@ urlpatterns = patterns('',
 	url(r'candidate_paper_conference/$',views.cand_paper_conference, name='candidate_paper_conference'),
 	url(r'candidate_development/$',views.cand_development, name='candidate_development'),
 
-
+	url(r'user_profile_search/$',views.user_details_search, name='user_profile_search'),
 	# url(r'^blog/', include('blog.urls')),
 	# url(r'^signup/$', views.signup, name="signup"),
 	# url(r'signin/$', views.login_user, name="auth_login"),
