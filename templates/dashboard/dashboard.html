@@ -331,6 +331,11 @@
   {% if request.user.gus_type == 'Faculty' %}
 
 
+      <div id="act_faculty" class="col s12">Test 1</div>
+      <div id="journal_faculty" class="col s12">Test 2</div>
+      <div id="awards_faculty" class="col s12">Test 3</div>
+      <div id="soft_faculty" class="col s12">Test 4</div>
+
 
 
 
@@ -341,5 +346,16 @@
 
 
 
-{% block extrajs %}     {% endblock %}
+{% block extrajs %}   
+      <script type="text/javascript">
+
+         $(document).ready(function(){
+        $('ul.tabs').tabs();
+      });
+
+
+      </script>
+
+
+  {% endblock %}
 

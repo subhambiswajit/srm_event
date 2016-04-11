@@ -42,3 +42,11 @@ border:solid 8px #17375E;
 	color:white;
 	padding-top:10px;
 }
+.bar{
+	background-color: #17375E;
+    color: white;
+}
+.heading{
+	padding-top: 3px;
+	padding-bottom:3px;
+}

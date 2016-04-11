@@ -4,3 +4,30 @@
 .collapsible-body{
 	    border-bottom: 1px solid white!important; 
 }
+.btn_tab{
+	border:solid 2px black!important;
+}
+.search{
+	border: solid 2px!important;
+    background-color: white!important;
+    color: black!important;
+    border-radius: 10px!important;
+    height: 30px!important;
+    padding-left: 16px!important;
+}
+#panel{
+	position:absolute;
+	z-index:9999;
+	width:500px;
+	background-color: #17375E;
+	color: white;
+	border: solid 2px white;
+    padding-left:20px;
+    opacity:0.9;
+}
+.drop{
+	margin-top:52px;
+	width:187px!important;
+}
+
+
