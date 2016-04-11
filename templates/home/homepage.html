@@ -15,7 +15,7 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo"><img class="left" class="responsive-img" src="/media/images/srm.jpg"
-      style="height:61px;padding-left:13px">&nbsp;SRM UNIVERSITY</a>
+      style="height:61px;padding-left:13px">&nbsp;CSE DEPARTMENT</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="fa fa-list"></i></a>
       <ul class="right hide-on-med-and-down">
 
@@ -264,7 +264,7 @@
 
 
 <!--modal sign up-->
-<div id="signup" class="modal">
+<div id="signup" class="modal" style="margin-top:-55px!important;max-height:100%!important">
     <div class="modal-content">
       <h4>&nbsp;&nbsp;SIGNUP</h4>
       <div class="divider"></div>
@@ -343,12 +343,12 @@
 </div>
 <!--footer-->
 <script>
+$(document).ready(function(){
 $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
-        
-
+});
 </script>
 
 {%if messages %}
