@@ -319,6 +319,7 @@ def user_details_search(request):
 				dat['id'] = t.gus_userid
 				dat['name'] = t.gus_name
 				dat['username'] = t.gus_username
+				dat['type'] = t.gus_type
 				filter_data.append(dat)
 			render_data['searchdata'] = filter_data
 			print render_data
