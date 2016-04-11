@@ -43,10 +43,28 @@
 	    <script src="/static/js/dashboard/dashboardajax.js"></script>
 	    <script>
 	    function myFunction() {
-        $("#panel").slideDown("slow");
+        //$("#panel").slideDown();
         var x = document.getElementById("myInput").value;
-        document.getElementById("panel").innerHTML =x;
-}
+        
+        $.ajax({
+        	  type: 'POST',
+              url:'user_profile_search/',
+              data:{searchdata: x},              
+              success: function(data) {
+              	data1=JSON.stringify(data);
+		        var arr=JSON.parse(data1);
+		        var len=arr.searchdata.length;
+                var inc;
+                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a href="abc">'+arr.searchdata[0].name+'</a></div>';
+                for(inc=1;inc<len;inc++)
+                {
+                	results+='<div class="row" style="margin-bottom:0px;height:40px;"><a href="abc">'+arr.searchdata[inc].name+'</a></div>';
+                }
+                document.getElementById("panel").innerHTML =results;
+              }
+            
+        });
+  }
 	    </script>
 	    {% block extrajs %}			{% endblock %}
 

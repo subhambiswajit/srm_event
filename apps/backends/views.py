@@ -304,7 +304,7 @@ def user_details(request):
 		render_data['candidatedev'] = candidatedev
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
-
+@csrf_exempt
 def user_details_search(request):
 	search_data = ''
 	render_data ={}
