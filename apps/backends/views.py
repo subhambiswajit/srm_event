@@ -135,6 +135,7 @@ def reset_password(request):
 def cand_activity(request):
 	if request.user:
 		print "user authentication worked"
+		
 	if request.method == 'POST':
 		candidate_activity = CandidateActivity()
 		print request.user.gus_userid
@@ -142,6 +143,7 @@ def cand_activity(request):
 		if 'activity_name' in request.POST:
 			candidate_activity.cand_act_name = request.POST['activity_name']
 		if 'activity_date' in request.POST:
+			print request.POST['activity_date']
 			candidate_activity.cand_act_date = request.POST['activity_date']
 		if 'activity_nature' in request.POST:
 			candidate_activity.cand_act_nature = request.POST['activity_nature']

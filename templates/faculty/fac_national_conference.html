@@ -1,0 +1,71 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}     National Conference Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+							<div class="container">
+				<h4>National Conferences</h4>
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_title" type="text" class="validate" required>
+				          <label for="national_conference_title">Title Of Paper</label>
+				   </div>
+				</div>
+
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_author" type="text" class="validate" required>
+				          <label for="national_conference_author">Author(s)</label>
+				   </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_name" type="text" class="validate" required>
+				          <label for="national_conference_author">Conference Name(with expansion)</label>
+				   </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_journal" type="text" class="validate" required>
+				          <label for="national_conference_author">Name Of Journal</label>
+				   </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s12" required>
+				       <input id="national_conference_date" type="date">
+				   </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_place" type="text" class="validate" required>
+				          <label for="national_conference_author">Institute Organising/Place</label>
+				   </div>
+				</div>
+				<div class="row">
+				   <div class="input-field col s12">
+				        <input  id="national_conference_published" type="text" class="validate" required>
+				          <label for="national_conference_author">Presented/Published/Accepted </label>
+				   </div>
+				</div>
+
+				</div>
+
+
+
+
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

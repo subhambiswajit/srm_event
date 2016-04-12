@@ -1,0 +1,49 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}    Software Development Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+<div class="container">
+<h4>Awards and Honours</h4>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="awards_faculty_name" type="text" class="validate" required>
+          <label for="awards_faculty_name">Name Of Faculty with Designation</label>
+   </div>
+</div>
+
+<div class="row">
+  <div class="row">
+      <div class="input-field col s12">
+          <textarea id="awards_description" class="materialize-textarea"></textarea>
+          <label for="awards_description">Brief Description Of Awards and Honors</label>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+     <center><button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  </div>
+</div>
+</div>
+ 
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

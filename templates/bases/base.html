@@ -4,6 +4,7 @@
 		<head>
 			<title>{% block page_title %}                  {% endblock %}</title>
 			<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+			<link rel="shortcut icon" href="http://www.srmuniv.ac.in/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
 			<link rel="stylesheet" href="/static/css/materialize.min.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="/static/css/dashboard/dashboard.css">
@@ -13,7 +14,19 @@
 
 		</head>
 		<body>
-
+			 {%if request.user.gus_type = 'Faculty' %}
+				 <ul style="margin-top:64px !important; width:268px !important;" id="dropdown1" class="dropdown-content">
+					  <li style="color:#17375e;width: 255px;"><a style="color:#17375e" href="#!">National Conference Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Internatonal Conference</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">International Journal</a></li>
+					   <li style="color:#17375e"><a style="color:#17375e" href="#!">National Journal</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Consultancy Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Manual Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Seminar Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Software Development Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Awards Details</a></li>
+					</ul>
+            {% endif %}         
 			 <nav>
 				<div class="nav-wrapper">
 				  <a href="#" class="brand-logo">&nbsp;&nbsp;&nbsp;SRM UNIVERSITY</a>
@@ -24,19 +37,7 @@
 				    </a></li>
 				    <li><a href="#">WELCOME {{request.user.gus_name}}&nbsp;&nbsp;|</a></li>
 				    {%if request.user.gus_type = 'Faculty' %}
-
-                     <li><a class='dropdown-button' href="#" data-activates='dropdown1'>UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
-
-                     <ul id='dropdown1' class='tabs dropdown-content drop'>
-                          <li  class="tab"><a href="#act_faculty">Activities</a></li>
-                          <li class="tab"><a href="#journal_faculty">journals/conferences</a></li>
-                          <li class="tab"><a href="#awards_faculty">Awards</a></li>
-                          <li class="tab"><a href="#soft_faculty">software developed</a></li>
-                     </ul>
-
-
-                     
-
+				    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
 				    {% endif %}
 				    <li><a href="{%url 'dashboard' %}">DASHBOARD&nbsp;&nbsp;|</a></li>
 				    <li><a href="{% url 'view_details' %}">MY PROFILE&nbsp;&nbsp;|</a></li>

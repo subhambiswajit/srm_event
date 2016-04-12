@@ -1,7 +1,6 @@
    $('.activity_button').click(function(){
-    alert('clicked');
    	var activity_name=$('#nameofevent').val();
-   	var activity_date=$('#dateofevent').val();
+   	var activity_date=$('#activitydate').val();
    	var activity_nature=$('#natureofparticipation').val();
    	var activity_prize=$('#prize').val();
    	var activity_year=$('#year').val();
@@ -23,7 +22,6 @@
 
    // //formtwo
         $('.performance_button').click(function(){
-    alert('clicked');
     var performance_exam=$('#nameofexam').val();
     var performance_pass=$('#yearofpassing').val();
     var performance_marks=$('#marks').val();
@@ -46,7 +44,6 @@
 
    //   //form3
          $('.recognition_button').click(function(){
-    alert('clicked');
     var recognition_recognitions=$('#recognitions').val();
     var recognition_year=$('#yr').val();
           $.ajax ({
@@ -71,7 +68,6 @@
    // //form 4
 
     $('.initiatives_button').click(function(){
-    alert('clicked');
     var initiatives_univ=$('#univ').val();
     var initiatives_seminar=$('#seminar').val();
     var initiatives_event=$('#event').val();

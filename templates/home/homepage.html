@@ -2,6 +2,7 @@
 
 <head>
 <title>SRM Profile Uploader</title>
+<link rel="shortcut icon" href="http://www.srmuniv.ac.in/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/static/css/materialize.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -49,7 +50,7 @@
       <li>
         <img src="/media/homepage/slide1.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h3>Department of computer science presents</h3>
+          <h3>Department of Computer Science presents</h3>
           <h5 class="light grey-text text-lighten-3">Student faculty profile bank</h5>
         </div>
       </li>
@@ -264,7 +265,7 @@
 
 
 <!--modal sign up-->
-<div id="signup" class="modal">
+<div id="signup" class="modal" style="margin-top:-55px!important;max-height:100%!important">
     <div class="modal-content">
       <h4>&nbsp;&nbsp;SIGNUP</h4>
       <div class="divider"></div>
@@ -343,12 +344,12 @@
 </div>
 <!--footer-->
 <script>
+$(document).ready(function(){
 $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
     selectYears: 15 // Creates a dropdown of 15 years to control year
   });
-        
-
+});
 </script>
 
 {%if messages %}

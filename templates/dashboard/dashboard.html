@@ -31,14 +31,13 @@
     <!--form one-->
      
     <div id="test1" class="col s12">
-      <form>
          <div class="input-field col s12">
           <input id="nameofevent" type="text" class="validate" autocomplete="off" required>
            <label for="nameofevent">Name of event</label>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="date" type="date" autocomplete="off" required>
+          <input id="activitydate" type="date" autocomplete="off" required>
         </div>
       <br><br>
          <div class="input-field col s12">
@@ -59,7 +58,6 @@
              <center> <button class="btn waves-effect waves-light btn_send activity_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
-           </form>
         </div>
     
     <!--form 1 ends-->
@@ -331,11 +329,7 @@
   {% if request.user.gus_type == 'Faculty' %}
 
 
-      <div id="act_faculty" class="col s12">Test 1</div>
-      <div id="journal_faculty" class="col s12">Test 2</div>
-      <div id="awards_faculty" class="col s12">Test 3</div>
-      <div id="soft_faculty" class="col s12">Test 4</div>
-
+  
 
 
 
@@ -347,14 +341,6 @@
 
 
 {% block extrajs %}   
-      <script type="text/javascript">
-
-         $(document).ready(function(){
-        $('ul.tabs').tabs();
-      });
-
-
-      </script>
 
 
   {% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}    Publcation Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+<div class="container">
+<h2>Staff Activities</h2>
+
+<h4>Participation in Conferences/Seminars/STTPs/Workshops/Other FDPs</h4>
+
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="seminars_cconference_faculty" type="text" class="validate" required>
+          <label for="seminars_conference_faculty">Name Of Faculty</label>
+   </div>
+</div>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="seminars_conference_place" type="text" class="validate" required>
+          <label for="seminars_conference_place">Name Of Event/Organising Institute/Place</label>
+   </div>
+</div>
+
+<div class="row">
+   <div class="input-field col s12" required>
+       <input id="seminars_conference_date" type="date">
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="seminars_conference_nature_participation" type="text" class="validate" required>
+          <label for="software_conference_nature_participation">Nature Of Participation-Delegate/key note speaker/Resource person etc.</label>
+   </div>
+</div>
+
+<div class="row">
+     <div class="input-field col s12">
+     <center><button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+     </div>
+  </div>
+
+</div>
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}    Software Development Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+<div class="container">
+<h4>Consultancy Activities</h4>
+
+<div class="row">
+   <div class="input-field col s12">
+
+        <input  id="consultancy_nature" type="text" class="validate" required>
+          <label for="consultancy_nature">Nature Of Consultancy/project</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="consultancy_client" type="text" class="validate" required>
+          <label for="consultancy_client">Client</label>
+   </div>
+</div>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="consultancy_department" type="text" class="validate" required>
+          <label for="consultancy_department">Associated Department</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="consultancy_revenue" type="text" class="validate" required>
+          <label for="consultancy_revenue">Revenue earned in Rs.</label>
+   </div>
+</div>
+<div class="row">
+     <div class="input-field col s12">
+     <center><button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

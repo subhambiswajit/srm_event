@@ -25,6 +25,17 @@ urlpatterns = patterns('',
 	url(r'user_profile_search/$',views.user_details_search, name='user_profile_search'),
 	url(r'foreign_profile/(\d+)$',views.foreign_profile_generation, name='foreign_profile'),
 
+	# faculty urls
+	(r'^fac_national_conference/$', TemplateView.as_view(template_name='faculty/fac_national_conference.html')),
+	(r'^fac_awards/$', TemplateView.as_view(template_name='faculty/fac_awards.html')),
+	(r'^fac_consultancy/$', TemplateView.as_view(template_name='faculty/fac_consultancy_activities.html')),
+	(r'^fac_international_journal/$', TemplateView.as_view(template_name='faculty/fac_international_journal.html')),
+	(r'^fac_national_journal/$', TemplateView.as_view(template_name='faculty/fac_national_journals.html')),
+	(r'^fac_publication_details/$', TemplateView.as_view(template_name='faculty/fac_publication_details.html')),
+	(r'^fac_seminars/$', TemplateView.as_view(template_name='faculty/fac_seminars.html')),
+	(r'^fac_software_development/$', TemplateView.as_view(template_name='faculty/fac_software_development.html')),
+
+
 	# url(r'^blog/', include('blog.urls')),
 	# url(r'^signup/$', views.signup, name="signup"),
 	# url(r'signin/$', views.login_user, name="auth_login"),

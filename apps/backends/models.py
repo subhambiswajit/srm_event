@@ -131,4 +131,129 @@ class CandidateDevelopment(models.Model):
         managed = False
         db_table = 'candidate_development'
 
+class FacAwards(models.Model):
+    fac_awards_id = models.IntegerField(primary_key=True)
+    fac_awards_gusid = models.ForeignKey('GlobalUsers', db_column='fac_awards_gusid', blank=True, null=True)
+    fac_awards_name = models.CharField(max_length=100, blank=True)
+    fac_awards_details = models.TextField(blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_awards'
+
+
+class FacConsultancyActivities(models.Model):
+    fac_con_act_id = models.IntegerField(primary_key=True)
+    fac_con_act_gusid = models.ForeignKey('GlobalUsers', db_column='fac_con_act_gusid', blank=True, null=True)
+    fac_con_act_nature = models.TextField(blank=True)
+    fac_con_act_client = models.CharField(max_length=100, blank=True)
+    fac_con_act_dept = models.CharField(max_length=1000, blank=True)
+    fac_con_act_revenue = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_consultancy_activities'
+
+
+class FacInternationalConference(models.Model):
+    fac_int_conf_id = models.IntegerField(primary_key=True)
+    fac_int_conf_gusid = models.ForeignKey('GlobalUsers', db_column='fac_int_conf_gusid', blank=True, null=True)
+    fac_int_conf_title = models.CharField(max_length=100, blank=True)
+    fac_int_conf_author = models.CharField(max_length=100, blank=True)
+    fac_int_conf_name = models.CharField(max_length=100, blank=True)
+    fac_int_conf_journame = models.CharField(max_length=100, blank=True)
+    fac_int_conf_venue = models.CharField(max_length=100, blank=True)
+    fac_int_conf_status = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_international_conference'
+
+
+class FacInternatonalJournals(models.Model):
+    fac_int_jour_id = models.IntegerField(primary_key=True)
+    fac_int_jour_gusid = models.ForeignKey('GlobalUsers', db_column='fac_int_jour_gusid', blank=True, null=True)
+    fac_int_jour_title = models.CharField(max_length=100, blank=True)
+    fac_int_jour_author = models.CharField(max_length=100, blank=True)
+    fac_int_jour_name = models.CharField(max_length=100, blank=True)
+    fac_int_jour_vol = models.CharField(max_length=100, blank=True)
+    fac_int_jour_impact = models.CharField(max_length=100, blank=True)
+    fac_int_jour_citation = models.CharField(max_length=100, blank=True)
+    fac_int_jour_status = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_internatonal_journals'
+
+
+class FacManualPublications(models.Model):
+    fac_man_pub_id = models.IntegerField(primary_key=True)
+    fac_man_pub_gusid = models.ForeignKey('GlobalUsers', db_column='fac_man_pub_gusid', blank=True, null=True)
+    fac_man_pub_title = models.CharField(max_length=100, blank=True)
+    fac_man_pub_author = models.CharField(max_length=100, blank=True)
+    fac_man_pub_publisher = models.CharField(max_length=100, blank=True)
+    fac_man_pub_fedition = models.CharField(max_length=100, blank=True)
+    fac_man_pub_oedition = models.CharField(max_length=100, blank=True)
+    fac_man_pub_details = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_manual_publications'
+
+
+class FacNationalConference(models.Model):
+    fac_nat_conf_id = models.IntegerField(primary_key=True)
+    fac_nat_conf_gusid = models.ForeignKey('GlobalUsers', db_column='fac_nat_conf_gusid', blank=True, null=True)
+    fac_nat_conf_title = models.CharField(max_length=50, blank=True)
+    fac_nat_conf_author = models.CharField(max_length=100, blank=True)
+    fac_nat_conf_name = models.CharField(max_length=100, blank=True)
+    fac_nat_conf_journame = models.IntegerField(blank=True, null=True)
+    fac_nat_conf_date = models.DateTimeField(blank=True, null=True)
+    fac_nat_conf_venue = models.CharField(max_length=100, blank=True)
+    fac_nat_conf_status = models.CharField(max_length=30, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_national_conference'
+
+
+class FacNationalJournals(models.Model):
+    fac_nat_jour_id = models.IntegerField(primary_key=True)
+    fac_nat_jour_gusid = models.ForeignKey('GlobalUsers', db_column='fac_nat_jour_gusid', blank=True, null=True)
+    fac_nat_jour_author = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_oauthor = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_name = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_volume = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_impact = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_citation = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_status = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_national_journals'
+
+
+class FacSeminars(models.Model):
+    fac_sem_id = models.IntegerField(primary_key=True)
+    fac_sem_gusid = models.ForeignKey('GlobalUsers', db_column='fac_sem_gusid', blank=True, null=True)
+    fac_sem_facname = models.CharField(max_length=100, blank=True)
+    fac_sem_name = models.CharField(max_length=100, blank=True)
+    fac_sem_nature = models.TextField(blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_seminars'
+
+
+class FacSoftwareDevelopment(models.Model):
+    fac_soft_dev_id = models.IntegerField(primary_key=True)
+    fac_soft_dev_name = models.CharField(max_length=100, blank=True)
+    fac_soft_dev_staff = models.CharField(max_length=100, blank=True)
+    fac_soft_dev_student = models.CharField(max_length=100, blank=True)
+    fac_soft_dev_gusid = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'fac_software_development'
+
 

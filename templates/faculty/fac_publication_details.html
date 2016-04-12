@@ -1,0 +1,71 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}    Publication Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+<div class="container">
+<h4>Books/Monographs/Manuals Published</h4>
+
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual_title" type="text" class="validate" required>
+          <label for="manual_title">Title Of Book</label>
+   </div>
+</div>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual_author" type="text" class="validate" required>
+          <label for="manual_author">Name Of Authors</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual_publishers" type="text" class="validate" required>
+          <label for="manual_publishers">Publishers</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual_edition_year" type="text" class="validate" required>
+          <label for="manual_edition_year">Year Of First Editions</label>
+   </div>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual_other_edition" type="text" class="validate" required>
+          <label for="manual_other_edition">Other Editions</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="manual" type="text" class="validate" required>
+          <label for="manual">Book/Monograph/Manual etc. </label>
+   </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+     <center><button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

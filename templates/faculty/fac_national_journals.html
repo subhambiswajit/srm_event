@@ -1,0 +1,87 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}     Internaltional Journal Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+<div class="container">
+<h4>National Journals</h4>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_title" type="text" class="validate" required>
+          <label for="national_journal_title">Title Of Paper</label>
+   </div>
+</div>
+
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_author" type="text" class="validate" required>
+          <label for="national_journal_author">First Author</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_oauthor" type="text" class="validate" required>
+          <label for="national_journal_oauthor">Other Authors</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_name" type="text" class="validate" required>
+          <label for="national_journal-name">Name Of Journal</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12" required>
+       <input id="national_journal_date" type="date">
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_volume" type="text" class="validate" required>
+          <label for="national_journal_volume">Volume/Issue No/Page No</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_factor" type="text" class="validate">
+          <label for="national_journal_factor">Impact factor of the Journal(if any)</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_citation" type="text" class="validate">
+          <label for="national_journal_citation">Citation index of the paper(if any)</label>
+   </div>
+</div>
+<div class="row">
+   <div class="input-field col s12">
+        <input  id="national_journal_indexed" type="text" class="validate">
+          <label for="national_journal_indexed">Indexed or not/Hyperlink</label>
+   </div>
+</div>
+<div class="row">
+     <div class="input-field col s12">
+     <center><button class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+     </div>
+  </div>
+</div>
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}
