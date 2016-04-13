@@ -354,6 +354,28 @@ def foreign_profile_generation(request, user_id):
 
 
 
+@login_required
+def fac_awards(request):
+
+	return render(request,'faculty/fac_awards.html')
+
+
+@csrf_exempt
+def fac_awards_save(request):
+	if request.method == 'POST':
+		fac_awards = FacAwards()
+		fac_awards.fac_awards_gusid = request.user
+		if 'award_fac_name' in request.POST:
+			fac_awards.fac_awards_name = request.POST['award_fac_name']
+		if 'award_fac_desc' in request.POST:
+			fac_awards.fac_awards_details = request.POST['award_fac_desc']
+		fac_awards.save()
+	return HttpResponse('details saved')
+
+
+
+
+
 
 
 

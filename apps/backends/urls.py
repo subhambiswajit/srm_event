@@ -27,13 +27,16 @@ urlpatterns = patterns('',
 
 	# faculty urls
 	(r'^fac_national_conference/$', TemplateView.as_view(template_name='faculty/fac_national_conference.html')),
-	(r'^fac_awards/$', TemplateView.as_view(template_name='faculty/fac_awards.html')),
+	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),
 	(r'^fac_consultancy/$', TemplateView.as_view(template_name='faculty/fac_consultancy_activities.html')),
 	(r'^fac_international_journal/$', TemplateView.as_view(template_name='faculty/fac_international_journal.html')),
 	(r'^fac_national_journal/$', TemplateView.as_view(template_name='faculty/fac_national_journals.html')),
 	(r'^fac_publication_details/$', TemplateView.as_view(template_name='faculty/fac_publication_details.html')),
 	(r'^fac_seminars/$', TemplateView.as_view(template_name='faculty/fac_seminars.html')),
 	(r'^fac_software_development/$', TemplateView.as_view(template_name='faculty/fac_software_development.html')),
+
+	# faculty details saving urls
+	url(r'fac_award_save/$',views.fac_awards_save, name='fac_awards_save'),
 
 
 	# url(r'^blog/', include('blog.urls')),
