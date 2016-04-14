@@ -162,6 +162,7 @@ class FacInternationalConference(models.Model):
     fac_int_conf_author = models.CharField(max_length=100, blank=True)
     fac_int_conf_name = models.CharField(max_length=100, blank=True)
     fac_int_conf_journame = models.CharField(max_length=100, blank=True)
+    fac_int_conf_date = models.DateTimeField(blank=True, null=True)
     fac_int_conf_venue = models.CharField(max_length=100, blank=True)
     fac_int_conf_status = models.CharField(max_length=100, blank=True)
 

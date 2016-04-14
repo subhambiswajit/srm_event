@@ -359,6 +359,16 @@ def fac_awards(request):
 
 	return render(request,'faculty/fac_awards.html')
 
+@login_required
+def fac_consultancy(request):
+
+	return render(request,'faculty/fac_consultancy_activities.html')
+
+@login_required
+def fac_intconf(request):
+
+	return render(request,'faculty/fac_international_conference.html')
+
 
 @csrf_exempt
 def fac_awards_save(request):
@@ -372,6 +382,43 @@ def fac_awards_save(request):
 		fac_awards.save()
 	return HttpResponse('details saved')
 
+@csrf_exempt
+def fac_consact_save(request):
+	if request.method == 'POST':
+		fac_consultancy = FacConsultancyActivities()
+		fac_consultancy.fac_con_act_gusid = request.user
+		if 'consultancy_nature' in request.POST:
+			fac_consultancy.fac_con_act_nature = request.POST['consultancy_nature']
+		if 'consultancy_client' in request.POST:
+			fac_consultancy.fac_con_act_client = request.POST['consultancy_client']
+		if 'consultancy_department' in request.POST:
+			fac_consultancy.fac_con_act_dept = request.POST['consultancy_department']
+		if 'consultancy_revenue' in request.POST:
+			fac_consultancy.fac_con_act_revenue = request.POST['consultancy_revenue']
+		fac_consultancy.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_intconf_save(request):
+	if request.method == 'POST':
+		fac_intconf = FacInternationalConference()
+		fac_intconf.fac_int_conf_gusid = request.user
+		if 'international_conference_title' in request.POST:
+			fac_intconf.fac_int_conf_title = request.POST['international_conference_title']
+		if 'international_conference_author' in request.POST:
+			fac_intconf.fac_int_conf_author =request.POST['international_conference_author']
+		if 'international_conference_name' in request.POST:
+			fac_intconf.fac_int_conf_name = request.POST['international_conference_name']
+		if 'international_conference_journal_name' in request.POST:
+			fac_intconf.fac_int_conf_journame = request.POST['international_conference_journal_name']
+		if 'international_conference_date' in request.POST:
+			fac_intconf.fac_int_conf_date = request.POST['international_conference_date']
+		if 'international_conference_place' in request.POST:
+			fac_intconf.fac_int_conf_venue = request.POST['international_conference_place'] 
+		if 'international_conference_published' in request.POST:
+			fac_intconf.fac_int_conf_status = request.POST['international_conference_published']
+		fac_intconf.save()
+	return HttpResponse('details saved')
 
 
 
