@@ -29,13 +29,13 @@
 				<div class="row">
 				   <div class="input-field col s12">
 				        <input  id="national_conference_name" type="text" class="validate" required>
-				          <label for="national_conference_author">Conference Name(with expansion)</label>
+				          <label for="national_conference_name">Conference Name(with expansion)</label>
 				   </div>
 				</div>
 				<div class="row">
 				   <div class="input-field col s12">
 				        <input  id="national_conference_journal" type="text" class="validate" required>
-				          <label for="national_conference_author">Name Of Journal</label>
+				          <label for="national_conference_journal">Name Of Journal</label>
 				   </div>
 				</div>
 				<div class="row">
@@ -46,15 +46,22 @@
 				<div class="row">
 				   <div class="input-field col s12">
 				        <input  id="national_conference_place" type="text" class="validate" required>
-				          <label for="national_conference_author">Institute Organising/Place</label>
+				          <label for="national_conference_place">Institute Organising/Place</label>
 				   </div>
 				</div>
 				<div class="row">
 				   <div class="input-field col s12">
-				        <input  id="national_conference_published" type="text" class="validate" required>
-				          <label for="national_conference_author">Presented/Published/Accepted </label>
+				        <input  id="national_conference_status" type="text" class="validate" required>
+				          <label for="national_conference_status">Presented/Published/Accepted </label>
 				   </div>
 				</div>
+				<div class="row">
+				     <div class="input-field col s12">
+				     <center><button id="fac_nat_conference_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+				     <i class="fa fa-paper-plane right"></i>
+				  </button></center>
+				     </div>
+				  </div>
 
 				</div>
 
@@ -66,6 +73,6 @@
 
 
 {% block extrajs %}   
-
+ <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
 
   {% endblock %}

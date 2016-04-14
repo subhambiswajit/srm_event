@@ -16,12 +16,12 @@
 		<body>
 			 {%if request.user.gus_type = 'Faculty' %}
 				 <ul style="margin-top:64px !important; width:268px !important;" id="dropdown1" class="dropdown-content">
-					  <li style="color:#17375e;width: 255px;"><a style="color:#17375e" href="#!">National Conference Details</a></li>
+					  <li style="color:#17375e;width: 255px;"><a style="color:#17375e" href="{% url 'fac_natconf' %}">National Conference Details</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intconf' %}">Internatonal Conference</a></li>
-					  <li style="color:#17375e"><a style="color:#17375e" href="#!">International Journal</a></li>
-					   <li style="color:#17375e"><a style="color:#17375e" href="#!">National Journal</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intjour' %}">International Journal</a></li>
+					   <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_natjour' %}">National Journal</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_consultancy' %}">Consultancy Details</a></li>
-					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Manual Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_pub' %}">Publication Details</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Seminar Details</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="#!">Software Development Details</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_awards' %}">Awards Details</a></li>

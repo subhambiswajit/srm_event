@@ -26,13 +26,13 @@ urlpatterns = patterns('',
 	url(r'foreign_profile/(\d+)$',views.foreign_profile_generation, name='foreign_profile'),
 
 	# faculty urls
-	(r'^fac_national_conference/$', TemplateView.as_view(template_name='faculty/fac_national_conference.html')),
 	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),
 	url(r'fac_consultancy/$', views.fac_consultancy, name='fac_consultancy'),
 	url(r'fac_intconf/$', views.fac_intconf, name='fac_intconf'),
-	(r'^fac_international_journal/$', TemplateView.as_view(template_name='faculty/fac_international_journal.html')),
-	(r'^fac_national_journal/$', TemplateView.as_view(template_name='faculty/fac_national_journals.html')),
-	(r'^fac_publication_details/$', TemplateView.as_view(template_name='faculty/fac_publication_details.html')),
+	url(r'fac_intjour/$', views.fac_intjour, name='fac_intjour'),
+	url(r'fac_natconf/$', views.fac_natconf, name='fac_natconf'),
+	url(r'fac_natjour/$', views.fac_natjour, name='fac_natjour'),
+	url(r'fac_pub/$', views.fac_pub, name='fac_pub'),
 	(r'^fac_seminars/$', TemplateView.as_view(template_name='faculty/fac_seminars.html')),
 	(r'^fac_software_development/$', TemplateView.as_view(template_name='faculty/fac_software_development.html')),
 
@@ -40,6 +40,10 @@ urlpatterns = patterns('',
 	url(r'fac_award_save/$',views.fac_awards_save, name='fac_awards_save'),
 	url(r'fac_consultancy_save/$',views.fac_consact_save, name='fac_consultancy_save'),
 	url(r'fac_int_conf_save/$',views.fac_intconf_save, name='fac_int_conf_save'),
+	url(r'fac_intjour_save/$',views.fac_intjour_save, name='fac_intjour_save'),
+	url(r'fac_natconf_save/$',views.fac_natconf_save, name='fac_natconf_save'),
+	url(r'fac_natjour_save/$',views.fac_natjour_save, name='fac_natjour_save'),
+	url(r'fac_pub_save/$',views.fac_pub_save, name='fac_pub_save'),
 
 
 	# url(r'^blog/', include('blog.urls')),

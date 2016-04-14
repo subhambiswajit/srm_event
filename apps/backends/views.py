@@ -369,6 +369,26 @@ def fac_intconf(request):
 
 	return render(request,'faculty/fac_international_conference.html')
 
+@login_required
+def fac_intjour(request):
+
+	return render(request,'faculty/fac_international_journal.html')
+
+@login_required
+def fac_natconf(request):
+
+	return render(request,'faculty/fac_national_conference.html')
+
+@login_required
+def fac_natjour(request):
+
+	return render(request,'faculty/fac_national_journals.html')
+
+@login_required
+def fac_pub(request):
+
+	return render(request,'faculty/fac_publication_details.html')
+
 
 @csrf_exempt
 def fac_awards_save(request):
@@ -419,6 +439,103 @@ def fac_intconf_save(request):
 			fac_intconf.fac_int_conf_status = request.POST['international_conference_published']
 		fac_intconf.save()
 	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_intjour_save(request):
+	if request.method == 'POST':
+		fac_intjour = FacInternatonalJournals()
+		fac_intjour.fac_int_jour_gusid = request.user
+		if 'international_journal_title' in request.POST:
+			fac_intjour.fac_int_jour_title = request.POST['international_journal_title']
+		if 'international_journal_author' in request.POST:
+			fac_intjour.fac_int_jour_author = request.POST['international_journal_author']
+		if 'international_journal_oauthor' in request.POST:
+			fac_intjour.fac_int_jour_oauthor = request.POST['international_journal_oauthor']
+		if 'international_journal_journal_name' in request.POST:
+			fac_intjour.fac_int_jour_name = request.POST['international_journal_journal_name']
+		if 'international_journal_date' in request.POST:
+			fac_intjour.fac_int_jour_date = request.POST['international_journal_date']
+		if 'international_journal_volume' in request.POST:
+			fac_intjour.fac_int_jour_vol = request.POST['international_journal_volume']
+		if 'international_journal_factor' in request.POST:
+			fac_intjour.fac_int_jour_impact = request.POST['international_journal_factor']
+		if 'international_journal_citation' in request.POST:
+			fac_intjour.fac_int_jour_citation = request.POST['international_journal_citation']
+		if 'international_journal_indexed' in request.POST:
+			fac_intjour.fac_int_jour_status = request.POST['international_journal_indexed']
+		fac_intjour.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_natconf_save(request):
+	if request.method == 'POST':
+		fac_natconf = FacNationalConference()
+		fac_natconf.fac_nat_conf_gusid = request.user
+		if 'national_conference_title' in request.POST:
+			fac_natconf.fac_nat_conf_title = request.POST['national_conference_title']
+		if 'national_conference_author' in request.POST:
+			fac_natconf.fac_nat_conf_author = request.POST['national_conference_author']
+		if 'national_conference_name' in request.POST:
+			fac_natconf.fac_nat_conf_name = request.POST['national_conference_name']
+		if 'national_conference_journal' in request.POST:
+			fac_natconf.fac_nat_conf_journame = request.POST['national_conference_journal']
+		if 'national_conference_date' in request.POST:
+			fac_natconf.fac_nat_conf_date = request.POST['national_conference_date']
+		if 'national_conference_place' in request.POST:
+			fac_natconf.fac_nat_conf_venue = request.POST['national_conference_place']
+		if 'national_conference_status' in request.POST:
+			fac_natconf.fac_nat_conf_status = request.POST['national_conference_status']
+		fac_natconf.save()
+	return HttpResponse('details saved')
+
+
+@csrf_exempt
+def fac_natjour_save(request):
+	if request.method == 'POST':
+		fac_natjour = FacNationalJournals()
+		fac_natjour.fac_nat_jour_gusid = request.user
+		if 'national_journal_title' in request.POST:
+			fac_natjour.fac_nat_jour_title = request.POST['national_journal_title']
+		if 'national_journal_author' in request.POST:
+			fac_natjour.fac_nat_jour_author = request.POST['national_journal_author']
+		if 'national_journal_oauthor' in request.POST:
+			fac_natjour.fac_nat_jour_oauthor = request.POST['national_journal_oauthor']
+		if 'national_journal_name' in request.POST:
+			fac_natjour.fac_nat_jour_name = request.POST['national_journal_name']
+		if 'national_journal_date' in request.POST:
+			fac_natjour.fac_nat_jour_date = request.POST['national_journal_date']
+		if 'national_journal_volume' in request.POST:
+			fac_natjour.fac_nat_jour_volume = request.POST['national_journal_volume']
+		if 'national_journal_factor' in request.POST:
+			fac_natjour.fac_nat_jour_impact = request.POST['national_journal_factor']
+		if 'national_journal_citation' in request.POST:
+			fac_natjour.fac_nat_jour_citation = request.POST['national_journal_citation']
+		if 'national_journal_indexed' in request.POST:
+			fac_natjour.fac_nat_jour_status = request.POST['national_journal_indexed']
+		fac_natjour.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_pub_save(request):
+	if request.method == 'POST':
+		fac_pub = FacManualPublications()
+		fac_pub.fac_man_pub_gusid = request.user
+		if 'manual_title' in request.POST:
+			fac_pub.fac_man_pub_title = request.POST['manual_title']
+		if 'manual_author' in request.POST:
+			fac_pub.fac_man_pub_author = request.POST['manual_author']
+		if 'manual_publishers' in request.POST:
+			fac_pub.fac_man_pub_publisher = request.POST['manual_publishers']
+		if 'manual_first_edition' in request.POST:
+			fac_pub.fac_man_pub_fedition = request.POST['manual_first_edition']
+		if 'manual_other_edition' in request.POST:
+			fac_pub.fac_man_pub_oedition = request.POST['manual_other_edition']
+		if 'manual' in request.POST:
+			fac_pub.fac_man_pub_details = request.POST['manual']
+		fac_pub.save()
+	return HttpResponse('details saved')
+
+
 
 
 
