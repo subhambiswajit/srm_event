@@ -389,6 +389,16 @@ def fac_pub(request):
 
 	return render(request,'faculty/fac_publication_details.html')
 
+@login_required
+def fac_seminar(request):
+
+	return render(request,'faculty/fac_seminars.html')
+
+@login_required
+def fac_soft_dev(request):
+
+	return render(request,'faculty/fac_software_development.html')
+
 
 @csrf_exempt
 def fac_awards_save(request):
@@ -533,6 +543,36 @@ def fac_pub_save(request):
 		if 'manual' in request.POST:
 			fac_pub.fac_man_pub_details = request.POST['manual']
 		fac_pub.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_seminar_save(request):
+	if request.method == 'POST':
+		fac_seminar = FacSeminars()
+		fac_seminar.fac_sem_gusid = request.user
+		if 'seminars_conference_faculty' in request.POST:
+			fac_seminar.fac_sem_facname = request.POST['seminars_conference_faculty']
+		if 'seminars_conference_place' in request.POST:
+			fac_seminar.fac_sem_name = request.POST['seminars_conference_place']
+		if 'seminars_conference_date' in request.POST:
+			fac_seminar.fac_sem_date = request.POST['seminars_conference_date']
+		if 'seminars_conference_nature_participation' in request.POST:
+			fac_seminar.fac_sem_nature = request.POST['seminars_conference_nature_participation']
+		fac_seminar.save()
+	return HttpResponse('details saved')
+
+@csrf_exempt
+def fac_soft_dev_save(request):
+	if request.method == 'POST':
+		fac_soft_dev = FacSoftwareDevelopment()
+		fac_soft_dev.fac_soft_dev_gusid = request.user
+		if 'software_project_name' in request.POST:
+			fac_soft_dev.fac_soft_dev_name = request.POST['software_project_name']
+		if 'software_student' in request.POST:
+			fac_soft_dev.fac_soft_dev_student = request.POST['software_student']
+		if 'software_staff' in request.POST:
+			fac_soft_dev.fac_soft_dev_staff = request.POST['software_staff']
+		fac_soft_dev.save()
 	return HttpResponse('details saved')
 
 

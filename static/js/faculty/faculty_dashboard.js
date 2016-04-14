@@ -200,3 +200,52 @@ $('#fac_publication_submit').click(function(){
                      }   
                  });
    });
+
+$('#fac_seminar_submit').click(function(){
+    var seminars_conference_faculty =$('#seminars_conference_faculty').val();
+    var seminars_conference_place =$('#seminars_conference_place').val();
+    var seminars_conference_date =$('#seminars_conference_date').val();
+    var seminars_conference_nature_participation =$('#seminars_conference_nature_participation').val();
+          $.ajax ({
+                       type: 'POST',
+                       url:'fac_seminar_save/',
+                       data:{seminars_conference_faculty:seminars_conference_faculty,
+                        seminars_conference_place: seminars_conference_place,
+                        seminars_conference_date: seminars_conference_date,
+                        seminars_conference_nature_participation : seminars_conference_nature_participation
+                      },              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Seminar Details successfully added', 5000);
+
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });
+
+
+$('#fac_software_submit').click(function(){
+    var software_project_name =$('#software_project_name').val();
+    var software_student =$('#software_student').val();
+    var software_staff =$('#software_staff').val();
+          $.ajax ({
+                       type: 'POST',
+                       url:'fac_soft_dev_save/',
+                       data:{software_project_name:software_project_name,
+                        software_student: software_student,
+                        software_staff:software_staff
+                      },              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Software Development Details successfully added', 5000);
+
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                 });
+   });

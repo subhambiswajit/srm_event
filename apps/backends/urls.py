@@ -33,8 +33,8 @@ urlpatterns = patterns('',
 	url(r'fac_natconf/$', views.fac_natconf, name='fac_natconf'),
 	url(r'fac_natjour/$', views.fac_natjour, name='fac_natjour'),
 	url(r'fac_pub/$', views.fac_pub, name='fac_pub'),
-	(r'^fac_seminars/$', TemplateView.as_view(template_name='faculty/fac_seminars.html')),
-	(r'^fac_software_development/$', TemplateView.as_view(template_name='faculty/fac_software_development.html')),
+	url(r'fac_seminar/$', views.fac_seminar, name='fac_seminar'),
+	url(r'fac_soft_dev/$', views.fac_soft_dev, name='fac_soft_dev'),
 
 	# faculty details saving urls
 	url(r'fac_award_save/$',views.fac_awards_save, name='fac_awards_save'),
@@ -44,6 +44,8 @@ urlpatterns = patterns('',
 	url(r'fac_natconf_save/$',views.fac_natconf_save, name='fac_natconf_save'),
 	url(r'fac_natjour_save/$',views.fac_natjour_save, name='fac_natjour_save'),
 	url(r'fac_pub_save/$',views.fac_pub_save, name='fac_pub_save'),
+	url(r'fac_seminar_save/$',views.fac_seminar_save, name='fac_seminar_save'),
+	url(r'fac_soft_dev_save/$',views.fac_soft_dev_save, name='fac_soft_dev_save'),
 
 
 	# url(r'^blog/', include('blog.urls')),

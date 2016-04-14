@@ -351,6 +351,7 @@ class FacSeminars(models.Model):
     fac_sem_gusid = models.ForeignKey('GlobalUsers', db_column='fac_sem_gusid', blank=True, null=True)
     fac_sem_facname = models.CharField(max_length=100, blank=True)
     fac_sem_name = models.CharField(max_length=100, blank=True)
+    fac_sem_date = models.DateTimeField(blank=True, null=True)
     fac_sem_nature = models.TextField(blank=True)
 
     class Meta:
@@ -363,7 +364,7 @@ class FacSoftwareDevelopment(models.Model):
     fac_soft_dev_name = models.CharField(max_length=100, blank=True)
     fac_soft_dev_staff = models.CharField(max_length=100, blank=True)
     fac_soft_dev_student = models.CharField(max_length=100, blank=True)
-    fac_soft_dev_gusid = models.IntegerField(blank=True, null=True)
+    fac_soft_dev_gusid = models.ForeignKey('GlobalUsers', db_column='fac_soft_dev_gusid', blank=True, null=True)
 
     class Meta:
         managed = False
