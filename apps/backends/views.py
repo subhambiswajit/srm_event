@@ -287,23 +287,45 @@ def cand_development(request):
 @login_required
 def user_details(request):
 	render_data ={}
+	render_data ['gus_type'] = request.user.gus_type
 	if request.user.is_authenticated():
-		activity = CandidateActivity.objects.filter(cand_act_gusid = request.user)
-		render_data['activity'] = activity
-		performance = CandidatePerformance.objects.filter(cand_per_gusid= request.user)
-		render_data['performance'] = performance
-		nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus= request.user)
-		render_data['nationalrecognition'] = nationalrecognition
-		initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid= request.user)
-		render_data['initiatives'] = initiatives
-		internship = CandidateInternship.objects.filter(cand_int_gusid= request.user)
-		render_data['internship'] = internship
-		candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid= request.user)
-		render_data['candidatejournals'] = candidatejournals
-		candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid = request.user)
-		render_data['candidatepaperconference'] = candidatepaperconference
-		candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid= request.user)
-		render_data['candidatedev'] = candidatedev
+		if request.user.gus_type == 'Student':
+			activity = CandidateActivity.objects.filter(cand_act_gusid = request.user)
+			render_data['activity'] = activity
+			performance = CandidatePerformance.objects.filter(cand_per_gusid= request.user)
+			render_data['performance'] = performance
+			nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus= request.user)
+			render_data['nationalrecognition'] = nationalrecognition
+			initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid= request.user)
+			render_data['initiatives'] = initiatives
+			internship = CandidateInternship.objects.filter(cand_int_gusid= request.user)
+			render_data['internship'] = internship
+			candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid= request.user)
+			render_data['candidatejournals'] = candidatejournals
+			candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid = request.user)
+			render_data['candidatepaperconference'] = candidatepaperconference
+			candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid= request.user)
+			render_data['candidatedev'] = candidatedev
+		else:
+			facawards = FacAwards.objects.filter(fac_awards_gusid = request.user)
+			render_data['facawards'] = facawards
+			facconsultancy = FacConsultancyActivities.objects.filter(fac_con_act_gusid = request.user)
+			render_data['facconsultancy'] = facconsultancy
+			facnatconf = FacNationalConference.objects.filter(fac_nat_conf_gusid = request.user)
+			render_data['facnatconf'] = facnatconf
+			facintconf = FacInternationalConference.objects.filter(fac_int_conf_gusid = request.user)
+			render_data['facintconf'] = facintconf
+			facintjour = FacInternatonalJournals.objects.filter(fac_int_jour_gusid = request.user)
+			render_data['facintjour'] = facintjour
+			facnatjour = FacNationalJournals.objects.filter(fac_nat_jour_gusid = request.user)
+			render_data['facnatjour'] = facnatjour
+			facpub = FacManualPublications.objects.filter(fac_man_pub_gusid = request.user)
+			render_data['facpub'] = facpub
+			facstaffact = FacSeminars.objects.filter(fac_sem_gusid = request.user)
+			render_data['facstaffact'] = facstaffact
+			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid = request.user)
+			render_data['facsoftdev'] = facsoftdev
+
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
 @csrf_exempt
@@ -333,23 +355,48 @@ def foreign_profile_generation(request, user_id):
 	user_check_id = user_id
 	print user_check_id
 	render_data ={}
+	user_data = GlobalUsers.objects.get(gus_userid = user_check_id)
+	render_data['gus_type'] = user_data.gus_type
+	print render_data['gus_type']
 	if request.method == 'GET':
-		activity = CandidateActivity.objects.filter(cand_act_gusid__gus_userid = user_check_id)
-		render_data['activity'] = activity
-		performance = CandidatePerformance.objects.filter(cand_per_gusid__gus_userid= user_check_id)
-		render_data['performance'] = performance
-		nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus__gus_userid= user_check_id)
-		render_data['nationalrecognition'] = nationalrecognition
-		initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid__gus_userid= user_check_id)
-		render_data['initiatives'] = initiatives
-		internship = CandidateInternship.objects.filter(cand_int_gusid__gus_userid= user_check_id)
-		render_data['internship'] = internship
-		candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid__gus_userid= user_check_id)
-		render_data['candidatejournals'] = candidatejournals
-		candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid__gus_userid = user_check_id)
-		render_data['candidatepaperconference'] = candidatepaperconference
-		candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid__gus_userid= user_check_id)
-		render_data['candidatedev'] = candidatedev
+		if user_data.gus_type == 'Student':
+			activity = CandidateActivity.objects.filter(cand_act_gusid__gus_userid = user_check_id)
+			render_data['activity'] = activity
+			performance = CandidatePerformance.objects.filter(cand_per_gusid__gus_userid= user_check_id)
+			render_data['performance'] = performance
+			nationalrecognition = CandidateNationalRecognition.objects.filter(cand_nat_reg_gus__gus_userid= user_check_id)
+			render_data['nationalrecognition'] = nationalrecognition
+			initiatives = CandidateInitiatives.objects.filter(cand_ini_gusid__gus_userid= user_check_id)
+			render_data['initiatives'] = initiatives
+			internship = CandidateInternship.objects.filter(cand_int_gusid__gus_userid= user_check_id)
+			render_data['internship'] = internship
+			candidatejournals = CandidateJournals.objects.filter(cand_jour_gusid__gus_userid= user_check_id)
+			render_data['candidatejournals'] = candidatejournals
+			candidatepaperconference = CandidatePaperConference.objects.filter(cand_pap_conf_gusid__gus_userid = user_check_id)
+			render_data['candidatepaperconference'] = candidatepaperconference
+			candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid__gus_userid= user_check_id)
+			render_data['candidatedev'] = candidatedev
+		else:
+			facawards = FacAwards.objects.filter(fac_awards_gusid = user_check_id)
+			print facawards
+			render_data['facawards'] = facawards
+			facconsultancy = FacConsultancyActivities.objects.filter(fac_con_act_gusid__gus_userid = user_check_id)
+			render_data['facconsultancy'] = facconsultancy
+			facnatconf = FacNationalConference.objects.filter(fac_nat_conf_gusid__gus_userid = user_check_id)
+			render_data['facnatconf'] = facnatconf
+			facintconf = FacInternationalConference.objects.filter(fac_int_conf_gusid__gus_userid = user_check_id)
+			render_data['facintconf'] = facintconf
+			facintjour = FacInternatonalJournals.objects.filter(fac_int_jour_gusid__gus_userid = user_check_id)
+			render_data['facintjour'] = facintjour
+			facnatjour = FacNationalJournals.objects.filter(fac_nat_jour_gusid__gus_userid = user_check_id)
+			render_data['facnatjour'] = facnatjour
+			facpub = FacManualPublications.objects.filter(fac_man_pub_gusid__gus_userid = user_check_id)
+			render_data['facpub'] = facpub
+			facstaffact = FacSeminars.objects.filter(fac_sem_gusid__gus_userid = user_check_id)
+			render_data['facstaffact'] = facstaffact
+			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid__gus_userid = user_check_id)
+			render_data['facsoftdev'] = facsoftdev
+
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
 
@@ -574,6 +621,7 @@ def fac_soft_dev_save(request):
 			fac_soft_dev.fac_soft_dev_staff = request.POST['software_staff']
 		fac_soft_dev.save()
 	return HttpResponse('details saved')
+
 
 
 

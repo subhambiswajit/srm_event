@@ -110,7 +110,6 @@
     var national_conference_date=$('#national_conference_date').val();
     var national_conference_place=$('#national_conference_place').val();
     var national_conference_status=$('#national_conference_status').val();
-    alert(national_conference_status);
           $.ajax ({
                        type: 'POST',
                        url:'fac_natconf_save/',

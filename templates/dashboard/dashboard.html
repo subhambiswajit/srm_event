@@ -327,7 +327,20 @@
   </div>
   {% endif %}
   {% if request.user.gus_type == 'Faculty' %}
+      <div class="row">
+          <div class="col s12 l12 m12">
+                <h1 class="center-align"> Welcome </h1>
+          </div>
+          <div class="col s12 l12 m12">
+                <h3 class="center-align"> {{request.user.gus_name}} </h3>
+                <h4 class="center-align"> {{request.user.gus_username}} </h4>
+          </div>
 
+
+
+
+
+      </div>
 
   
 

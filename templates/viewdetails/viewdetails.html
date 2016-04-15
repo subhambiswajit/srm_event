@@ -11,9 +11,10 @@
 
 
 {% block base_content   %} 
-<div class="container">
 
-{%if request.user.gus_type == 'Student' %}
+<div class="container">
+{%ifequal gus_type  "Student" %}
+
 <!--activities-->
 <h4>ACTIVITIES</h4>
 <hr>
@@ -153,8 +154,9 @@
       </div>
       {% endfor %}
 </div>
-{% else %}
 </div>
+{% else %}
+
 <p> No records found </p>
 {% endif %}
 <!--initiatives ends-->
@@ -318,9 +320,387 @@ Software Developed<hr>
 {% endif %}
 
 <!--journel / conference ends-->
-
 </div>
-{% endif %}
+{% endifequal %}
+
+{%ifequal gus_type  "Faculty" %}
+
+<h4> National Conferences </h4>
+<hr>
+
+<div class="row">
+  {%if facnatconf %}
+    {%for facnatconf in facnatconf %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Title of the Paper:</b> {{facnatconf.fac_nat_conf_title}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Author:</b> {{facnatconf.fac_nat_conf_author}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Conference Name:</b> {{facnatconf.fac_nat_conf_name}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Name of Journal:</b> {{facnatconf.fac_nat_conf_journame}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Conference Date:</b> {{facnatconf.fac_nat_conf_date}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Venue:</b> {{facnatconf.fac_nat_conf_venue}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Presented/Published/Accepted:</b> {{facnatconf.fac_nat_conf_status}}
+      </div>
+    </div>
+
+  </div>
+    {%endfor%}
+  {% else %}
+  <div class="row">
+    <div class="col s12 m12 l12">
+       <p> No Records Found </p>
+     </div>
+   </div>
+  {%endif%}
+</div>
+
+
+
+<h4> International Conferences </h4>
+<hr>
+<div class="row">
+  {%if facintconf %}
+    {%for facintconf in facintconf %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Title of the Paper:</b> {{facintconf.fac_int_conf_title}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Author:</b> {{facintconf.fac_int_conf_author}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Conference Name:</b> {{facintconf.fac_int_conf_name}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Name of Journal:</b> {{facintconf.fac_int_conf_journame}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Conference Date:</b> {{facintconf.fac_int_conf_date}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Venue:</b> {{facintconf.fac_int_conf_venue}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Presented/Published/Accepted:</b> {{facintconf.fac_int_conf_status}}
+      </div>
+    </div>
+
+  </div>
+  {%endfor%}
+  {%else%}
+  <p> No Records Found </p>
+  {%endif%}
+</div>
+
+
+
+<h4> International Journals </h4>
+<hr>
+<div class="row">
+  {%if facintjour %}
+    {%for facintjour in facintjour %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Title of the Paper:</b> {{facintjour.fac_int_jour_title}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> First Author:</b> {{facintjour.fac_int_jour_author}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Other Authors:</b> {{facintjour.fac_int_jour_oauthor}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Name of Journal:</b> {{facintjour.fac_int_jour_name}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Publication Date:</b> {{facintjour.fac_int_jour_date}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Volume/Issue/Page No:</b> {{facintjour.fac_int_jour_vol}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Impact Factor of Journal:</b> {{facintjour.fac_int_jour_impact}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Citation Index of Paper:</b> {{facintjour.fac_int_jour_citation}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Hyperlink:</b> {{facintjour.fac_int_jour_status}}
+      </div>
+    </div>
+
+  </div>
+  {%endfor%}
+  {%else%}
+  <p>No Records Found</p>
+  {%endif%}
+</div>
+
+
+<h4> National Journals </h4>
+<hr>
+<div class="row">
+  {%if facnatjour %}
+  {%for facnatjour in facnatjour %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Title of the Paper:</b> {{facnatjour.fac_nat_jour_title}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> First Author:</b> {{facnatjour.fac_nat_jour_author}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Other Authors:</b> {{facnatjour.fac_nat_jour_oauthor}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Name of Journal:</b> {{facnatjour.fac_nat_jour_name}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Publication Date:</b> {{facnatjour.fac_nat_jour_date}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Volume/Issue/Page No:</b> {{facnatjour.fac_nat_jour_volume}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Impact Factor of Journal:</b> {{facnatjour.fac_nat_jour_impact}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Citation Index of Paper:</b> {{facnatjour.fac_nat_jour_citation}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Hyperlink:</b> {{facnatjour.fac_nat_jour_status}}
+      </div>
+    </div>
+
+  </div>
+  {%endfor%}
+  {%else%}
+  <p> No Records Found </p>
+  {%endif%}
+</div>
+
+
+<h4> Consultancy Activities </h4>
+<hr>
+<div class="row">
+  {%if facconsultancy %}
+    {%for facconsultancy in facconsultancy %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Nature Of Actvity:</b> {{facconsultancy.fac_con_act_nature}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> Client:</b> {{facconsultancy.fac_con_act_client}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Associated Department:</b> {{facconsultancy.fac_con_act_dept}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Revenue Earned:</b> {{facconsultancy.fac_con_act_revenue}}
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+  {%else%}
+  <p> No records found </p>
+  {%endif%}
+</div>
+
+
+
+<h4> Publications </h4>
+<hr>
+<div class="row">
+  {%if facpub %}
+  {%for facpub in facpub %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Title Of Book:</b> {{facpub.fac_man_pub_title}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> Name Of Authors:</b> {{facpub.fac_man_pub_author}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Publishers:</b> {{facpub.fac_man_pub_publisher}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Year Of First Edition:</b> {{facpub.fac_man_pub_fedition}}
+      </div>
+    </div>
+
+     <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Other Editions:</b> {{facpub.fac_man_pub_oedition}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Book/Monograph/Manual etc:</b> {{facpub.fac_man_pub_details}}
+      </div>
+    </div>
+
+  </div>
+  {%endfor%}
+
+  {%else%}
+ <p>No Records Found</p>
+  {%endif%}
+</div>
+
+
+<h4> Staff Activities </h4>
+<hr>
+<div class="row">
+  {% if  facstaffact %}
+    {%for facstaffact in facstaffact %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Name Of Faculty:</b> {{facstaffact.fac_sem_facname}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> Name Of Event/Organising Institute/Place:</b> {{facstaffact.fac_sem_name}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Date of Publication:</b> {{facstaffact.fac_sem_date}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b>Nature Of Participation:</b> {{facstaffact.fac_sem_nature}}
+      </div>
+    </div>
+
+  </div>
+    {%endfor%}
+    {%else%}
+    <p> No Records Found </p>
+  {%endif%}
+</div>
+
+
+<h4> Software Development </h4>
+<hr>
+<div class="row">
+  {%if facsoftdev %}
+    {%for facsoftdev in facsoftdev %}
+  <div class="col s12 m12 l12 card">
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Name Of Project:</b> {{facsoftdev.fac_soft_dev_name}}
+      </div>
+       <div class="col s6 m6 l6">
+        <b> Student Members:</b> {{facsoftdev.fac_soft_dev_student}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s6 m6 l6">
+        <b>Staff Members:</b> {{facsoftdev.fac_soft_dev_staff}}
+      </div>
+    </div>
+
+  </div>
+  {%endfor%}
+  <p>No Records Found
+  {%else%}
+  <p> No Records Found </p>
+  {%endif%}
+</div>
+
+
+<h4> Awards and Honors </h4>
+<hr>
+<div class="row">
+  {%if facawards %}
+  <div class="col s12 m12 l12">
+    {%for facawards in facawards %}
+    <div class="row  card">
+      <div class="col s12 m12 l12">
+        <b>Name Of Faculty with Designation:</b> {{facawards.fac_awards_name}}
+      </div>
+       <div class="col s12 m12 l12">
+        <b> Brief Description Of Awards and Honors:</b> {{facawards.fac_awards_details}}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {%else%}
+  <p> No records found </p>
+  {%endif%}
+</div>
+
+
+{% endifequal %}
 
 
 
