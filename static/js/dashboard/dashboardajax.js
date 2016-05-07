@@ -20,14 +20,14 @@
                     { 
                           alert("Error"); 
                      }   
-                 });
+               
    });
  }
  else
  {
     Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
-
+  });
    // //formtwo
         $('.performance_button').click(function(){
     var performance_exam=$('#nameofexam').val();
@@ -51,7 +51,7 @@
                     { 
                           alert("Error"); 
                      }   
-                 });
+                 
    });
       }
       else
@@ -59,7 +59,7 @@
         Materialize.toast('Fill up all the Manditory fields!', 4000);
       }
    // //form2 ends
-
+});
    //   //form3
          $('.recognition_button').click(function(){
     var recognition_recognitions=$('#recognitions').val();
@@ -80,13 +80,13 @@
                           alert("Error"); 
                      }   
                  });
-   });
+   
 }
 else
 {
    Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
-
+});
    // //form3 ends
 
    // //form 4
@@ -116,13 +116,13 @@ else
                           alert("Error"); 
                      }   
                  });
-   });
+  
  }
  else
  {
   Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
-
+ });
    // //form 4 ends
 
    // //form 5
@@ -149,7 +149,7 @@ else
                     { 
                           alert("Error"); 
                      }   
-                 });
+                
    });
 }
 else
@@ -157,7 +157,7 @@ else
   Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
 
-
+ });
    // //form 5 ends
 
 
@@ -194,7 +194,7 @@ else
                     { 
                           alert("Error"); 
                      }   
-                 });
+                 
    });
  }
  else
@@ -202,7 +202,7 @@ else
   Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
    // //form 6.1 ends
-
+});
    // //form 6.2
 
     $('.conferences_button').click(function(){
@@ -234,14 +234,14 @@ else
                     { 
                           alert("Error"); 
                      }   
-                 });
+                
    });
  }
  else
  {
    Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
-
+ });
    // //form 6.2 ends
 
    // //form 6.3
@@ -264,13 +264,13 @@ else
                     { 
                           alert("Error"); 
                      }   
-                 });
+                
    });
   }
   else
   {
     Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
- 
+  });
 
    //form 6.3 ends

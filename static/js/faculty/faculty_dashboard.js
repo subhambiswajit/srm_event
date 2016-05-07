@@ -31,6 +31,10 @@
     var consultancy_client=$('#consultancy_client').val();
     var consultancy_department=$('#consultancy_department').val();
     var consultancy_revenue=$('#consultancy_revenue').val();
+
+    if(consultancy_nature.length !=0 && consultancy_client.length !=0 &&
+      consultancy_department.length !=0 && consultancy_revenue.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'fac_consultancy_save/',
@@ -45,8 +49,13 @@
                           alert("Error"); 
                      }   
                  });
-   });
-
+   
+}
+else
+{
+  Materialize.toast('Fill up all the Manditory fields!', 4000);
+}
+});
 
   $('#international_conference_submit').click(function(){
     var international_conference_title=$('#international_conference_title').val();
@@ -75,12 +84,14 @@
                           alert("Error"); 
                      }   
                  });
-   });
+   
 }
     else
   {
       Materialize.toast('Fill up all the Manditory fields!', 4000);
   }
+
+  });
 
 
   $('#fac_international_journal').click(function(){
@@ -124,12 +135,13 @@
                           alert("Error"); 
                      }   
                  });
-   });
+ 
  }
  else
  {
    Materialize.toast('Fill up all the Manditory fields!', 4000);
  }
+   });
 
  $('#fac_nat_conference_submit').click(function(){
     var national_conference_title=$('#national_conference_title').val();
@@ -165,7 +177,7 @@
                     { 
                           alert("Error"); 
                      }   
-                 });
+                 
    });
 }
 else
@@ -173,6 +185,7 @@ else
    Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
 
+});
  $('#fac_national_journal_submit').click(function(){
     var national_journal_title =$('#national_journal_title').val();
     var national_journal_author =$('#national_journal_author').val();
@@ -211,13 +224,16 @@ else
                     { 
                           alert("Error"); 
                      }   
-                 });
+                 
    });
 }
+
 else
 {
   Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
+
+});
 
 
 $('#fac_publication_submit').click(function(){
@@ -253,14 +269,14 @@ $('#fac_publication_submit').click(function(){
                           alert("Error"); 
                      }   
                  });
-   });
+  
 }
 else
 {
   Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
 
-
+ });
 
 $('#fac_seminar_submit').click(function(){
     var seminars_conference_faculty =$('#seminars_conference_faculty').val();
@@ -288,7 +304,7 @@ $('#fac_seminar_submit').click(function(){
                     { 
                           alert("Error"); 
                      }   
-                 });
+                 
    });
 }
 else
@@ -296,7 +312,7 @@ else
   Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
 
-
+});
 $('#fac_software_submit').click(function(){
     var software_project_name =$('#software_project_name').val();
     var software_student =$('#software_student').val();
@@ -320,9 +336,10 @@ $('#fac_software_submit').click(function(){
                           alert("Error"); 
                      }   
                  });
-   });
+   
 }
 else
 {
   Materialize.toast('Fill up all the Manditory fields!', 4000);
 }
+});
