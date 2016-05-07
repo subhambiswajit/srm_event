@@ -1,6 +1,9 @@
 from django.db import models
 from imagekit.processors import ResizeToFill
 from imagekit.models import ImageSpecField
+
+
+import os
 # Create your models here.
 
 
@@ -32,6 +35,14 @@ class GlobalUsers(models.Model):
         return True
     def is_staff(self):
         return True
+    def get_thumbnail(self):
+        if self.gus_picture:
+            if os.path.exists('media/' +str(self.gus_picture)):
+                return self.image_thumbnail.url
+            else:
+                return "/static/img/user_no_profile.png"
+        else:
+            return "/static/img/user_no_profile.png"
 
 class CandidateActivity(models.Model):
     candidate_id = models.IntegerField(primary_key=True)

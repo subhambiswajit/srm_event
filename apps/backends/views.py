@@ -18,6 +18,7 @@ import datetime
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 import random
+import os
 
 # Create your views here.
 
@@ -61,6 +62,18 @@ def user_signup(request):
 			global_user.gus_dob = request.POST['candidate_dob']
 		if 'email' in request.POST:
 			global_user.gus_email = request.POST['email']
+		print request.FILES
+		if 'profile_image' in request.FILES:
+			print "world isbad"
+			data = request.FILES.get('profile_image').read()
+			if os.path.exists('media/profile_picture/'):
+				with open('media/profile_picture/' + str(global_user.gus_username) +str(global_user.gus_email) + '.png', 'wb+') as f:
+					f.write(data)
+			else:
+				os.makedirs('media/profile_picture/')
+				with open('media/profile_picture/' + str(global_user.gus_username) +str(global_user.gus_email) + '.png', 'wb+') as f:
+					f.write(data)
+			global_user.gus_picture = request.FILES.get('profile_image')
 		global_user.gus_modifiedon = datetime.datetime.now()
 		global_user.gus_isused = 1
 		global_user.gus_verify = verify_code

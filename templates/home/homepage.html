@@ -270,7 +270,7 @@
       <h4>&nbsp;&nbsp;SIGNUP</h4>
       <div class="divider"></div>
        <br>
-      <form method="post" action="{%url 'user_signup' %}">
+      <form method="post" action="{%url 'user_signup' %}" data-parsley-validate data-parsley-trigger="change" enctype="multipart/form-data">
          {% csrf_token %}
          <div class="input-field">
           <i class="fa fa-user prefix"></i>
@@ -322,7 +322,7 @@
            <div class="file-field input-field">
       <div class="btn">
         <span>Profile Image</span>
-        <input type="file" placeholder="image" name="profile_image">
+        <input name="profile_image" placeholder="image" value=""  type="file" >
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text">
