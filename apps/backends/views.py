@@ -65,10 +65,10 @@ def user_signup(request):
 		global_user.gus_isused = 1
 		global_user.gus_verify = verify_code
 		global_user.save()
-		subject = "email verification for profile generation in SRM portal"            
-		message = "please verify your email by typing the following code to activate your account" + verify_code
-		sender = "digu35@gmail.com"
-		send_mail(subject, message, sender, [request.POST['email']])
+		# subject = "email verification for profile generation in SRM portal"            
+		# message = "please verify your email by typing the following code to activate your account" + verify_code
+		# sender = "digu35@gmail.com"
+		# send_mail(subject, message, sender, [request.POST['email']])
 	else:
 		if request.POST['username'] in username_check:
 			messages.warning(request,"Registration Id already added")
@@ -353,11 +353,9 @@ def user_details_search(request):
 @login_required
 def foreign_profile_generation(request, user_id):
 	user_check_id = user_id
-	print user_check_id
 	render_data ={}
 	user_data = GlobalUsers.objects.get(gus_userid = user_check_id)
 	render_data['gus_type'] = user_data.gus_type
-	print render_data['gus_type']
 	if request.method == 'GET':
 		if user_data.gus_type == 'Student':
 			activity = CandidateActivity.objects.filter(cand_act_gusid__gus_userid = user_check_id)
