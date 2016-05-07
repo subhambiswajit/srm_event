@@ -4,6 +4,10 @@
    	var activity_nature=$('#natureofparticipation').val();
    	var activity_prize=$('#prize').val();
    	var activity_year=$('#year').val();
+    if(activity_name.length!=0 && activity_date.length!=0 &&
+      activity_nature.length!=0 && activity_prize.length!=0 &&
+      activity_year.length!=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_activity/',
@@ -11,7 +15,6 @@
                        success: function(data) 
                        {
                         Materialize.toast('Activity details successfully added', 5000);
-
                        },
                     error: function() 
                     { 
@@ -19,6 +22,11 @@
                      }   
                  });
    });
+ }
+ else
+ {
+    Materialize.toast('Fill up all the Manditory fields!', 4000);
+ }
 
    // //formtwo
         $('.performance_button').click(function(){
@@ -26,6 +34,11 @@
     var performance_pass=$('#yearofpassing').val();
     var performance_marks=$('#marks').val();
     var performance_year=$('#y').val();
+
+
+    if(performance_exam.length !=0 && performance_pass.length !=0 &&
+       performance_marks.length !=0 && performance_year.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_performance/',
@@ -40,12 +53,19 @@
                      }   
                  });
    });
+      }
+      else
+      {
+        Materialize.toast('Fill up all the Manditory fields!', 4000);
+      }
    // //form2 ends
 
    //   //form3
          $('.recognition_button').click(function(){
     var recognition_recognitions=$('#recognitions').val();
     var recognition_year=$('#yr').val();
+    if(recognition_recognitions.length !=0 && recognition_year.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_nat_reg/',
@@ -61,7 +81,11 @@
                      }   
                  });
    });
-
+}
+else
+{
+   Materialize.toast('Fill up all the Manditory fields!', 4000);
+}
 
    // //form3 ends
 
@@ -73,6 +97,11 @@
     var initiatives_event=$('#event').val();
     var initiatives_place=$('#place').val();
     var initiatives_d=$('#d').val();
+
+    if(initiatives_univ.length !=0 && initiatives_seminar.length !=0 &&
+      initiatives_event.length !=0 && initiatives_place.length !=0 &&
+      initiatives_d.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_initiatives/',
@@ -88,6 +117,11 @@
                      }   
                  });
    });
+ }
+ else
+ {
+  Materialize.toast('Fill up all the Manditory fields!', 4000);
+ }
 
    // //form 4 ends
 
@@ -99,6 +133,9 @@
     var internship_sdate=$('#sdate').val();
     var internship_edate=$('#edate').val();
     var internship_stipend=$('#stipend').val();
+    if(internship_comp.length !=0 && internship_sdate.length !=0 &&
+       internship_edate.length !=0 && internship_stipend.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_internship/',
@@ -114,7 +151,11 @@
                      }   
                  });
    });
-
+}
+else
+{
+  Materialize.toast('Fill up all the Manditory fields!', 4000);
+}
 
 
    // //form 5 ends
@@ -132,7 +173,11 @@
     var journels_ifactor=$('#ifactor').val();
     var journels_Citationindex=$('#Citationindex').val();
     var journels_Indexed=$('#Indexed').val();
-
+    
+    if(journels_title.length !=0 && journels_Fauthor.length !=0 && journels_oauthors.length !=0 &&
+       journels_jname.length !=0 && journels_dt.length !=0 && journels_vol.length !=0 &&
+       journels_ifactor.length !=0 && journels_Citationindex.length !=0 && journels_Indexed.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_journals/',
@@ -151,6 +196,11 @@
                      }   
                  });
    });
+ }
+ else
+ {
+  Materialize.toast('Fill up all the Manditory fields!', 4000);
+ }
    // //form 6.1 ends
 
    // //form 6.2
@@ -165,7 +215,10 @@
     var conferences_ins=$('#ins').val();
     var conferences_pl=$('#pl').val();
     var conferences_opt=$('#opt').val();
-
+    if(conferences_tt.length !=0 && conferences_a.length !=0 && conferences_cname.length !=0 &&
+      conferences_dd.length !=0 && conferences_dr.length !=0 && conferences_ins.length !=0 &&
+      conferences_pl.length !=0 && conferences_opt.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_paper_conference/',
@@ -183,6 +236,11 @@
                      }   
                  });
    });
+ }
+ else
+ {
+   Materialize.toast('Fill up all the Manditory fields!', 4000);
+ }
 
    // //form 6.2 ends
 
@@ -191,7 +249,8 @@
     alert('clicked');
     var activity_soft=$('#soft').val();
     var activity_mentor=$('#mentor').val();
-    
+    if(activity_soft.length !=0 && activity_mentor.length !=0)
+    {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_development/',
@@ -207,5 +266,11 @@
                      }   
                  });
    });
+  }
+  else
+  {
+    Materialize.toast('Fill up all the Manditory fields!', 4000);
+ }
+ 
 
    //form 6.3 ends
