@@ -38,6 +38,14 @@ urlpatterns = patterns('',
 	# student urls
 	url(r'cand_activity/$', views.cand_activity, name='cand_activity'),
 	url(r'cand_performance/$', views.cand_performance, name='cand_performance'),
+	url(r'cand_nat_recog/$', views.cand_national_recognition, name='cand_nat_recog'),
+	url(r'cand_initiatives/$', views.candidate_initiatives, name='cand_initiatives'),
+	url(r'cand_candidate/$', views.candidate_initiatives, name='cand_initiatives'),
+	url(r'cand_intern/$', views.cand_intern, name='cand_intern'),
+	url(r'cand_paper_presented/$', views.cand_paper_presented, name='cand_paper_presented'),
+	url(r'cand_paper_published/$', views.cand_paper_published, name='cand_paper_published'),
+	url(r'cand_software_development/$', views.cand_software_development, name='cand_software_development'),
+
 
 	# faculty urls
 	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),

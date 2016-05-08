@@ -1,0 +1,65 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block page_title %}     Candidate Initiatives details          {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+<div class="container">
+  <h4>Candidate Initiatives details</h4>
+
+     <div class="row">
+
+   <div class="input-field col s12">
+          <input id="univ" type="text" class="validate" autocomplete="off" required>
+           <label for="univ">International/National/ State / university</label>
+        </div>
+         <br><br>
+         <div class="input-field col s12">
+          <input id="seminar" type="text" class="validate" autocomplete="off" required>
+           <label for="seminar">Seminars/ Exhibition/ Competitions etc.</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="event" type="text" class="validate" autocomplete="off" required>
+           <label for="event">Event</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="place" type="text" class="validate" autocomplete="off" required>
+           <label for="place">Place</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="d" type="date"  autocomplete="off" required>
+        </div>
+         <br><br>
+             <center> <button class="btn waves-effect waves-light btn_send initiatives_button" type="submit" name="action">Submit
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

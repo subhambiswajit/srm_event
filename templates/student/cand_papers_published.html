@@ -1,0 +1,86 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block page_title %}     Candidate Papers Published details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+<div class="container">
+  <h4>Candidate Papers Published in National/ International Journals details</h4>
+      <div class="row">
+
+     <div class="input-field col s12">
+          <input id="title" type="text"  autocomplete="off" required>
+           <label for="title">Title of paper</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="Fauthor" type="text"  autocomplete="off" required>
+           <label for="Fauthor">First author</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="oauthors" type="text" autocomplete="off" required>
+           <label for="oauthors">Other authors</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="jname" type="text"  autocomplete="off" required>
+           <label for="jname">Journal name</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="dt" type="date"  autocomplete="off" required>
+           
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="vol" type="text" autocomplete="off" required>
+           <label for="vol">Volume/page number</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="ifactor" type="text" autocomplete="off" required>
+           <label for="ifactor">Impact factor</label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="Citationindex" type="text" autocomplete="off" required>
+           <label for="Citationindex">Citation index </label>
+        </div>
+         <br><br>
+               <div class="input-field col s12">
+          <input id="Indexed" type="text" autocomplete="off" required>
+           <label for="Indexed">Indexed or not/Hyperlink</label>
+        </div>
+    
+          <center> <button class="btn waves-effect waves-light btn_send journels_button" type="submit" name="action">Submit
+          <i class="fa fa-paper-plane right"></i>
+          </button></center>
+          
+
+
+
+
+
+
+
+
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

@@ -533,7 +533,36 @@ def fac_soft_dev(request):
 
 	return render(request,'faculty/fac_software_development.html')
 
+@login_required
+def cand_national_recognition(request):
 
+	return render(request,'student/cand_national_recognition.html')
+
+
+@login_required
+def candidate_initiatives(request):
+
+	return render(request,'student/cand_initiatives.html')
+
+@login_required
+def cand_intern(request):
+
+	return render(request,'student/cand_internship_details.html')
+
+@login_required
+def cand_paper_presented(request):
+
+	return render(request,'student/cand_papers_presented.html')
+
+@login_required
+def cand_paper_published(request):
+
+	return render(request,'student/cand_papers_published.html')
+
+@login_required
+def cand_software_development(request):
+
+	return render(request,'student/cand_software_developed.html')
 
 
 @csrf_exempt
