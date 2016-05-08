@@ -88,6 +88,7 @@ class CandidateActivity(models.Model):
     cand_act_prize = models.TextField(blank=True)
     cand_act_nature = models.TextField(blank=True)
     cand_act_year = models.CharField(max_length=100, blank=True)
+    cand_act_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -99,6 +100,7 @@ class CandidateDevelopment(models.Model):
     cand_dev_gusid = models.ForeignKey('GlobalUsers', db_column='cand_dev_gusid', blank=True, null=True)
     cand_dev_name = models.TextField()
     cand_dev_faculty = models.TextField()
+    cand_dev_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -126,6 +128,7 @@ class CandidateInternship(models.Model):
     cand_int_start = models.DateTimeField(blank=True, null=True)
     cand_int_end = models.DateTimeField(blank=True, null=True)
     cand_int_stipend = models.CharField(max_length=100, blank=True)
+    cand_ini_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -144,6 +147,7 @@ class CandidateJournals(models.Model):
     cand_jour_impact = models.CharField(max_length=100, blank=True)
     cand_jour_citation = models.CharField(max_length=100, blank=True)
     cand_jour_indexed = models.CharField(max_length=100, blank=True)
+    cand_jour_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -173,6 +177,7 @@ class CandidatePaperConference(models.Model):
     cand_pap_conf_org = models.CharField(max_length=100, blank=True)
     cand_pap_conf_venue = models.CharField(max_length=50, blank=True)
     cand_pap_conf_status = models.CharField(max_length=50, blank=True)
+    cand_pap_conf_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -186,6 +191,7 @@ class CandidatePerformance(models.Model):
     cand_per_ypass = models.CharField(max_length=30, blank=True)
     cand_per_marks = models.CharField(max_length=30, blank=True)
     cand_per_year = models.CharField(max_length=30, blank=True)
+    cand_per_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -244,6 +250,7 @@ class FacAwards(models.Model):
     fac_awards_gusid = models.ForeignKey('GlobalUsers', db_column='fac_awards_gusid', blank=True, null=True)
     fac_awards_name = models.CharField(max_length=100, blank=True)
     fac_awards_details = models.TextField(blank=True)
+    fac_awards_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -257,6 +264,7 @@ class FacConsultancyActivities(models.Model):
     fac_con_act_client = models.CharField(max_length=100, blank=True)
     fac_con_act_dept = models.CharField(max_length=1000, blank=True)
     fac_con_act_revenue = models.CharField(max_length=100, blank=True)
+    fac_con_act_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -273,6 +281,7 @@ class FacInternationalConference(models.Model):
     fac_int_conf_date = models.DateTimeField(blank=True, null=True)
     fac_int_conf_venue = models.CharField(max_length=100, blank=True)
     fac_int_conf_status = models.CharField(max_length=100, blank=True)
+    fac_int_conf_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -291,6 +300,7 @@ class FacInternatonalJournals(models.Model):
     fac_int_jour_impact = models.CharField(max_length=100, blank=True)
     fac_int_jour_citation = models.CharField(max_length=100, blank=True)
     fac_int_jour_status = models.CharField(max_length=100, blank=True)
+    fac_int_jour_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -306,6 +316,7 @@ class FacManualPublications(models.Model):
     fac_man_pub_fedition = models.CharField(max_length=100, blank=True)
     fac_man_pub_oedition = models.CharField(max_length=100, blank=True)
     fac_man_pub_details = models.CharField(max_length=100, blank=True)
+    fac_man_pub_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -314,6 +325,7 @@ class FacManualPublications(models.Model):
 
 class FacNationalConference(models.Model):
     fac_nat_conf_id = models.IntegerField(primary_key=True)
+    fac_nat_conf_isused = models.IntegerField()
     fac_nat_conf_gusid = models.ForeignKey('GlobalUsers', db_column='fac_nat_conf_gusid', blank=True, null=True)
     fac_nat_conf_title = models.CharField(max_length=50, blank=True)
     fac_nat_conf_author = models.CharField(max_length=100, blank=True)
@@ -340,6 +352,7 @@ class FacNationalJournals(models.Model):
     fac_nat_jour_impact = models.CharField(max_length=100, blank=True)
     fac_nat_jour_citation = models.CharField(max_length=100, blank=True)
     fac_nat_jour_status = models.CharField(max_length=100, blank=True)
+    fac_nat_jour_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -353,6 +366,7 @@ class FacSeminars(models.Model):
     fac_sem_name = models.CharField(max_length=100, blank=True)
     fac_sem_date = models.DateTimeField(blank=True, null=True)
     fac_sem_nature = models.TextField(blank=True)
+    fac_sem_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -365,6 +379,7 @@ class FacSoftwareDevelopment(models.Model):
     fac_soft_dev_staff = models.CharField(max_length=100, blank=True)
     fac_soft_dev_student = models.CharField(max_length=100, blank=True)
     fac_soft_dev_gusid = models.ForeignKey('GlobalUsers', db_column='fac_soft_dev_gusid', blank=True, null=True)
+    fac_soft_dev_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -373,6 +388,7 @@ class FacSoftwareDevelopment(models.Model):
 
 class GlobalUsers(models.Model):
     gus_userid = models.IntegerField(primary_key=True)
+    gus_picture = models.CharField(max_length=200, blank=True)
     gus_username = models.CharField(max_length=100, blank=True)
     gus_name = models.CharField(max_length=100, blank=True)
     gus_password = models.CharField(max_length=100, blank=True)
