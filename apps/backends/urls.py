@@ -35,6 +35,10 @@ urlpatterns = patterns('',
 	url(r'fac_soft_dev_edit/(\d+)$',views.fac_soft_dev_edit, name='fac_soft_dev_edit'),
 	url(r'fac_awards_edit/(\d+)$',views.fac_awards_edit, name='fac_awards_edit'),
 
+	# student urls
+	url(r'cand_activity/$', views.cand_activity, name='cand_activity'),
+	url(r'cand_performance/$', views.cand_performance, name='cand_performance'),
+
 	# faculty urls
 	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),
 	url(r'fac_consultancy/$', views.fac_consultancy, name='fac_consultancy'),

@@ -30,8 +30,8 @@
 
              {%if request.user.gus_type = 'Student' %}
 				 <ul style="margin-top:64px !important; width:273px !important;" id="dropdown2" class="dropdown-content">
-					  <li style="color:#17375e;"><a style="color:#17375e" href="{% url 'fac_natconf' %}">Activities</a></li>
-					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intconf' %}">Performances</a></li>
+					  <li style="color:#17375e;"><a style="color:#17375e" href="{% url 'cand_activity' %}">Activities</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_performance' %}">Performances</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intjour' %}">National Recognitions</a></li>
 					   <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_natjour' %}">Initiatives</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_consultancy' %}">Internship Details</a></li>

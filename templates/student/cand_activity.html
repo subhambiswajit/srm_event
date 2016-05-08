@@ -1,0 +1,54 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block page_title %}     Candidate acitivity details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+<div class="container">
+<h4>Candidate Activity details</h4>
+	
+	<div class="row">
+			 <div class="input-field col s12">
+          <input id="nameofevent" type="text" class="validate" autocomplete="off" required>
+           <label for="nameofevent">Name of event</label>
+        </div>
+      <br><br>
+         <div class="input-field col s12">
+          <input id="activitydate" type="date" autocomplete="off" required>
+        </div>
+      <br><br>
+         <div class="input-field col s12">
+          <input id="natureofparticipation" type="text" class="validate" autocomplete="off" required>
+           <label for="natureofparticipation">Nature of participation</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="prize" type="text" class="validate" autocomplete="off" required>
+           <label for="prize">Details of award/prizes won if any</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="year" type="text" class="validate" autocomplete="off" required>
+           <label for="year">year/section</label>
+        </div>
+        <br><br>
+             <center> <button class="btn waves-effect waves-light btn_send activity_button" type="submit" name="action">Submit
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
+
+	</div>
+</div>
+   {% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

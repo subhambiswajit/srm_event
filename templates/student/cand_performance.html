@@ -1,0 +1,62 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+{% block page_title %}     Candidate acitivity details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+<div class="container">
+	<h4>Candidate Performance details</h4>
+
+		<div class="row">
+			<div class="input-field col s12">
+          <input id="nameofexam" type="text" class="validate" autocomplete="off" required>
+           <label for="nameofexam">Name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
+)</label>
+        </div>
+      <br><br>
+       <div class="input-field col s12">
+          <input id="yearofpassing" type="text" class="validate" autocomplete="off" required>
+           <label for="yearofpassing">Year of passing</label>
+        </div>
+      <br><br>
+      <div class="input-field col s12">
+          <input id="marks" type="text" class="validate" autocomplete="off" required>
+           <label for="marks">Marks obtained</label>
+        </div>
+        <br><br>
+         <div class="input-field col s12">
+          <input id="y" type="text" class="validate" autocomplete="off" required>
+           <label for="y">Year/section</label>
+        </div>
+      <br><br>
+       <center> <button class="btn waves-effect waves-light btn_send performance_button" type="submit" name="action">Submit
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
+
+
+
+
+
+
+
+
+
+
+		</div>
+
+</div>
+
+{% endblock %}
+
+
+
+{% block extrajs %}   
+
+
+  {% endblock %}

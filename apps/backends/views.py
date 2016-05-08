@@ -517,9 +517,23 @@ def fac_seminar(request):
 	return render(request,'faculty/fac_seminars.html')
 
 @login_required
+def cand_activity(request):
+
+	return render(request,'student/cand_activity.html')
+
+@login_required
+def cand_performance(request):
+
+	return render(request,'student/cand_performance.html')
+
+
+
+@login_required
 def fac_soft_dev(request):
 
 	return render(request,'faculty/fac_software_development.html')
+
+
 
 
 @csrf_exempt
