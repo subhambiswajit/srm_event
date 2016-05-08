@@ -14,32 +14,39 @@
 
 <div class="container">
 <h2>Software Developed</h2>
-
+<input type="hidden" id="software_project_id" value="{{facsoftdev.fac_soft_dev_id}}">
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="software_project_name" type="text" class="validate" required>
+        <input  id="software_project_name" type="text" value="{{facsoftdev.fac_soft_dev_name}}" class="validate" required>
           <label for="software_project_name">Name Of Project/Software</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="software_student" type="text" class="validate" required>
+        <input  id="software_student" type="text" value="{{facsoftdev.fac_soft_dev_student  }}" class="validate" required>
           <label for="software_student">Student Members</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="software_staff" type="text" class="validate" required>
+        <input  id="software_staff" type="text" value="{{facsoftdev.fac_soft_dev_staff}}" class="validate" required>
           <label for="software_staff">Staff Members</label>
    </div>
 </div>
      <div class="row">
        <div class="input-field col s12">
+     {%if not facsoftdev %}
      <center><button id="fac_software_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+ <center><button id="fac_software_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+
+  {%endif%}
       </div>
      </div>
 </div>
@@ -51,4 +58,5 @@
 {% block extrajs %}   
 
   <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+  <script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
   {% endblock %}

@@ -27,6 +27,19 @@
 					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_awards' %}">Awards Details</a></li>
 					</ul>
             {% endif %}         
+
+             {%if request.user.gus_type = 'Student' %}
+				 <ul style="margin-top:64px !important; width:273px !important;" id="dropdown2" class="dropdown-content">
+					  <li style="color:#17375e;"><a style="color:#17375e" href="{% url 'fac_natconf' %}">Activities</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intconf' %}">Performances</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intjour' %}">National Recognitions</a></li>
+					   <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_natjour' %}">Initiatives</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_consultancy' %}">Internship Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_pub' %}">Journals</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_seminar' %}">Conferences</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_soft_dev' %}">Software Development Details</a></li>
+					</ul>
+            {% endif %}         
 			 <nav>
 				<div class="nav-wrapper">
 				   <a href="#!" class="brand-logo"><img class="left" class="responsive-img" src="/media/images/srm.png"
@@ -41,6 +54,12 @@
 				    {%if request.user.gus_type = 'Faculty' %}
 				    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
 				    {% endif %}
+
+				     {%if request.user.gus_type = 'Student' %}
+				    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
+				    {% endif %}
+
+
 				    <li><a href="{%url 'dashboard' %}">DASHBOARD&nbsp;&nbsp;|</a></li>
 				    <li><a href="{% url 'view_details' %}">MY PROFILE&nbsp;&nbsp;|</a></li>
 				    <li><a href="{%url 'user_logout' %}">LOG OUT</a></li>

@@ -16,39 +16,46 @@
 <h2>Staff Activities</h2>
 
 <h4>Participation in Conferences/Seminars/STTPs/Workshops/Other FDPs</h4>
-
+<input type="hidden" id="seminars_conference_id" value="{{facstaffact.fac_sem_id}}">
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="seminars_conference_faculty" type="text" class="validate" required>
+        <input  id="seminars_conference_faculty" type="text" value="{{facstaffact.fac_sem_facname}}" class="validate" required>
           <label for="seminars_conference_faculty">Name Of Faculty</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="seminars_conference_place" type="text" class="validate" required>
+        <input  id="seminars_conference_place" type="text" value="{{facstaffact.fac_sem_name}}" class="validate" required>
           <label for="seminars_conference_place">Name Of Event/Organising Institute/Place</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12" required>
-       <input id="seminars_conference_date" type="date">
+       <input id="seminars_conference_date" value="{{facstaffact.fac_sem_date}}" type="date">
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="seminars_conference_nature_participation" type="text" class="validate" required>
+        <input  id="seminars_conference_nature_participation" type="text" value="{{facstaffact.fac_sem_nature}}" class="validate" required>
           <label for="seminars_conference_nature_participation">Nature Of Participation-Delegate/key note speaker/Resource person etc.</label>
    </div>
 </div>
 
 <div class="row">
      <div class="input-field col s12">
+     {%if not facstaffact %}
      <center><button id="fac_seminar_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+      <center><button id="fac_seminar_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  {%endif%}
+
      </div>
   </div>
 
@@ -60,4 +67,5 @@
 {% block extrajs %}   
 
 <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+<script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
   {% endblock %}

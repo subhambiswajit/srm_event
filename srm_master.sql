@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2016 at 05:17 PM
+-- Generation Time: May 08, 2016 at 01:48 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -480,9 +480,11 @@ CREATE TABLE IF NOT EXISTS `django_session` (
 INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALUES
 ('01pltcndw0afsws6m23igmv2wzeihskb', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-24 04:13:13'),
 ('1bcp8j7oqgzovawajdsf1s8sn8seyggg', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-22 10:53:19'),
+('4x1to4lqy8nwbktpuk3c1hna48jkw3ma', 'YzE3N2ZiY2U2YzczZmVjMWE2Nzg2NTdkMzY1NTAxNDY3YzNmZWJhMTp7fQ==', '2016-05-21 04:23:17'),
+('6wt90as96j7z9amjb7lrg2emis2vblp4', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 07:05:08'),
 ('a6tue05j7d7zvedccztl9lnrfhhfvte9', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-24 04:43:39'),
 ('bp8hoqb0p13q9c2jbdx7x47s2zx3hdqs', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-23 15:06:10'),
-('fo5aj58e0vuydxl7akn5a098lq62fb5d', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-04-28 11:54:27');
+('quuli13pt57o9uerj83hmgpgcbs42g0t', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 06:49:30');
 
 -- --------------------------------------------------------
 
@@ -495,17 +497,19 @@ CREATE TABLE IF NOT EXISTS `fac_awards` (
   `fac_awards_gusid` int(11) DEFAULT NULL,
   `fac_awards_name` varchar(100) DEFAULT NULL,
   `fac_awards_details` text
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_awards`
 --
 
 INSERT INTO `fac_awards` (`fac_awards_id`, `fac_awards_gusid`, `fac_awards_name`, `fac_awards_details`) VALUES
-(1, 3, 'jsjssj', 'jsjsjs'),
-(2, 3, '', ''),
-(3, 3, '', ''),
-(4, 3, '', '');
+(5, 3, 'Subham Biswajit', 'Uniwip Project '),
+(6, 3, 'hhjhjj', 'jgjghjghj'),
+(7, 16, '', ''),
+(8, 3, 'Subham Biswajit', 'Uniwip Project '),
+(9, 3, 'Subham Biswajit', 'uniwip test upload '),
+(10, 3, 'akash agarwall', 'Uniwip Project ');
 
 -- --------------------------------------------------------
 
@@ -520,14 +524,16 @@ CREATE TABLE IF NOT EXISTS `fac_consultancy_activities` (
   `fac_con_act_client` varchar(100) DEFAULT NULL,
   `fac_con_act_dept` varchar(1000) DEFAULT NULL,
   `fac_con_act_revenue` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_consultancy_activities`
 --
 
 INSERT INTO `fac_consultancy_activities` (`fac_con_act_id`, `fac_con_act_gusid`, `fac_con_act_nature`, `fac_con_act_client`, `fac_con_act_dept`, `fac_con_act_revenue`) VALUES
-(1, 3, 'subham', 'sshs', 'hshsh', 'shshs');
+(1, 3, 'subham', 'sshs', 'hshsh', 'shshs'),
+(2, 3, 'Tata Tender Program for rural Empowerment ', 'TCS', 'Computer Science Department ', '1 lakh '),
+(3, 3, 'Tata Tender Program for rural Empowerment ', 'Wipro', 'Computer Science Department ', '1 lakh ');
 
 -- --------------------------------------------------------
 
@@ -545,7 +551,15 @@ CREATE TABLE IF NOT EXISTS `fac_international_conference` (
   `fac_int_conf_date` datetime DEFAULT NULL,
   `fac_int_conf_venue` varchar(100) DEFAULT NULL,
   `fac_int_conf_status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fac_international_conference`
+--
+
+INSERT INTO `fac_international_conference` (`fac_int_conf_id`, `fac_int_conf_gusid`, `fac_int_conf_title`, `fac_int_conf_author`, `fac_int_conf_name`, `fac_int_conf_journame`, `fac_int_conf_date`, `fac_int_conf_venue`, `fac_int_conf_status`) VALUES
+(1, 3, 'Fundamentals of coding ', 'Arthur Ken', 'Coding session', 'IEEE version 9.0', '2016-04-06 18:30:00', 'Indian Institute of Science and Technology, Chennai', 'Presented'),
+(2, 3, 'Fundamentals of coding ', 'Suvojit Kar', 'Coding session', 'IEEE version 9.0', '2016-05-05 18:30:00', 'Indian Institute of Science and Technology, Chennai', 'Published');
 
 -- --------------------------------------------------------
 
@@ -565,14 +579,17 @@ CREATE TABLE IF NOT EXISTS `fac_internatonal_journals` (
   `fac_int_jour_impact` varchar(100) DEFAULT NULL,
   `fac_int_jour_citation` varchar(100) DEFAULT NULL,
   `fac_int_jour_status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_internatonal_journals`
 --
 
 INSERT INTO `fac_internatonal_journals` (`fac_int_jour_id`, `fac_int_jour_gusid`, `fac_int_jour_title`, `fac_int_jour_author`, `fac_int_jour_oauthor`, `fac_int_jour_name`, `fac_int_jour_date`, `fac_int_jour_vol`, `fac_int_jour_impact`, `fac_int_jour_citation`, `fac_int_jour_status`) VALUES
-(1, 3, 'jddjj', 'jjd', 'jdjd', 'jddj', '2016-04-05 18:30:00', 'kdkd', 'kk', 'ksks', 'kdkd');
+(1, 3, 'jddjj', 'jjd', 'jdjd', 'jddj', '2016-04-05 18:30:00', 'kdkd', 'kk', 'ksks', 'kdkd'),
+(3, 3, '', '', '', '', NULL, '', '', '', ''),
+(4, 3, 'Siddhant', 'jsjs', 'jsjs', 'jsjs', '2016-05-05 18:30:00', 'kssk', 'dkdkd', 'ldldld', 'ldldld'),
+(5, 3, 'new journa;', 'hew ', 'hew', 'hwhw', '2016-05-18 18:30:00', 'ksks', 'kkdk', 'ksks', 'kdkd');
 
 -- --------------------------------------------------------
 
@@ -589,14 +606,16 @@ CREATE TABLE IF NOT EXISTS `fac_manual_publications` (
   `fac_man_pub_fedition` varchar(100) DEFAULT NULL,
   `fac_man_pub_oedition` varchar(100) DEFAULT NULL,
   `fac_man_pub_details` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_manual_publications`
 --
 
 INSERT INTO `fac_manual_publications` (`fac_man_pub_id`, `fac_man_pub_gusid`, `fac_man_pub_title`, `fac_man_pub_author`, `fac_man_pub_publisher`, `fac_man_pub_fedition`, `fac_man_pub_oedition`, `fac_man_pub_details`) VALUES
-(12, 3, 'sdsf', 'sds', 'dsdsd', 'sdsd', 'sdds', 'sds');
+(12, 3, 'sdsf', 'sds', 'dsdsd', 'sdsd', 'sdds', 'sds'),
+(13, 3, 'Suvojit', 'sds', 'dsdsd', 'sdsd', 'sdds', 'sds'),
+(14, 3, 'Suvojit kar', 'sds', 'dsdsd', 'sdsd', 'sdds', 'sds');
 
 -- --------------------------------------------------------
 
@@ -614,7 +633,18 @@ CREATE TABLE IF NOT EXISTS `fac_national_conference` (
   `fac_nat_conf_date` datetime DEFAULT NULL,
   `fac_nat_conf_venue` varchar(100) DEFAULT NULL,
   `fac_nat_conf_status` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fac_national_conference`
+--
+
+INSERT INTO `fac_national_conference` (`fac_nat_conf_id`, `fac_nat_conf_gusid`, `fac_nat_conf_title`, `fac_nat_conf_author`, `fac_nat_conf_name`, `fac_nat_conf_journame`, `fac_nat_conf_date`, `fac_nat_conf_venue`, `fac_nat_conf_status`) VALUES
+(1, 3, 'The Big Data analytics ', 'Subham Biswajit', 'The Big Data ', 'IEEE version 9.0', '2016-03-31 18:30:00', 'SRM University, Chennai', 'Published'),
+(3, 7, 'The internet OF things', 'Ken Thomson ', 'IOT', 'IEEE version 9.0', '2016-04-05 18:30:00', 'SRM chennai', 'Presented'),
+(4, 7, 'Something', 'jsjsj', 'jsjssj', 'jssjs', '2016-04-05 18:30:00', 'ksksk', 'kdkddk'),
+(5, 3, 'Srm sheet', 'subham', 'iot', 'journal', '2016-05-06 18:30:00', 'SRM university', 'presented'),
+(6, 3, 'Srm sheet', 'subham', 'iot', 'journal', '2016-05-06 18:30:00', 'SRM university', 'presented');
 
 -- --------------------------------------------------------
 
@@ -634,7 +664,15 @@ CREATE TABLE IF NOT EXISTS `fac_national_journals` (
   `fac_nat_jour_impact` varchar(100) DEFAULT NULL,
   `fac_nat_jour_citation` varchar(100) DEFAULT NULL,
   `fac_nat_jour_status` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fac_national_journals`
+--
+
+INSERT INTO `fac_national_journals` (`fac_nat_jour_id`, `fac_nat_jour_gusid`, `fac_nat_jour_title`, `fac_nat_jour_author`, `fac_nat_jour_oauthor`, `fac_nat_jour_name`, `fac_nat_jour_date`, `fac_nat_jour_volume`, `fac_nat_jour_impact`, `fac_nat_jour_citation`, `fac_nat_jour_status`) VALUES
+(1, 3, 'Internet of Things', 'Suvojit', 'Subham Biswajit, Anusha T ', 'IEEE version 8.0', '2016-05-03 18:30:00', 'Page no:10', 'Something', 'Something', 'Indexed'),
+(2, 3, 'Amarnath', 'jwjw', 'wkwk', 'kwkw', '2016-04-08 18:30:00', '9sksks', 'kssks', 'sjsjs', 'ksks');
 
 -- --------------------------------------------------------
 
@@ -649,7 +687,15 @@ CREATE TABLE IF NOT EXISTS `fac_seminars` (
   `fac_sem_name` varchar(100) DEFAULT NULL,
   `fac_sem_date` datetime DEFAULT NULL,
   `fac_sem_nature` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fac_seminars`
+--
+
+INSERT INTO `fac_seminars` (`fac_sem_id`, `fac_sem_gusid`, `fac_sem_facname`, `fac_sem_name`, `fac_sem_date`, `fac_sem_nature`) VALUES
+(1, 3, 'Subham Biswajit', 'aaruush', '2016-05-24 18:30:00', 'faculty'),
+(2, 3, 'simran kaur deol ', 'aaruush', '2016-05-03 18:30:00', 'faculty');
 
 -- --------------------------------------------------------
 
@@ -663,7 +709,14 @@ CREATE TABLE IF NOT EXISTS `fac_software_development` (
   `fac_soft_dev_staff` varchar(100) DEFAULT NULL,
   `fac_soft_dev_student` varchar(100) DEFAULT NULL,
   `fac_soft_dev_gusid` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fac_software_development`
+--
+
+INSERT INTO `fac_software_development` (`fac_soft_dev_id`, `fac_soft_dev_name`, `fac_soft_dev_staff`, `fac_soft_dev_student`, `fac_soft_dev_gusid`) VALUES
+(1, 'big Data ', 'Mrs S. Priya', 'subham, rishab', 3);
 
 -- --------------------------------------------------------
 
@@ -673,6 +726,7 @@ CREATE TABLE IF NOT EXISTS `fac_software_development` (
 
 CREATE TABLE IF NOT EXISTS `global_users` (
 `gus_userid` int(11) NOT NULL,
+  `gus_picture` varchar(200) DEFAULT NULL,
   `gus_username` varchar(100) DEFAULT NULL,
   `gus_name` varchar(100) DEFAULT NULL,
   `gus_password` varchar(100) DEFAULT NULL,
@@ -684,17 +738,21 @@ CREATE TABLE IF NOT EXISTS `global_users` (
   `gus_isused` int(2) DEFAULT NULL,
   `gus_modifiedon` datetime DEFAULT NULL,
   `gus_verify` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `global_users`
 --
 
-INSERT INTO `global_users` (`gus_userid`, `gus_username`, `gus_name`, `gus_password`, `gus_lastlogin`, `gus_type`, `gus_createdby`, `gus_dob`, `gus_email`, `gus_isused`, `gus_modifiedon`, `gus_verify`) VALUES
-(3, '1031310363', 'Subham Biswajit', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-04-14 11:54:27', 'Faculty', NULL, '2016-04-08 18:30:00', 'digu35@gmail.com', 1, '2016-04-08 09:28:53', '25605'),
-(4, '1031310371', 'Simran Kaur Deol', 'pbkdf2_sha256$50000$salt$HBVwmlw4KLm+L/ru97nLCUkRsjKzGrghHeMqa8yrUtQ=', '2016-04-10 14:18:02', 'Student', NULL, '2016-04-19 18:30:00', 'simrandeol05@gmail.com', 1, '2016-04-10 14:17:28', '51245'),
-(5, '1031310365', 'suvojit', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-04-11 16:23:54', 'Faculty', NULL, '2016-03-31 18:30:00', 'karsuvojit4@gmail.com', 1, '2016-04-11 13:13:31', '22049'),
-(6, '1031310330', 'Anusha T', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-04-14 11:47:48', 'Student', NULL, '2016-04-11 18:30:00', 'digu35@gmail.com', 1, '2016-04-12 02:13:07', '57606');
+INSERT INTO `global_users` (`gus_userid`, `gus_picture`, `gus_username`, `gus_name`, `gus_password`, `gus_lastlogin`, `gus_type`, `gus_createdby`, `gus_dob`, `gus_email`, `gus_isused`, `gus_modifiedon`, `gus_verify`) VALUES
+(3, NULL, '1031310363', 'Subham Biswajit', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-08 07:05:08', 'Faculty', NULL, '2016-04-08 18:30:00', 'digu35@gmail.com', 1, '2016-04-08 09:28:53', '25605'),
+(4, NULL, '1031310371', 'Simran Kaur Deol', 'pbkdf2_sha256$50000$salt$HBVwmlw4KLm+L/ru97nLCUkRsjKzGrghHeMqa8yrUtQ=', '2016-04-10 14:18:02', 'Student', NULL, '2016-04-19 18:30:00', 'simrandeol05@gmail.com', 1, '2016-04-10 14:17:28', '51245'),
+(6, NULL, '1031310330', 'Anusha T', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 04:44:00', 'Student', NULL, '2016-04-11 18:30:00', 'digu35@gmail.com', 1, '2016-04-12 02:13:07', '57606'),
+(7, NULL, '101304', 'S. Priya', 'pbkdf2_sha256$50000$salt$ANauMFo9VjWNi+EPPJBYvlbZP/QhH9kZ/kCINeJM9g8=', '2016-04-16 06:19:38', 'Faculty', NULL, '2016-04-05 18:30:00', 'priya@gmail.com', 1, '2016-04-16 05:35:17', '83847'),
+(11, '', '1031310361', 'subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', NULL, 'Student', NULL, '2016-05-06 18:30:00', 'digu35@gmail.com', 1, '2016-05-07 20:04:31', '25188'),
+(15, 'uploads/banner-05.png', '1031310377', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', NULL, 'Student', NULL, '2016-05-06 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:39:50', '99930'),
+(16, 'uploads/banner-05_CCumVtq.png', '1031310388', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-07 20:55:10', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:42:46', '83873'),
+(17, 'uploads/10301525_435909603217636_6616425518403483625_n.jpg', '1031310365', 'Suvojit Kar', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 04:52:58', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu35@gmail.com', 1, '2016-05-08 04:52:35', '88661');
 
 --
 -- Indexes for dumped tables
@@ -961,52 +1019,52 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 -- AUTO_INCREMENT for table `fac_awards`
 --
 ALTER TABLE `fac_awards`
-MODIFY `fac_awards_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `fac_awards_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `fac_consultancy_activities`
 --
 ALTER TABLE `fac_consultancy_activities`
-MODIFY `fac_con_act_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `fac_con_act_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `fac_international_conference`
 --
 ALTER TABLE `fac_international_conference`
-MODIFY `fac_int_conf_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `fac_int_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `fac_internatonal_journals`
 --
 ALTER TABLE `fac_internatonal_journals`
-MODIFY `fac_int_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `fac_int_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `fac_manual_publications`
 --
 ALTER TABLE `fac_manual_publications`
-MODIFY `fac_man_pub_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+MODIFY `fac_man_pub_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `fac_national_conference`
 --
 ALTER TABLE `fac_national_conference`
-MODIFY `fac_nat_conf_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `fac_nat_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `fac_national_journals`
 --
 ALTER TABLE `fac_national_journals`
-MODIFY `fac_nat_jour_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `fac_nat_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `fac_seminars`
 --
 ALTER TABLE `fac_seminars`
-MODIFY `fac_sem_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `fac_sem_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `fac_software_development`
 --
 ALTER TABLE `fac_software_development`
-MODIFY `fac_soft_dev_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `fac_soft_dev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `global_users`
 --
 ALTER TABLE `global_users`
-MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
 --
 -- Constraints for dumped tables
 --

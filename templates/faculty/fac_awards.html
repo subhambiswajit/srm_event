@@ -14,10 +14,11 @@
 
 <div class="container">
 <h4>Awards and Honors</h4>
+<input type="hidden" id="awards_faculty_id" value="{{facawards.fac_awards_id}}">
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="awards_faculty_name" type="text" class="validate" required>
+        <input  id="awards_faculty_name" type="text" value="{{facawards.fac_awards_name}}" class="validate" required>
           <label for="awards_faculty_name">Name Of Faculty with Designation</label>
    </div>
 </div>
@@ -25,16 +26,22 @@
 <div class="row">
   <div class="row">
       <div class="input-field col s12">
-          <textarea id="awards_description" class="materialize-textarea"></textarea>
+          <textarea id="awards_description" value="" class="materialize-textarea">{{facawards.fac_awards_details}}</textarea>
           <label for="awards_description">Brief Description Of Awards and Honors</label>
       </div>
   </div>
 </div>
 <div class="row">
   <div class="input-field col s12">
+  {%if not facawards %}
      <center><button id="fac_award_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+    <center><button id="fac_award_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  {%endif%}
   </div>
 </div>
 </div>
@@ -45,5 +52,5 @@
 
 {% block extrajs %}   
   <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
-
+  <script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
   {% endblock %}
