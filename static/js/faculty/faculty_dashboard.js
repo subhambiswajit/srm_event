@@ -21,7 +21,7 @@
  }
  else
  {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
 
 });
@@ -53,7 +53,7 @@
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
@@ -88,7 +88,7 @@ else
 }
     else
   {
-      Materialize.toast('Fill up all the Manditory fields!', 4000);
+      Materialize.toast('Fill up all the Mandatory fields!', 4000);
   }
 
   });
@@ -139,7 +139,7 @@ else
  }
  else
  {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    });
 
@@ -182,7 +182,7 @@ else
 }
 else
 {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -230,7 +230,7 @@ else
 
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -273,7 +273,7 @@ $('#fac_publication_submit').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
  });
@@ -309,7 +309,7 @@ $('#fac_seminar_submit').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -340,6 +340,6 @@ $('#fac_software_submit').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });

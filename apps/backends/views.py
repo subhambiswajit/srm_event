@@ -407,6 +407,7 @@ def foreign_profile_generation(request, user_id):
 			render_data['facstaffact'] = facstaffact
 			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid__gus_userid = user_check_id)
 			render_data['facsoftdev'] = facsoftdev
+			render_data['foreign_profile'] = True
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
 

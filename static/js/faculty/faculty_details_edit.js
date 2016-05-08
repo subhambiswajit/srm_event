@@ -39,7 +39,7 @@ $('#fac_nat_conference_edit').click(function(){
 }
 else
 {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -77,7 +77,7 @@ else
 }
     else
   {
-      Materialize.toast('Fill up all the Manditory fields!', 4000);
+      Materialize.toast('Fill up all the Mandatory fields!', 4000);
   }
 
   });
@@ -129,7 +129,7 @@ $('#fac_international_journal_update').click(function(){
  }
  else
  {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    });
 
@@ -181,7 +181,7 @@ $('#fac_international_journal_update').click(function(){
  }
  else
  {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    });
 
@@ -231,7 +231,7 @@ $('#fac_national_journal_update').click(function(){
 
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -264,7 +264,7 @@ $('#consultancy_update').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
@@ -308,7 +308,7 @@ $('#fac_publication_update').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
  });
@@ -346,7 +346,7 @@ $('#fac_seminar_update').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
@@ -380,7 +380,7 @@ $('#fac_software_update').click(function(){
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
@@ -409,7 +409,7 @@ else
  }
  else
  {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
 
 });
