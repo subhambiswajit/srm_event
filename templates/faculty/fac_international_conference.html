@@ -14,54 +14,61 @@
 
 <div class="container">
 <h4>International Conferences</h4>
-
+<input type="hidden" id="international_conference_id" value="{{facintconf.fac_int_conf_id}}">
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_title" type="text" class="validate" required>
+        <input  id="international_conference_title" type="text" value = "{{facintconf.fac_int_conf_title}}" class="validate" required>
           <label for="international_conference_title">Title Of Paper</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_author" type="text" class="validate" required>
+        <input  id="international_conference_author" type="text" value = "{{facintconf.fac_int_conf_author}}" class="validate" required>
           <label for="international_conference_author">Author(s)</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_name" type="text" class="validate" required>
+        <input  id="international_conference_name" type="text" value = "{{facintconf.fac_int_conf_name}}" class="validate" required>
           <label for="international_conference_name">Conference Name(with expansion)</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_journal_name" type="text" class="validate" required>
+        <input  id="international_conference_journal_name" type="text" value = "{{facintconf.fac_int_conf_journame}}" class="validate" required>
           <label for="international_conference_journal_name">Name Of Journal</label>
    </div>
 </div>
 <div class="row">
-   <div class="input-field col s12" required>
+   <div class="input-field col s12" value = "{{facintconf.fac_int_conf_date}}" required>
        <input id="international_conference_date" type="date">
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_place" type="text" class="validate" required>
+        <input  id="international_conference_place" value = "{{facintconf.fac_int_conf_venue}}" type="text" class="validate" required>
           <label for="international_conference_place">Institute Organising/Place</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_conference_published" type="text" class="validate" required>
+        <input  id="international_conference_published" value = "{{facintconf.fac_int_conf_status}}" type="text" class="validate" required>
           <label for="international_conference_published">Presented/Published/Accepted </label>
    </div>
 </div>
 <div class="row">
   <div class="input-field col s12">
-     <center><button id="international_conference_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
+  {%if not facintconf  %}
+     <center><button id="international_conference_submit"  class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {% else %}
+  <center><button id="international_conference_save"  class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+
+
+  {%endif%}
   </div>
 </div>
 </div>
@@ -73,6 +80,7 @@
 
 {% block extrajs %}   
   <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+  <script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
 
 
   {% endblock %}

@@ -14,38 +14,44 @@
 
 <div class="container">
 <h4>Consultancy Activities</h4>
-
+<input type="hidden" id="consultancy_id" value="{{facconsultancy.fac_con_act_id}}">
 <div class="row">
    <div class="input-field col s12">
 
-        <input  id="consultancy_nature" type="text" class="validate" required>
+        <input  id="consultancy_nature" type="text" value="{{facconsultancy.fac_con_act_nature}}" class="validate" required>
           <label for="consultancy_nature">Nature Of Consultancy/project</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="consultancy_client" type="text" class="validate" required>
+        <input  id="consultancy_client" type="text" value="{{facconsultancy.fac_con_act_client}}" class="validate" required>
           <label for="consultancy_client">Client</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="consultancy_department" type="text" class="validate" required>
+        <input  id="consultancy_department" type="text" value="{{facconsultancy.fac_con_act_dept}}" class="validate" required>
           <label for="consultancy_department">Associated Department</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="consultancy_revenue" type="text" class="validate" required>
+        <input  id="consultancy_revenue" type="text" value="{{facconsultancy.fac_con_act_revenue}}" class="validate" required>
           <label for="consultancy_revenue">Revenue earned in Rs.</label>
    </div>
 </div>
 <div class="row">
      <div class="input-field col s12">
+   {%if not facconsultancy %}
      <center><button id="consultancy_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+    <center><button id="consultancy_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  {%endif%}
      </div>
   </div>
 </div>
@@ -56,4 +62,5 @@
 {% block extrajs %}   
 
   <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+  <script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
   {% endblock %}

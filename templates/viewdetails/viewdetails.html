@@ -348,7 +348,7 @@ Software Developed<hr>
   {%if facnatconf %}
     {%for facnatconf in facnatconf %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{% url 'fac_nat_conf_edit' facnatconf.fac_nat_conf_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -402,7 +402,7 @@ Software Developed<hr>
   {%if facintconf %}
     {%for facintconf in facintconf %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_int_conf_edit' facintconf.fac_int_conf_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -452,7 +452,7 @@ Software Developed<hr>
   {%if facintjour %}
     {%for facintjour in facintjour %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_int_jour_edit' facintjour.fac_int_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -510,7 +510,7 @@ Software Developed<hr>
   {%if facnatjour %}
   {%for facnatjour in facnatjour %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_nat_jour_edit' facnatjour.fac_nat_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -568,7 +568,7 @@ Software Developed<hr>
   {%if facconsultancy %}
     {%for facconsultancy in facconsultancy %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_consultancy_edit' facconsultancy.fac_con_act_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -603,7 +603,7 @@ Software Developed<hr>
   {%if facpub %}
   {%for facpub in facpub %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_pub_edit' facpub.fac_man_pub_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -650,7 +650,7 @@ Software Developed<hr>
   {% if  facstaffact %}
     {%for facstaffact in facstaffact %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_seminar_edit' facstaffact.fac_sem_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -684,7 +684,7 @@ Software Developed<hr>
   {%if facsoftdev %}
     {%for facsoftdev in facsoftdev %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_soft_dev_edit' facsoftdev.fac_soft_dev_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
       <div class="col s6 m6 l6">
@@ -703,7 +703,6 @@ Software Developed<hr>
 
   </div>
   {%endfor%}
-  <p>No Records Found
   {%else%}
   <p> No Records Found </p>
   {%endif%}
@@ -717,7 +716,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12">
     {%for facawards in facawards %}
     <div class="row  card">
-     <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+     <a href="{%url 'fac_awards_edit' facawards.fac_awards_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
       <div class="col s12 m12 l12">
         <b>Name Of Faculty with Designation:</b> {{facawards.fac_awards_name}}

@@ -15,67 +15,74 @@
 <div class="container">
 <h4>International Journals</h4>
 
-
+<input type="hidden" id="international_journal_id" value="{{facintjour.fac_int_jour_id}}">
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_title" type="text" class="validate" required>
+        <input  id="international_journal_title" type="text" value="{{facintjour.fac_int_jour_title}}" class="validate" required>
           <label for="international_journal_title">Title Of Paper</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_author" type="text" class="validate" required>
+        <input  id="international_journal_author" type="text" value="{{facintjour.fac_int_jour_author}}" class="validate" required>
           <label for="international_journal_author">First Author</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_oauthor" type="text" class="validate" required>
+        <input  id="international_journal_oauthor" type="text" value="{{facintjour.fac_int_jour_oauthor}}" class="validate" required>
           <label for="international_journal_oauthor">Other Authors</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_journal_name" type="text" class="validate" required>
+        <input  id="international_journal_journal_name" type="text" value="{{facintjour.fac_int_jour_name}}" class="validate" required>
           <label for="international_journal_journal_name">Name Of Journal</label>
    </div>
 </div>
 <div class="row">
-   <div class="input-field col s12" required>
+   <div class="input-field col s12" value="{{facintjour.fac_int_jour_date}}" required>
        <input id="international_journal_date" type="date">
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_volume" type="text" class="validate" required>
+        <input  id="international_journal_volume" type="text" value="{{facintjour.fac_int_jour_vol}}" class="validate" required>
           <label for="international_journal_volume">Volume/Issue No/Page No</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_factor" type="text" class="validate">
+        <input  id="international_journal_factor" type="text" value="{{facintjour.fac_int_jour_impact}}" class="validate">
           <label for="international_journal_factor">Impact factor of the Journal(if any)</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_citation" type="text" class="validate">
+        <input  id="international_journal_citation" type="text" value="{{facintjour.fac_int_jour_citation}}" class="validate">
           <label for="international_journal_citation">Citation index of the paper(if any)</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="international_journal_indexed" type="text" class="validate">
+        <input  id="international_journal_indexed" type="text" value="{{facintjour.fac_int_jour_status}}" class="validate">
           <label for="international_journal_indexed">Indexed or not/Hyperlink</label>
    </div>
 </div>
 
   <div class="row">
+
      <div class="input-field col s12">
+     {%if not facintjour %}
      <center><button id="fac_international_journal" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+      <center><button id="fac_international_journal_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+  {%endif%}
      </div>
   </div>
 </div>
@@ -85,5 +92,6 @@
 
 {% block extrajs %}   
  <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+ <script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
 
   {% endblock %}

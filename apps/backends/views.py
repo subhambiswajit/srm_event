@@ -410,6 +410,69 @@ def foreign_profile_generation(request, user_id):
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
+def fac_national_conferences_edit(request,conf_id):
+	if request.method == 'GET':
+		render_data = {}
+		fac_national_conf_data = FacNationalConference.objects.filter(fac_nat_conf_gusid = request.user, fac_nat_conf_id = conf_id)
+		render_data['facnatconf'] = fac_national_conf_data
+	return render (request, 'faculty_edit/fac_nat_conf_edit.html', render_data)
+
+def fac_international_conferences_edit(request,conf_id):
+	if request.method == 'GET':
+		render_data = {}
+		fac_int_conf_data = FacInternationalConference.objects.get(fac_int_conf_id = conf_id, fac_int_conf_gusid = request.user)
+		render_data['facintconf'] = fac_int_conf_data
+		return render (request, 'faculty/fac_international_conference.html', render_data)
+
+def fac_international_journal_edit(request, jour_id):
+	if request.method == 'GET':
+		render_data = {}
+		fac_international_jour_data = FacInternatonalJournals.objects.get(fac_int_jour_id = jour_id, fac_int_jour_gusid= request.user)
+		render_data['facintjour'] = fac_international_jour_data
+		return render (request, 'faculty/fac_international_journal.html', render_data)
+
+def fac_national_journal_edit(request, jour_id):
+	if request.method == 'GET':
+		render_data ={}
+		fac_national_jour_data = FacNationalJournals.objects.get(fac_nat_jour_id= jour_id, fac_nat_jour_gusid= request.user)
+		render_data['facnatjour'] = fac_national_jour_data
+		return render (request, 'faculty/fac_national_journals.html', render_data)
+
+def fac_consultancy_edit(request, cons_id):	
+	if request.method == 'GET':
+		render_data = {}
+		fac_consultancy_data = FacConsultancyActivities.objects.get(fac_con_act_id= cons_id, fac_con_act_gusid= request.user)
+		render_data['facconsultancy'] = fac_consultancy_data
+		return render (request, 'faculty/fac_consultancy_activities.html', render_data)
+
+def fac_pub_edit(request, pub_id):	
+	if request.method == 'GET':
+		render_data = {}
+		fac_pub_data = FacManualPublications.objects.get(fac_man_pub_id= pub_id, fac_man_pub_gusid= request.user)
+		render_data['facpub'] = fac_pub_data
+		return render (request, 'faculty/fac_publication_details.html', render_data)
+
+def fac_seminar_edit(request, sem_id):	
+	if request.method == 'GET':
+		render_data = {}
+		fac_sem_data = FacSeminars.objects.get(fac_sem_id= sem_id, fac_sem_gusid= request.user)
+		render_data['facstaffact'] = fac_sem_data
+		return render (request, 'faculty/fac_seminars.html', render_data)
+
+def fac_soft_dev_edit(request, dev_id):	
+	if request.method == 'GET':
+		render_data = {}
+		fac_dev_data = FacSoftwareDevelopment.objects.get(fac_soft_dev_id= dev_id, fac_soft_dev_gusid= request.user)
+		render_data['facsoftdev'] = fac_dev_data
+		return render (request, 'faculty/fac_software_development.html', render_data)
+
+def fac_awards_edit(request, award_id):	
+	if request.method == 'GET':
+		render_data = {}
+		fac_award_data = FacAwards.objects.get(fac_awards_id= award_id, fac_awards_gusid= request.user)
+		render_data['facawards'] = fac_award_data
+		return render (request, 'faculty/fac_awards.html', render_data)
+
 
 
 @login_required
@@ -461,8 +524,11 @@ def fac_soft_dev(request):
 @csrf_exempt
 def fac_awards_save(request):
 	if request.method == 'POST':
-		fac_awards = FacAwards()
-		fac_awards.fac_awards_gusid = request.user
+		if 'award_fac_id' in request.POST:
+			fac_awards = FacAwards.objects.get(fac_awards_id= request.POST['award_fac_id'], fac_awards_gusid= request.user)
+		else:
+			fac_awards = FacAwards()
+			fac_awards.fac_awards_gusid = request.user
 		if 'award_fac_name' in request.POST:
 			fac_awards.fac_awards_name = request.POST['award_fac_name']
 		if 'award_fac_desc' in request.POST:
@@ -489,8 +555,11 @@ def fac_consact_save(request):
 @csrf_exempt
 def fac_intconf_save(request):
 	if request.method == 'POST':
-		fac_intconf = FacInternationalConference()
-		fac_intconf.fac_int_conf_gusid = request.user
+		if 'international_conference_id' in request.POST:
+			fac_intconf = FacInternationalConference.objects.get(fac_int_conf_id = request.POST['international_conference_id'], fac_int_conf_gusid= request.user)
+		else:
+			fac_intconf = FacInternationalConference()
+			fac_intconf.fac_int_conf_gusid = request.user
 		if 'international_conference_title' in request.POST:
 			fac_intconf.fac_int_conf_title = request.POST['international_conference_title']
 		if 'international_conference_author' in request.POST:
@@ -511,8 +580,11 @@ def fac_intconf_save(request):
 @csrf_exempt
 def fac_intjour_save(request):
 	if request.method == 'POST':
-		fac_intjour = FacInternatonalJournals()
-		fac_intjour.fac_int_jour_gusid = request.user
+		if 'international_journal_id' in request.POST:
+			fac_intjour = FacInternatonalJournals.objects.get(fac_int_jour_id = request.POST['international_journal_id'],fac_int_jour_gusid = request.user)
+		else:
+			fac_intjour = FacInternatonalJournals()
+			fac_intjour.fac_int_jour_gusid = request.user
 		if 'international_journal_title' in request.POST:
 			fac_intjour.fac_int_jour_title = request.POST['international_journal_title']
 		if 'international_journal_author' in request.POST:
@@ -537,8 +609,11 @@ def fac_intjour_save(request):
 @csrf_exempt
 def fac_natconf_save(request):
 	if request.method == 'POST':
-		fac_natconf = FacNationalConference()
-		fac_natconf.fac_nat_conf_gusid = request.user
+		if 'national_conference_id' in request.POST:
+			fac_natconf = FacNationalConference.objects.get(fac_nat_conf_id= request.POST['national_conference_id'], fac_nat_conf_gusid = request.user)
+		else:
+			fac_natconf = FacNationalConference()
+			fac_natconf.fac_nat_conf_gusid = request.user
 		if 'national_conference_title' in request.POST:
 			fac_natconf.fac_nat_conf_title = request.POST['national_conference_title']
 		if 'national_conference_author' in request.POST:
@@ -560,8 +635,11 @@ def fac_natconf_save(request):
 @csrf_exempt
 def fac_natjour_save(request):
 	if request.method == 'POST':
-		fac_natjour = FacNationalJournals()
-		fac_natjour.fac_nat_jour_gusid = request.user
+		if 'national_journal_id' in request.POST:
+			fac_natjour = FacNationalJournals.objects.get(fac_nat_jour_id= request.POST['national_journal_id'], fac_nat_jour_gusid= request.user)
+		else:	
+			fac_natjour = FacNationalJournals()
+			fac_natjour.fac_nat_jour_gusid = request.user
 		if 'national_journal_title' in request.POST:
 			fac_natjour.fac_nat_jour_title = request.POST['national_journal_title']
 		if 'national_journal_author' in request.POST:
@@ -606,8 +684,11 @@ def fac_pub_save(request):
 @csrf_exempt
 def fac_seminar_save(request):
 	if request.method == 'POST':
-		fac_seminar = FacSeminars()
-		fac_seminar.fac_sem_gusid = request.user
+		if 'seminars_conference_id' in request.POST:
+			fac_seminar = FacSeminars.objects.get(fac_sem_id = request.POST['seminars_conference_id'], fac_sem_gusid= request.user)
+		else:
+			fac_seminar = FacSeminars()
+			fac_seminar.fac_sem_gusid = request.user
 		if 'seminars_conference_faculty' in request.POST:
 			fac_seminar.fac_sem_facname = request.POST['seminars_conference_faculty']
 		if 'seminars_conference_place' in request.POST:
@@ -622,8 +703,11 @@ def fac_seminar_save(request):
 @csrf_exempt
 def fac_soft_dev_save(request):
 	if request.method == 'POST':
-		fac_soft_dev = FacSoftwareDevelopment()
-		fac_soft_dev.fac_soft_dev_gusid = request.user
+		if 'software_project_id' in request.POST:
+			fac_soft_dev = FacSoftwareDevelopment.objects.get(fac_soft_dev_id = request.POST['software_project_id'], fac_soft_dev_gusid = request.user)
+		else:
+			fac_soft_dev = FacSoftwareDevelopment()
+			fac_soft_dev.fac_soft_dev_gusid = request.user
 		if 'software_project_name' in request.POST:
 			fac_soft_dev.fac_soft_dev_name = request.POST['software_project_name']
 		if 'software_student' in request.POST:

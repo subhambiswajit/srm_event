@@ -14,50 +14,57 @@
 
 <div class="container">
 <h4>Books/Monographs/Manuals Published</h4>
-
+<input type="hidden" id="manual_id" value="{{facpub.fac_man_pub_id}}">
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual_title" type="text" class="validate" required>
+        <input  id="manual_title" type="text" value="{{facpub.fac_man_pub_title}}" class="validate" required>
           <label for="manual_title">Title Of Book</label>
    </div>
 </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual_author" type="text" class="validate" required>
+        <input  id="manual_author" type="text" value="{{facpub.fac_man_pub_author}}" class="validate" required>
           <label for="manual_author">Name Of Authors</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual_publishers" type="text" class="validate" required>
+        <input  id="manual_publishers" type="text" value="{{facpub.fac_man_pub_publisher}}" class="validate" required>
           <label for="manual_publishers">Publishers</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual_first_edition" type="text" class="validate" required>
+        <input  id="manual_first_edition" type="text" value="{{facpub.fac_man_pub_fedition}}" class="validate" required>
           <label for="manual_first_edition">Year Of First Editions</label>
    </div>
 
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual_other_edition" type="text" class="validate" required>
+        <input  id="manual_other_edition" type="text" value="{{facpub.fac_man_pub_oedition}}" class="validate" required>
           <label for="manual_other_edition">Other Editions</label>
    </div>
 </div>
 <div class="row">
    <div class="input-field col s12">
-        <input  id="manual" type="text" class="validate" required>
+        <input  id="manual" type="text" class="validate" value="{{facpub.fac_man_pub_details}}" required>
           <label for="manual">Book/Monograph/Manual etc. </label>
    </div>
 </div>
 <div class="row">
   <div class="input-field col s12">
+  {%if not facpub %}
      <center><button id="fac_publication_submit" class="btn waves-effect waves-light center-align" type="submit" name="action">Submit
      <i class="fa fa-paper-plane right"></i>
   </button></center>
+  {%else%}
+   <center><button id="fac_publication_update" class="btn waves-effect waves-light center-align" type="submit" name="action">Update
+     <i class="fa fa-paper-plane right"></i>
+  </button></center>
+
+  {% endif %}
   </div>
 </div>
 </div>
@@ -68,5 +75,6 @@
 {% block extrajs %}   
 
 <script type="text/javascript" src="/static/js/faculty/faculty_dashboard.js"></script>
+<script type="text/javascript" src="/static/js/faculty/faculty_details_edit.js"></script>
 
   {% endblock %}
