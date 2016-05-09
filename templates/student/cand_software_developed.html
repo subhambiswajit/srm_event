@@ -12,19 +12,26 @@
 {% block base_content   %} 
 <div class="container">
   <h4>Candidate Software developed (Societal applications/For University or any other) details</h4>
+   <input type="hidden" id="devid" value="{{dev.cand_dev_id}}">
       <div class="row">
 
        <div class="input-field col s12">
-          <input id="soft" type="text" class="validate" autocomplete="off" required>
+          <input id="soft" type="text" class="validate" value="{{dev.cand_dev_name}}" autocomplete="off" required>
            <label for="soft">Name of software developed</label>
         </div>
         <div class="input-field col s12">
-          <input id="mentor" type="text" class="validate" autocomplete="off" required>
+          <input id="mentor" type="text" class="validate" value="{{dev.cand_dev_faculty}}" autocomplete="off" required>
            <label for="mentor">Faculty mentor</label>
         </div>
+        {%if not dev %}
           <center> <button class="btn waves-effect waves-light btn_send soft_dev_button" type="submit" name="action">Submit
           <i class="fa fa-paper-plane right"></i>
           </button></center>
+        {%else%}
+           <center> <button class="btn waves-effect waves-light btn_send soft_dev_update_button" type="submit" name="action">Update
+          <i class="fa fa-paper-plane right"></i>
+          </button></center>
+        {%endif%}
           
 
 
@@ -44,6 +51,6 @@
 
 
 {% block extrajs %}   
-
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
 
   {% endblock %}

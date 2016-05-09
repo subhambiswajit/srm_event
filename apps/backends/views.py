@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import *
-from django.shortcuts import resolve_url
+from django.shortcuts import resolve_url, redirect
 from apps.backends.models import *
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
@@ -187,11 +187,15 @@ def cand_performance(request):
 		messages.warning(request,"performance details successfully saved")
 	return HttpResponse("details added")
 
+
 @csrf_exempt
 def cand_nat_recog(request):
 	if request.method == 'POST':
-		candidate_nat_reg = CandidateNationalRecognition()
-		candidate_nat_reg.cand_nat_reg_gus = request.user
+		if 'recognitionid' in request.POST:
+			candidate_nat_reg = CandidateNationalRecognition.objects.get(cand_nat_reg_id = request.POST['recognitionid'], cand_nat_reg_gus = request.user)
+		else:
+			candidate_nat_reg = CandidateNationalRecognition()
+			candidate_nat_reg.cand_nat_reg_gus = request.user
 		if 'recognition_recognitions' in request.POST:
 			candidate_nat_reg.cand_nat_reg_details = request.POST['recognition_recognitions']
 		if 'recognition_year' in request.POST:
@@ -204,8 +208,11 @@ def cand_nat_recog(request):
 @csrf_exempt
 def cand_initiatives(request):
 	if request.method == 'POST':
-		candidate_initiatives = CandidateInitiatives()
-		candidate_initiatives.cand_ini_gusid = request.user
+		if 'initiativeid' in request.POST:
+			candidate_initiatives = CandidateInitiatives.objects.get(cand_ini_id = request.POST['initiativeid'], cand_ini_gusid= request.user)
+		else:
+			candidate_initiatives = CandidateInitiatives()
+			candidate_initiatives.cand_ini_gusid = request.user
 		if 'initiatives_univ' in request.POST:
 			candidate_initiatives.cand_ini_level = request.POST['initiatives_univ']
 		if 'initiatives_seminar' in request.POST:
@@ -221,8 +228,11 @@ def cand_initiatives(request):
 @csrf_exempt
 def cand_internship(request):
 	if request.method == 'POST':
-		candidate_internship = CandidateInternship()
-		candidate_internship.cand_int_gusid = request.user
+		if 'internshipid' in request.POST:
+			candidate_internship = CandidateInternship.objects.get(cand_int_id = request.POST['internshipid'], cand_int_gusid= request.user)
+		else:
+			candidate_internship = CandidateInternship()
+			candidate_internship.cand_int_gusid = request.user
 		if 'internship_comp' in request.POST:
 			candidate_internship.cand_int_name = request.POST['internship_comp']
 		if 'internship_sdate' in request.POST:
@@ -237,9 +247,11 @@ def cand_internship(request):
 @csrf_exempt
 def cand_journals(request):
 	if request.method == 'POST':
-		candidate_journals = CandidateJournals()
-		print request.POST['journels_title']
-		candidate_journals.cand_jour_gusid = request.user
+		if 'publishid' in request.POST:
+			candidate_journals = CandidateJournals.objects.get(cand_jour_id = request.POST['publishid'], cand_jour_gusid = request.user)
+		else:
+			candidate_journals = CandidateJournals()
+			candidate_journals.cand_jour_gusid = request.user
 		if 'journels_title' in request.POST:
 			candidate_journals.cand_jour_title = request.POST['journels_title']
 		if 'journels_Fauthor' in request.POST:
@@ -264,10 +276,11 @@ def cand_journals(request):
 @csrf_exempt
 def cand_paper_conference(request):
 	if request.method == 'POST':
-		print request.POST['conferences_tt']
-		print request.POST['conferences_a']
-		candidate_paper_conference = CandidatePaperConference()
-		candidate_paper_conference.cand_pap_conf_gusid = request.user
+		if 'presentid' in request.POST:
+			candidate_paper_conference = CandidatePaperConference.objects.get(cand_pap_conf_id = request.POST['presentid'], cand_pap_conf_gusid = request.user)
+		else:
+			candidate_paper_conference = CandidatePaperConference()
+			candidate_paper_conference.cand_pap_conf_gusid = request.user
 		if 'conferences_tt' in request.POST:
 			candidate_paper_conference.cand_pap_conf_title = request.POST['conferences_tt']
 		if 'conferences_a' in request.POST:
@@ -290,8 +303,11 @@ def cand_paper_conference(request):
 @csrf_exempt
 def cand_development(request):
 	if request.method == 'POST':
-		candidate_development = CandidateDevelopment()
-		candidate_development.cand_dev_gusid = request.user
+		if 'devid' in request.POST:
+			candidate_development = CandidateDevelopment.objects.get(cand_dev_id= request.POST['devid'], cand_dev_gusid= request.user)
+		else:
+			candidate_development = CandidateDevelopment()
+			candidate_development.cand_dev_gusid = request.user
 		if 'Journel_soft' in request.POST:
 			candidate_development.cand_dev_name = request.POST['Journel_soft']
 		if 'Journel_mentor' in request.POST:
@@ -322,23 +338,23 @@ def user_details(request):
 			candidatedev = CandidateDevelopment.objects.filter(cand_dev_gusid= request.user)
 			render_data['candidatedev'] = candidatedev
 		else:
-			facawards = FacAwards.objects.filter(fac_awards_gusid = request.user)
+			facawards = FacAwards.objects.filter(fac_awards_gusid = request.user, fac_awards_isused = 0)
 			render_data['facawards'] = facawards
-			facconsultancy = FacConsultancyActivities.objects.filter(fac_con_act_gusid = request.user)
+			facconsultancy = FacConsultancyActivities.objects.filter(fac_con_act_gusid = request.user, fac_con_act_isused =0)
 			render_data['facconsultancy'] = facconsultancy
-			facnatconf = FacNationalConference.objects.filter(fac_nat_conf_gusid = request.user)
+			facnatconf = FacNationalConference.objects.filter(fac_nat_conf_gusid = request.user, fac_nat_conf_isused = 0)
 			render_data['facnatconf'] = facnatconf
-			facintconf = FacInternationalConference.objects.filter(fac_int_conf_gusid = request.user)
+			facintconf = FacInternationalConference.objects.filter(fac_int_conf_gusid = request.user, fac_int_conf_isused = 0)
 			render_data['facintconf'] = facintconf
-			facintjour = FacInternatonalJournals.objects.filter(fac_int_jour_gusid = request.user)
+			facintjour = FacInternatonalJournals.objects.filter(fac_int_jour_gusid = request.user, fac_int_jour_isused = 0)
 			render_data['facintjour'] = facintjour
-			facnatjour = FacNationalJournals.objects.filter(fac_nat_jour_gusid = request.user)
+			facnatjour = FacNationalJournals.objects.filter(fac_nat_jour_gusid = request.user, fac_nat_jour_isused = 0)
 			render_data['facnatjour'] = facnatjour
-			facpub = FacManualPublications.objects.filter(fac_man_pub_gusid = request.user)
+			facpub = FacManualPublications.objects.filter(fac_man_pub_gusid = request.user, fac_man_pub_isused = 0)
 			render_data['facpub'] = facpub
-			facstaffact = FacSeminars.objects.filter(fac_sem_gusid = request.user)
+			facstaffact = FacSeminars.objects.filter(fac_sem_gusid = request.user, fac_sem_isused = 0)
 			render_data['facstaffact'] = facstaffact
-			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid = request.user)
+			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid = request.user, fac_soft_dev_isused = 0)
 			render_data['facsoftdev'] = facsoftdev
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
@@ -413,6 +429,7 @@ def foreign_profile_generation(request, user_id):
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
+@login_required
 def fac_national_conferences_edit(request,conf_id):
 	if request.method == 'GET':
 		render_data = {}
@@ -420,6 +437,7 @@ def fac_national_conferences_edit(request,conf_id):
 		render_data['facnatconf'] = fac_national_conf_data
 	return render (request, 'faculty_edit/fac_nat_conf_edit.html', render_data)
 
+@login_required
 def fac_international_conferences_edit(request,conf_id):
 	if request.method == 'GET':
 		render_data = {}
@@ -427,6 +445,7 @@ def fac_international_conferences_edit(request,conf_id):
 		render_data['facintconf'] = fac_int_conf_data
 		return render (request, 'faculty/fac_international_conference.html', render_data)
 
+@login_required
 def fac_international_journal_edit(request, jour_id):
 	if request.method == 'GET':
 		render_data = {}
@@ -434,6 +453,7 @@ def fac_international_journal_edit(request, jour_id):
 		render_data['facintjour'] = fac_international_jour_data
 		return render (request, 'faculty/fac_international_journal.html', render_data)
 
+@login_required
 def fac_national_journal_edit(request, jour_id):
 	if request.method == 'GET':
 		render_data ={}
@@ -441,6 +461,7 @@ def fac_national_journal_edit(request, jour_id):
 		render_data['facnatjour'] = fac_national_jour_data
 		return render (request, 'faculty/fac_national_journals.html', render_data)
 
+@login_required
 def fac_consultancy_edit(request, cons_id):	
 	if request.method == 'GET':
 		render_data = {}
@@ -448,6 +469,7 @@ def fac_consultancy_edit(request, cons_id):
 		render_data['facconsultancy'] = fac_consultancy_data
 		return render (request, 'faculty/fac_consultancy_activities.html', render_data)
 
+@login_required
 def fac_pub_edit(request, pub_id):	
 	if request.method == 'GET':
 		render_data = {}
@@ -455,6 +477,7 @@ def fac_pub_edit(request, pub_id):
 		render_data['facpub'] = fac_pub_data
 		return render (request, 'faculty/fac_publication_details.html', render_data)
 
+@login_required
 def fac_seminar_edit(request, sem_id):	
 	if request.method == 'GET':
 		render_data = {}
@@ -462,6 +485,7 @@ def fac_seminar_edit(request, sem_id):
 		render_data['facstaffact'] = fac_sem_data
 		return render (request, 'faculty/fac_seminars.html', render_data)
 
+@login_required
 def fac_soft_dev_edit(request, dev_id):	
 	if request.method == 'GET':
 		render_data = {}
@@ -469,6 +493,7 @@ def fac_soft_dev_edit(request, dev_id):
 		render_data['facsoftdev'] = fac_dev_data
 		return render (request, 'faculty/fac_software_development.html', render_data)
 
+@login_required
 def fac_awards_edit(request, award_id):	
 	if request.method == 'GET':
 		render_data = {}
@@ -476,6 +501,7 @@ def fac_awards_edit(request, award_id):
 		render_data['facawards'] = fac_award_data
 		return render (request, 'faculty/fac_awards.html', render_data)
 
+@login_required
 def student_activity_edit(request, act_id):
 	if request.method == 'GET':
 		render_data = {}
@@ -483,12 +509,137 @@ def student_activity_edit(request, act_id):
 		render_data['activity'] = stu_activity_data
 		return render (request, 'student/cand_activity.html', render_data)
 
+@login_required
 def student_performance_edit(request, per_id):
 	if request.method == 'GET':
 		render_data = {}
 		stu_performance_data = CandidatePerformance.objects.get(cand_per_id = per_id, cand_per_gusid= request.user)
 		render_data['performance'] = stu_performance_data
 		return render (request, 'student/cand_performance.html', render_data)
+
+
+@login_required
+def student_natreg_edit(request, nat_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_natreg_data = CandidateNationalRecognition.objects.get(cand_nat_reg_id = nat_id, cand_nat_reg_gus= request.user)
+		render_data['recognition'] = stu_natreg_data
+		return render (request, 'student/cand_national_recognition.html', render_data)
+
+@login_required
+def student_initiatives_edit(request, ini_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_ini_data = CandidateInitiatives.objects.get(cand_ini_id = ini_id, cand_ini_gusid= request.user)
+		render_data['initiative'] = stu_ini_data
+		return render (request, 'student/cand_initiatives.html', render_data)
+
+@login_required
+def student_internship_edit(request, int_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_int_data = CandidateInternship.objects.get(cand_int_id = int_id, cand_int_gusid= request.user)
+		render_data['internship'] = stu_int_data
+		return render (request, 'student/cand_internship_details.html', render_data)
+
+@login_required
+def student_paper_present_edit(request, pap_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_pap_data = CandidatePaperConference.objects.get(cand_pap_conf_id = pap_id, cand_pap_conf_gusid= request.user)
+		render_data['present'] = stu_pap_data
+		return render (request, 'student/cand_papers_presented.html', render_data)
+
+@login_required
+def student_paper_publish_edit(request, pap_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_publish_data = CandidateJournals.objects.get(cand_jour_id = pap_id, cand_jour_gusid= request.user)
+		render_data['publish'] = stu_publish_data
+		return render (request, 'student/cand_papers_published.html', render_data)
+
+@login_required
+def student_software_dev_edit(request, dev_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_dev_data = CandidateDevelopment.objects.get(cand_dev_id = dev_id, cand_dev_gusid= request.user)
+		render_data['dev'] = stu_dev_data
+		return render (request, 'student/cand_software_developed.html', render_data)
+
+# functions to delete a detail in faculty profile
+@login_required
+def fac_natconf_delete(request, id):
+	if request.method == 'GET':
+		data = FacNationalConference.objects.get(fac_nat_conf_id= id, fac_nat_conf_gusid = request.user)
+		data.fac_nat_conf_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_intconf_delete(request, id):
+	if request.method == 'GET':
+		data = FacInternationalConference.objects.get(fac_int_conf_id= id, fac_int_conf_gusid = request.user)
+		data.fac_int_conf_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_intjour_delete(request, id):
+	if request.method == 'GET':
+		data = FacInternatonalJournals.objects.get(fac_int_jour_id= id, fac_int_jour_gusid = request.user)
+		data.fac_int_jour_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_natjour_delete(request, id):
+	if request.method == 'GET':
+		data = FacNationalJournals.objects.get(fac_nat_jour_id= id, fac_nat_jour_gusid = request.user)
+		data.fac_nat_jour_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_consultancy_delete(request, id):
+	if request.method == 'GET':
+		data = FacConsultancyActivities.objects.get(fac_con_act_id= id, fac_con_act_gusid = request.user)
+		data.fac_con_act_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_pub_delete(request, id):
+	if request.method == 'GET':
+		data = FacManualPublications.objects.get(fac_man_pub_id= id, fac_man_pub_gusid = request.user)
+		data.fac_man_pub_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_seminar_delete(request, id):
+	if request.method == 'GET':
+		data = FacSeminars.objects.get(fac_sem_id= id, fac_sem_gusid = request.user)
+		data.fac_sem_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_soft_dev_delete(request, id):
+	if request.method == 'GET':
+		data = FacSoftwareDevelopment.objects.get(fac_soft_dev_id= id, fac_soft_dev_gusid = request.user)
+		data.fac_soft_dev_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+@login_required
+def fac_awards_delete(request, id):
+	if request.method == 'GET':
+		data = FacAwards.objects.get(fac_awards_id= id, fac_awards_gusid = request.user)
+		data.fac_awards_isused = 1
+		data.save()
+	return redirect('apps.backends.views.user_details')
+
+# functions to delete details in a student profile.
 
 @login_required
 def fac_awards(request):

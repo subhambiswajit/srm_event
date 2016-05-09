@@ -12,56 +12,63 @@
 {% block base_content   %} 
 <div class="container">
   <h4>Candidate Papers Published in National/ International Journals details</h4>
+  <input type="hidden" id="publishid" value="{{publish.cand_jour_id}}">
       <div class="row">
 
      <div class="input-field col s12">
-          <input id="title" type="text"  autocomplete="off" required>
+          <input id="title" type="text" value="{{publish.cand_jour_title}}"  autocomplete="off" required>
            <label for="title">Title of paper</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="Fauthor" type="text"  autocomplete="off" required>
+          <input id="Fauthor" type="text" value="{{publish.cand_jour_fauthor}}"  autocomplete="off" required>
            <label for="Fauthor">First author</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="oauthors" type="text" autocomplete="off" required>
+          <input id="oauthors" type="text" value="{{publish.cand_jour_oauthor}}" autocomplete="off" required>
            <label for="oauthors">Other authors</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="jname" type="text"  autocomplete="off" required>
+          <input id="jname" type="text" value="{{publish.cand_jour_name}}"  autocomplete="off" required>
            <label for="jname">Journal name</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="dt" type="date"  autocomplete="off" required>
+          <input id="dt" type="date" value="{{publish.cand_jour_date}}"  autocomplete="off" required>
            
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="vol" type="text" autocomplete="off" required>
+          <input id="vol" type="text" value="{{publish.cand_jour_vol}}" autocomplete="off" required>
            <label for="vol">Volume/page number</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="ifactor" type="text" autocomplete="off" required>
+          <input id="ifactor" type="text" value="{{publish.cand_jour_impact}}" autocomplete="off" required>
            <label for="ifactor">Impact factor</label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="Citationindex" type="text" autocomplete="off" required>
+          <input id="Citationindex" type="text" value="{{publish.cand_jour_citation}}" autocomplete="off" required>
            <label for="Citationindex">Citation index </label>
         </div>
          <br><br>
                <div class="input-field col s12">
-          <input id="Indexed" type="text" autocomplete="off" required>
+          <input id="Indexed" type="text" value="{{publish.cand_jour_indexed}}" autocomplete="off" required>
            <label for="Indexed">Indexed or not/Hyperlink</label>
         </div>
-    
+    {%if not publish %}
           <center> <button class="btn waves-effect waves-light btn_send journels_button" type="submit" name="action">Submit
           <i class="fa fa-paper-plane right"></i>
           </button></center>
+    {%else%}
+          <center> <button class="btn waves-effect waves-light btn_send journels_update_button" type="submit" name="action">Update
+          <i class="fa fa-paper-plane right"></i>
+          </button></center>
+
+    {%endif%}
           
 
 
@@ -82,5 +89,5 @@
 
 {% block extrajs %}   
 
-
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
   {% endblock %}

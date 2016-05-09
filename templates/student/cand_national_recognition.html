@@ -12,20 +12,29 @@
 {% block base_content   %} 
 <div class="container">
 	<h4>Candidate National Recognition details</h4>
+  <input type="hidden" id="recognitionid" value="{{recognition.cand_nat_reg_id}}">
 		<div class="row">
 			<div class="input-field col s12">
-          <input id="recognitions" type="text" class="validate" autocomplete="off" required>
+          <input id="recognitions" type="text" class="validate" value="{{recognition.cand_nat_reg_details}}" autocomplete="off" required>
            <label for="recognitions">International/ National recognitions received details</label>
         </div>
         <br><br>
          <div class="input-field col s12">
-          <input id="yr" type="text" class="validate" autocomplete="off" required>
+          <input id="yr" type="text" class="validate" value="{{recognition.cand_nat_reg_year}}" autocomplete="off" required>
            <label for="yr">Year/section</label>
         </div>
       <br><br>
+      {%if not recognition %}
        <center> <button class="btn waves-effect waves-light btn_send recognition_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
+         {%else%}
+         <center> <button class="btn waves-effect waves-light btn_send recognition_update_button" type="submit" name="action">Update
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
+
+
+         {%endif%}
 
 
 
@@ -45,6 +54,7 @@
 
 
 {% block extrajs %}   
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
 
 
   {% endblock %}

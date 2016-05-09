@@ -39,7 +39,23 @@ urlpatterns = patterns('',
 	# student edit urls
 	url(r'student_activity_edit/(\d+)$',views.student_activity_edit, name='student_activity_edit'),
 	url(r'student_performance_edit/(\d+)$',views.student_performance_edit, name='student_performance_edit'),
+	url(r'student_natreg_edit/(\d+)$',views.student_natreg_edit, name='student_natreg_edit'),
+	url(r'student_initiatives_edit/(\d+)$',views.student_initiatives_edit, name='student_initiatives_edit'),
+	url(r'student_internship_edit/(\d+)$',views.student_internship_edit, name='student_internship_edit'),
+	url(r'student_paper_present_edit/(\d+)$',views.student_paper_present_edit, name='student_paper_present_edit'),
+	url(r'student_paper_publish_edit/(\d+)$',views.student_paper_publish_edit, name='student_paper_publish_edit'),
+	url(r'student_software_dev_edit/(\d+)$',views.student_software_dev_edit, name='student_software_dev_edit'),
 
+	# faculty delete profile urls
+	url(r'fac_natconf_delete/(\d+)$',views.fac_natconf_delete, name='fac_natconf_delete'),
+	url(r'fac_intconf_delete/(\d+)$',views.fac_intconf_delete, name='fac_intconf_delete'),
+	url(r'fac_intjour_delete/(\d+)$',views.fac_intjour_delete, name='fac_intjour_delete'),
+	url(r'fac_natjour_delete/(\d+)$',views.fac_natjour_delete, name='fac_natjour_delete'),
+	url(r'fac_consultancy_delete/(\d+)$',views.fac_consultancy_delete, name='fac_consultancy_delete'),
+	url(r'fac_pub_delete/(\d+)$',views.fac_pub_delete, name='fac_pub_delete'),
+	url(r'fac_seminar_delete/(\d+)$',views.fac_seminar_delete, name='fac_seminar_delete'),
+	url(r'fac_soft_dev_delete/(\d+)$',views.fac_soft_dev_delete, name='fac_soft_dev_delete'),
+	url(r'fac_awards_delete/(\d+)$',views.fac_awards_delete, name='fac_awards_delete'),
 	# student urls
 	url(r'cand_activity/$', views.candidate_activity, name='cand_activity'),
 	url(r'cand_performance/$', views.candidate_performance, name='cand_performance'),

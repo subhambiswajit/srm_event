@@ -127,8 +127,8 @@
 <div class="row">
     {%for nationalrecognition in nationalrecognition %}
    <div class="col s12 m12 l12 card">
-    <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+    <a href="{%url 'student_natreg_edit' nationalrecognition.cand_nat_reg_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:black"></i></a>
+   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
       <div class="row">
          <div class="col l12">
             <b> International/national recognitions recieved </b> : {{nationalrecognition.cand_nat_reg_details}}
@@ -154,7 +154,7 @@
 <div class="row">
   {%for initiatives in initiatives %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_initiatives_edit' initiatives.cand_ini_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
       <div class="row">
          <div class="col l6">
@@ -195,7 +195,7 @@
 <div class="row">
    {%for internships in internship %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_internship_edit' internships.cand_int_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
      
     <div class="row">
@@ -228,7 +228,7 @@ Papers Published in National/ International Journals<hr>
 <div class="row">
   {%for candidatejournals in candidatejournals %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_paper_publish_edit' candidatejournals.cand_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
      <div class="col l6">
@@ -284,7 +284,7 @@ Papers Presented in in National/ International Conferences<hr>
 <div class="row">
   {% for candidatepaperconference in candidatepaperconference %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_paper_present_edit' candidatepaperconference.cand_pap_conf_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
      <div class="col l6">
@@ -334,7 +334,7 @@ Software Developed<hr>
 <div class="row">
   {% for candidatedev in candidatedev %}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_software_dev_edit' candidatedev.cand_dev_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     <div class="row">
      <div class="col l12">
@@ -387,7 +387,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
     {%if not foreign_profile %}
    <a href="{% url 'fac_nat_conf_edit' facnatconf.fac_nat_conf_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{% url 'fac_natconf_delete' facnatconf.fac_nat_conf_id %} "><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -443,7 +443,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
     {%if not foreign_profile %}
    <a href="{%url 'fac_int_conf_edit' facintconf.fac_int_conf_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_intconf_delete' facintconf.fac_int_conf_id %} "><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -494,8 +494,8 @@ Software Developed<hr>
     {%for facintjour in facintjour %}
   <div class="col s12 m12 l12 card">
    {%if not foreign_profile %}
-   <a href="{%url 'fac_int_jour_edit' facintjour.fac_int_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_int_jour_edit' facintjour.fac_int_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'fac_intjour_delete' facintjour.fac_int_jour_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
    {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -555,7 +555,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
    {%if not foreign_profile %}
    <a href="{%url 'fac_nat_jour_edit' facnatjour.fac_nat_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_natjour_delete' facnatjour.fac_nat_jour_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -615,7 +615,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
   {%if not foreign_profile %}
    <a href="{%url 'fac_consultancy_edit' facconsultancy.fac_con_act_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_consultancy_delete' facconsultancy.fac_con_act_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
    {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -652,7 +652,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
   {%if not foreign_profile %}
    <a href="{%url 'fac_pub_edit' facpub.fac_man_pub_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_pub_delete' facpub.fac_man_pub_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -701,7 +701,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
   {%if not foreign_profile %}
    <a href="{%url 'fac_seminar_edit' facstaffact.fac_sem_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_seminar_delete' facstaffact.fac_sem_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
    {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -737,7 +737,7 @@ Software Developed<hr>
   <div class="col s12 m12 l12 card">
   {%if not foreign_profile %}
    <a href="{%url 'fac_soft_dev_edit' facsoftdev.fac_soft_dev_id %} "><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_soft_dev_delete' facsoftdev.fac_soft_dev_id %} "><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
     {%endif%}
     <div class="row">
       <div class="col s6 m6 l6">
@@ -771,7 +771,7 @@ Software Developed<hr>
     <div class="row  card">
     {%if not foreign_profile %}
      <a href="{%url 'fac_awards_edit' facawards.fac_awards_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   <a href="{%url 'fac_awards_delete' facawards.fac_awards_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
       {%endif%}
       <div class="col s12 m12 l12">
         <b>Name Of Faculty with Designation:</b> {{facawards.fac_awards_name}}

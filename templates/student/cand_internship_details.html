@@ -12,22 +12,23 @@
 {% block base_content   %} 
 <div class="container">
   <h4>Candidate Internship details</h4>
+  <input type="hidden" id="internshipid" value="{{internship.cand_int_id}}">
       <div class="row">
 
     <div class="input-field col s12">
-          <input id="comp" type="text" class="validate" autocomplete="off" required>
+          <input id="comp" type="text" class="validate" value="{{internship.cand_int_name}}" autocomplete="off" required>
            <label for="comp">Company name</label>
         </div>
          <br><br>
          <div class="input-field col s12">
-          <input id="sdate" type="date"  autocomplete="off"  required>
+          <input id="sdate" type="date"  autocomplete="off" value="{{internship.cand_int_start}}"  required>
           <label for="sdate">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           start date</label> 
         </div>
          <div class="input-field col s12">
-          <input id="edate" type="date"  autocomplete="off" required>
+          <input id="edate" type="date"  autocomplete="off" value="{{internship.cand_int_end}}" required>
           <label for="sdate">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -35,13 +36,19 @@
         </div>
          <br><br>
          <div class="input-field col s12">
-          <input id="stipend" type="text" class="validate" autocomplete="off" required>
+          <input id="stipend" type="text" class="validate" value="{{internship.cand_int_stipend}}" autocomplete="off" required>
            <label for="stipend">Stipend</label>
         </div>
         <br><br> 
+        {%if not internship %}
              <center> <button class="btn waves-effect waves-light btn_send internship_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
+         {%else%}
+              <center> <button class="btn waves-effect waves-light btn_send internship_update_button" type="submit" name="action">Update
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
+         {%endif%}
 
 
 
@@ -61,5 +68,5 @@
 
 {% block extrajs %}   
 
-
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
   {% endblock %}

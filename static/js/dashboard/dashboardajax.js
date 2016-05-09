@@ -25,7 +25,7 @@
  }
  else
  {
-    Materialize.toast('Fill up all the Manditory fields!', 4000);
+    Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
    // //formtwo
@@ -56,7 +56,7 @@
       }
       else
       {
-        Materialize.toast('Fill up all the Manditory fields!', 4000);
+        Materialize.toast('Fill up all the Mandatory fields!', 4000);
       }
    // //form2 ends
 });
@@ -84,7 +84,7 @@
 }
 else
 {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
    // //form3 ends
@@ -120,7 +120,7 @@ else
  }
  else
  {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
    // //form 4 ends
@@ -154,7 +154,7 @@ else
 }
 else
 {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
  });
@@ -199,7 +199,7 @@ else
  }
  else
  {
-  Materialize.toast('Fill up all the Manditory fields!', 4000);
+  Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    // //form 6.1 ends
 });
@@ -238,14 +238,13 @@ else
  }
  else
  {
-   Materialize.toast('Fill up all the Manditory fields!', 4000);
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
    // //form 6.2 ends
 
    // //form 6.3
     $('.soft_dev_button').click(function(){
-    alert('clicked');
     var activity_soft=$('#soft').val();
     var activity_mentor=$('#mentor').val();
     if(activity_soft.length !=0 && activity_mentor.length !=0)
@@ -268,7 +267,7 @@ else
   }
   else
   {
-    Materialize.toast('Fill up all the Manditory fields!', 4000);
+    Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
 
