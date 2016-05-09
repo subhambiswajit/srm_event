@@ -24,6 +24,7 @@ urlpatterns = patterns('',
 
 	url(r'user_profile_search/$',views.user_details_search, name='user_profile_search'),
 	url(r'foreign_profile/(\d+)$',views.foreign_profile_generation, name='foreign_profile'),
+
 	# faculty details edit urls
 	url(r'fac_natconf_edit/(\d+)$',views.fac_national_conferences_edit, name='fac_nat_conf_edit'),
 	url(r'fac_intconf_edit/(\d+)$',views.fac_international_conferences_edit, name='fac_int_conf_edit'),
@@ -35,9 +36,13 @@ urlpatterns = patterns('',
 	url(r'fac_soft_dev_edit/(\d+)$',views.fac_soft_dev_edit, name='fac_soft_dev_edit'),
 	url(r'fac_awards_edit/(\d+)$',views.fac_awards_edit, name='fac_awards_edit'),
 
+	# student edit urls
+	url(r'student_activity_edit/(\d+)$',views.student_activity_edit, name='student_activity_edit'),
+	url(r'student_performance_edit/(\d+)$',views.student_performance_edit, name='student_performance_edit'),
+
 	# student urls
-	url(r'cand_activity/$', views.cand_activity, name='cand_activity'),
-	url(r'cand_performance/$', views.cand_performance, name='cand_performance'),
+	url(r'cand_activity/$', views.candidate_activity, name='cand_activity'),
+	url(r'cand_performance/$', views.candidate_performance, name='cand_performance'),
 	url(r'cand_nat_recog/$', views.cand_national_recognition, name='cand_nat_recog'),
 	url(r'cand_initiatives/$', views.candidate_initiatives, name='cand_initiatives'),
 	url(r'cand_candidate/$', views.candidate_initiatives, name='cand_initiatives'),

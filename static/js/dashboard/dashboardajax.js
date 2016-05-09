@@ -128,7 +128,7 @@ else
    // //form 5
 
     $('.internship_button').click(function(){
-    alert('clicked');
+
     var internship_comp=$('#comp').val();
     var internship_sdate=$('#sdate').val();
     var internship_edate=$('#edate').val();
@@ -163,7 +163,7 @@ else
 
    // //form 6.1
     $('.journels_button').click(function(){
-    alert('clicked');
+
     var journels_title=$('#title').val();
     var journels_Fauthor=$('#Fauthor').val();
     var journels_oauthors=$('#oauthors').val();
@@ -206,7 +206,6 @@ else
    // //form 6.2
 
     $('.conferences_button').click(function(){
-    alert('clicked');
     var conferences_tt=$('#tt').val();
     var conferences_a=$('#a').val();
     var conferences_cname=$('#cname').val();

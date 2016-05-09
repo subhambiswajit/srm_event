@@ -18,7 +18,7 @@
  <br>
  <div class="row card">
     <div class="col l4 s12">
-       <center><img class="circle responsive-img" src="{{request.user.get_thumbnail}}">
+       <center><img class="circle responsive-img" src ="{{request.user.get_thumbnail}}">
     </center>
     </div>
     <div class="col offset-l1 l3 s12">
@@ -28,7 +28,8 @@
     </div>
     <div class="col offset-l1 l3 s12">
     <br><br>
-      <b>Designation</b> : {{request.user.gus_type}} </center>
+      <center><b>Gender</b> : Male <br><br>
+      <b>Designation</b> : {{request.user.gus_type}}</center>
     </div>
  </div>
 
@@ -40,7 +41,7 @@
 <div class="row">
 {%for activity in activity%}
   <div class="col s12 m12 l12 card">
-   <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
+   <a href="{%url 'student_activity_edit' activity.candidate_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
       <div class="row">
          <div class="col l6">
@@ -49,7 +50,7 @@
          </div>
          <div class="col l6">
             
-            <b>Date of event</b> : {{activity.cand_act_date}}
+            <b>Date of event</b> : {{activity.cand_act_date|date:'M d, Y'}}
          </div>
       </div>
 
@@ -86,8 +87,8 @@
  <div class="row">
  {%for performance in performance %}
     <div class="col s12 m12 l12  card">
-     <a href=""><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
-   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+     <a href="{%url 'student_performance_edit' performance.cand_per_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:black"></i></a>
+   <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
 <div class="row">
    <div class="col l12">
       <b>Name of exam</b> : {{performance.cand_per_exam}}
@@ -160,7 +161,7 @@
             <b> International/national/state/university </b> : {{initiatives.cand_ini_level}}
       </div>
       <div class="col l6">
-            <b> Date </b> : {{initiatives.cand_ini_date}}
+            <b> Date </b> : {{initiatives.cand_ini_date|date:'M d, Y'}}
       </div>
       </div>
       <div class="row">
@@ -202,7 +203,7 @@
           <b> Company name </b> : {{internships.cand_int_name}}
     </div>
     <div class="col l6">
-          <b>Date </b> : {{internships.cand_int_start}} to {{internships.cand_int_end}}
+          <b>Date </b> : {{internships.cand_int_start|date:'M d, Y'}} to {{internships.cand_int_end|date:'M d, Y'}}
     </div>
     </div>
     <div class="row">
@@ -234,7 +235,7 @@ Papers Published in National/ International Journals<hr>
        <b>Title of paper</b> : {{candidatejournals.cand_jour_title}}
      </div>
      <div class="col l6">
-       <b>Date of publication</b> : {{candidatejournals.cand_jour_date}}
+       <b>Date of publication</b> : {{candidatejournals.cand_jour_date|date:'M d, Y'}}
      </div>
     </div>
     <div class="row">
@@ -290,7 +291,7 @@ Papers Presented in in National/ International Conferences<hr>
        <b>Title of paper</b> : {{candidatepaperconference.cand_pap_conf_title}}
      </div>
      <div class="col l6">
-       <b>Date</b> : {{candidatepaperconference.cand_pap_conf_date}}
+       <b>Date</b> : {{candidatepaperconference.cand_pap_conf_date|date:'M d, Y'}}
      </div>
     </div>
     <div class="row">
@@ -361,7 +362,8 @@ Software Developed<hr>
  
  <br>
  <div class="row card">
-   <center><img class="circle responsive-img" src="{{request.user.get_thumbnail}}">
+    <div class="col l4 s12">
+       <center><img class="circle responsive-img" src="{{request.user.get_thumbnail}}">
     </center>
     </div>
     <div class="col offset-l1 l3 s12">
@@ -407,7 +409,7 @@ Software Developed<hr>
 
      <div class="row">
       <div class="col s6 m6 l6">
-        <b>Conference Date:</b> {{facnatconf.fac_nat_conf_date}}
+        <b>Conference Date:</b> {{facnatconf.fac_nat_conf_date|date:'M d, Y'}}
       </div>
        <div class="col s6 m6 l6">
         <b>Venue:</b> {{facnatconf.fac_nat_conf_venue}}
@@ -463,7 +465,7 @@ Software Developed<hr>
 
      <div class="row">
       <div class="col s6 m6 l6">
-        <b>Conference Date:</b> {{facintconf.fac_int_conf_date}}
+        <b>Conference Date:</b> {{facintconf.fac_int_conf_date|date:'M d, Y'}}
       </div>
        <div class="col s6 m6 l6">
         <b>Venue:</b> {{facintconf.fac_int_conf_venue}}
@@ -515,7 +517,7 @@ Software Developed<hr>
 
      <div class="row">
       <div class="col s6 m6 l6">
-        <b>Publication Date:</b> {{facintjour.fac_int_jour_date}}
+        <b>Publication Date:</b> {{facintjour.fac_int_jour_date|date:'M d, Y'}}
       </div>
        <div class="col s6 m6 l6">
         <b>Volume/Issue/Page No:</b> {{facintjour.fac_int_jour_vol}}
@@ -575,7 +577,7 @@ Software Developed<hr>
 
      <div class="row">
       <div class="col s6 m6 l6">
-        <b>Publication Date:</b> {{facnatjour.fac_nat_jour_date}}
+        <b>Publication Date:</b> {{facnatjour.fac_nat_jour_date|date:'M d, Y'}}
       </div>
        <div class="col s6 m6 l6">
         <b>Volume/Issue/Page No:</b> {{facnatjour.fac_nat_jour_volume}}
@@ -712,7 +714,7 @@ Software Developed<hr>
 
     <div class="row">
       <div class="col s6 m6 l6">
-        <b>Date of Publication:</b> {{facstaffact.fac_sem_date}}
+        <b>Date of Publication:</b> {{facstaffact.fac_sem_date|date:'M d, Y'}}
       </div>
        <div class="col s6 m6 l6">
         <b>Nature Of Participation:</b> {{facstaffact.fac_sem_nature}}

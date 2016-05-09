@@ -12,33 +12,39 @@
 {% block base_content   %} 
 <div class="container">
 	<h4>Candidate Performance details</h4>
-
+  <input type="hidden" id="performanceid" value="{{performance.cand_per_id}}">
 		<div class="row">
 			<div class="input-field col s12">
-          <input id="nameofexam" type="text" class="validate" autocomplete="off" required>
+          <input id="nameofexam" type="text" class="validate" value="{{performance.cand_per_exam}}" autocomplete="off" required>
            <label for="nameofexam">Name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
 )</label>
         </div>
       <br><br>
        <div class="input-field col s12">
-          <input id="yearofpassing" type="text" class="validate" autocomplete="off" required>
+          <input id="yearofpassing" type="text" class="validate" value="{{performance.cand_per_ypass}}" autocomplete="off" required>
            <label for="yearofpassing">Year of passing</label>
         </div>
       <br><br>
       <div class="input-field col s12">
-          <input id="marks" type="text" class="validate" autocomplete="off" required>
+          <input id="marks" type="text" class="validate" value="{{performance.cand_per_marks}}" autocomplete="off" required>
            <label for="marks">Marks obtained</label>
         </div>
         <br><br>
          <div class="input-field col s12">
-          <input id="y" type="text" class="validate" autocomplete="off" required>
+          <input id="y" type="text" class="validate" value="{{performance.cand_per_year}}" autocomplete="off" required>
            <label for="y">Year/section</label>
         </div>
       <br><br>
+      {%if not performance %}
        <center> <button class="btn waves-effect waves-light btn_send performance_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
+      {%else%}
+       <center> <button class="btn waves-effect waves-light btn_send performance_update_button" type="submit" name="action">Update
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
 
+      {%endif%}
 
 
 
@@ -57,6 +63,6 @@
 
 
 {% block extrajs %}   
-
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
 
   {% endblock %}

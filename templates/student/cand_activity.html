@@ -12,36 +12,42 @@
 {% block base_content   %} 
 <div class="container">
 <h4>Candidate Activity details</h4>
-	
+	<input type="hidden" id="activityid" value="{{activity.candidate_id}}">
 	<div class="row">
 			 <div class="input-field col s12">
-          <input id="nameofevent" type="text" class="validate" autocomplete="off" required>
+          <input id="nameofevent" type="text" class="validate" value="{{activity.cand_act_name}}" autocomplete="off" required>
            <label for="nameofevent">Name of event</label>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="activitydate" type="date" autocomplete="off" required>
+          <input id="activitydate" type="date" value="{{activity.cand_act_date}}" autocomplete="off" required>
         </div>
       <br><br>
          <div class="input-field col s12">
-          <input id="natureofparticipation" type="text" class="validate" autocomplete="off" required>
+          <input id="natureofparticipation" type="text" value="{{activity.cand_act_prize}}" class="validate" autocomplete="off" required>
            <label for="natureofparticipation">Nature of participation</label>
         </div>
         <br><br>
          <div class="input-field col s12">
-          <input id="prize" type="text" class="validate" autocomplete="off" required>
+          <input id="prize" type="text" class="validate" value="{{activity.cand_act_nature}}" autocomplete="off" required>
            <label for="prize">Details of award/prizes won if any</label>
         </div>
         <br><br>
          <div class="input-field col s12">
-          <input id="year" type="text" class="validate" autocomplete="off" required>
+          <input id="year" type="text" class="validate" value="{{activity.cand_act_year}}" autocomplete="off" required>
            <label for="year">year/section</label>
         </div>
         <br><br>
+          {%if not activity %}
              <center> <button class="btn waves-effect waves-light btn_send activity_button" type="submit" name="action">Submit
              <i class="fa fa-paper-plane right"></i>
              </button></center>
+             {%else%}
+              <center> <button class="btn waves-effect waves-light btn_send activity_update_button" type="submit" name="action">Update
+             <i class="fa fa-paper-plane right"></i>
+             </button></center>
 
+             {%endif%}
 	</div>
 </div>
    {% endblock %}
@@ -50,5 +56,5 @@
 
 {% block extrajs %}   
 
-
+<script type="text/javascript" src="/static/js/student/student_details_update.js"> </script>
   {% endblock %}

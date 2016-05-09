@@ -146,13 +146,12 @@ def reset_password(request):
 
 @csrf_exempt
 def cand_activity(request):
-	if request.user:
-		print "user authentication worked"
-		
 	if request.method == 'POST':
-		candidate_activity = CandidateActivity()
-		print request.user.gus_userid
-		candidate_activity.cand_act_gusid = request.user
+		if 'activityid' in request.POST:
+			candidate_activity = CandidateActivity.objects.get(candidate_id = request.POST['activityid'], cand_act_gusid = request.user)
+		else:
+			candidate_activity = CandidateActivity()
+			candidate_activity.cand_act_gusid = request.user
 		if 'activity_name' in request.POST:
 			candidate_activity.cand_act_name = request.POST['activity_name']
 		if 'activity_date' in request.POST:
@@ -171,8 +170,11 @@ def cand_activity(request):
 @csrf_exempt
 def cand_performance(request):
 	if request.method == 'POST':
-		candidate_performance = CandidatePerformance()
-		candidate_performance.cand_per_gusid = request.user
+		if 'performanceid' in request.POST:
+			candidate_performance = CandidatePerformance.objects.get(cand_per_id = request.POST['performanceid'], cand_per_gusid = request.user)
+		else:
+			candidate_performance = CandidatePerformance()
+			candidate_performance.cand_per_gusid = request.user
 		if 'performance_exam' in request.POST:
 			candidate_performance.cand_per_exam = request.POST['performance_exam'] 
 		if 'performance_pass' in request.POST:
@@ -474,7 +476,19 @@ def fac_awards_edit(request, award_id):
 		render_data['facawards'] = fac_award_data
 		return render (request, 'faculty/fac_awards.html', render_data)
 
+def student_activity_edit(request, act_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_activity_data = CandidateActivity.objects.get(candidate_id = act_id, cand_act_gusid= request.user)
+		render_data['activity'] = stu_activity_data
+		return render (request, 'student/cand_activity.html', render_data)
 
+def student_performance_edit(request, per_id):
+	if request.method == 'GET':
+		render_data = {}
+		stu_performance_data = CandidatePerformance.objects.get(cand_per_id = per_id, cand_per_gusid= request.user)
+		render_data['performance'] = stu_performance_data
+		return render (request, 'student/cand_performance.html', render_data)
 
 @login_required
 def fac_awards(request):
@@ -517,12 +531,12 @@ def fac_seminar(request):
 	return render(request,'faculty/fac_seminars.html')
 
 @login_required
-def cand_activity(request):
+def candidate_activity(request):
 
 	return render(request,'student/cand_activity.html')
 
 @login_required
-def cand_performance(request):
+def candidate_performance(request):
 
 	return render(request,'student/cand_performance.html')
 
