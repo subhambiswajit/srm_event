@@ -430,17 +430,32 @@ def foreign_profile_generation(request, user_id):
 @login_required
 def admin_detail_search(request):
 	render_data = {}
+	fac_int_conference_data ={}
+	fac_nat_conference_data = {}
+	stu_int_conference_data = {}
+	fac_int_jour_data = {}
+	fac_nat_jour_data ={}
+	stu_jour_data = {}
 	if request.method == 'POST':
+		print 'hello'
 		search_data = request.POST['search_data']
 		search_type = request.POST['search_type']
+		print search_type
+		print search_data
 		if search_type == 'conferences':
 			fac_int_conference_data = FacInternationalConference.objects.filter(Q(fac_int_conf_title__icontains = search_data) | Q(fac_int_conf_name__icontains = search_data))
 			fac_nat_conference_data = FacNationalConference.objects.filter(Q(fac_nat_conf_title__icontains = search_data) | Q(fac_nat_conf_name__icontains = search_data))
 			stu_int_conference_data = CandidatePaperConference.objects.filter(Q(cand_pap_conf_title__icontains = search_data) | Q(cand_pap_conf_cname__icontains = search_data))
+			print fac_int_conference_data
+			print fac_nat_conference_data
+			print stu_int_conference_data
 		if search_type == 'journals':
 			fac_int_jour_data = FacInternatonalJournals.objects.filter(Q(fac_int_jour_title__icontains = search_data) | Q(fac_int_jour_name__icontains = search_data))
 			fac_nat_jour_data = FacNationalJournals.objects.filter(Q(fac_nat_jour_title__icontains = search_data) | Q(fac_nat_jour_name__icontains = search_data))	
 			stu_jour_data = CandidateJournals.objects.filter(Q(cand_jour_title__icontains = search_data) | Q(cand_jour_name__icontains = search_data))
+			print fac_int_jour_data
+			print fac_nat_jour_data
+			print stu_jour_data
 		render_data['fac_int_conf'] = fac_int_conference_data
 		render_data['fac_nat_conf'] = fac_nat_conference_data
 		render_data['stu_conf'] = stu_int_conference_data

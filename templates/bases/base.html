@@ -67,13 +67,7 @@
 				  </ul>
 				  <ul class="side-nav" id="mobile-demo">
         <li><a href="#">WELCOME {{request.user.gus_name}}</a></li><div class="divider"></div>
-         {%if request.user.gus_type = 'Faculty' %}
-				    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">UPLOAD DETAILS</a></li>
-				    {% endif %}
-
-				     {%if request.user.gus_type = 'Student' %}
-				    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">UPLOAD DETAILS</a></li>
-				    {% endif %}<div class="divider"></div>
+        <div class="divider"></div>
         <li><a href="{%url 'dashboard' %}">DASHBOARD</a></li><div class="divider"></div>
         <li><a href="{% url 'view_details' %}">MY PROFILE</a></li><div class="divider"></div>
 		 <li><a href="{%url 'user_logout' %}">LOG OUT</a></li><div class="divider"></div>
@@ -85,12 +79,20 @@
      
     <div class="nav-wrapper" style="background-color:white">
       <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons" style="color:black;">menu</i></a>
+      
       <ul class="side-nav" id="mobile-demo1">
+      <form method="POST" action = "{%url 'admin_detail_search' %}">
+      {% csrf_token %}
         <li style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;Search by : <hr></li>
-        <li><input name="group" type="radio" id="test2" />
-                    <label for="test2">Journals</label></li>
-        <li><input name="group" type="radio" id="test1" />
-                <label for="test1">Conference</label></li>
+        <li><input name="search_type" type="radio" value="journals" id="journal" />
+                    <label for="journal">Journals</label></li>
+        <li><input name="search_type" type="radio" value="conferences" id="conference" />
+                <label for="conference">Conference</label></li>
+
+        <li><input name="search_data" type="text" id="search_data" /></li>
+        <li><input  type="submit"  value="search" /></li>
+
+        </form>
       </ul>
     </div>
 
