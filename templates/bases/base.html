@@ -44,7 +44,7 @@
 			 <nav>
 				<div class="nav-wrapper">
 				   <a href="#!" class="brand-logo"><img class="left" class="responsive-img" src="/media/images/srm.png"
-      					style="height:61px;padding-left:13px">&nbsp;SRM UNIVERSITY</a>
+      					style="height:61px;padding-left:13px">&nbsp;CSE</a>
       					 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				  <ul id="nav-mobile" class="right hide-on-med-and-down">
 				    <li><a href="#">
@@ -127,10 +127,10 @@
 		        var arr=JSON.parse(data1);
 		        var len=arr.searchdata.length;
                 var inc;
-                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[0].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[0].name+'-'+arr.searchdata[0].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[0].type+'</div>'+'</a></div>';
+                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a style="width:100%" href="foreign_profile/'+arr.searchdata[0].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[0].name+'-'+arr.searchdata[0].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[0].type+'</div>'+'</a></div>';
                 for(inc=1;inc<len;inc++)
                 {
-                	results+='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[inc].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[inc].name+'-'+arr.searchdata[inc].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[inc].type+'</div>'+'</a></div>';
+                	results+='<div class="row" style="margin-bottom:2px;height:40px;"><a style="width:100%" href="foreign_profile/'+arr.searchdata[inc].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[inc].name+'-'+arr.searchdata[inc].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[inc].type+'</div>'+'</a></div>';
                 }
                 results+='<div class="row" style="margin-bottom:0px;height:10px;">&nbsp;</div>';
                 document.getElementById("panel").innerHTML =results;
