@@ -93,7 +93,7 @@
 				    <li><a href="{%url 'user_logout' %}">LOG OUT</a></li>
 				  </ul>
 				  <ul class="side-nav" id="mobile-demo">
-        <li><a href="#">WELCOME {{request.user.gus_name}}</a></li><div class="divider"></div>
+        <li style="padding-top:10px"><a href="#"><img class="circle responsive-img" src="https://scontent.fmaa1-2.fna.fbcdn.net/v/t1.0-1/c27.0.160.160/p160x160/10301525_435909603217636_6616425518403483625_n.jpg?oh=608d6009b94c31e3bb7ef4b7cab20c77&oe=57DE9D78" height="40px" width="40px">&nbsp;&nbsp;<div style=" white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden;margin-top:-78px;margin-left:48px">{{request.user.gus_name}}</div></a></li><div class="divider"></div>
         <div class="divider"></div>
         {%if request.user.gus_type = 'Faculty' %}
 				    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">UPLOAD DETAILS&nbsp;&nbsp;</a></li>
@@ -102,9 +102,10 @@
 				     {%if request.user.gus_type = 'Student' %}
 				    <li><a class="dropdown-button" href="#!" data-activates="dropdown4">UPLOAD DETAILS&nbsp;&nbsp;</a></li>
 				    {% endif %}
-        <li><a href="{%url 'dashboard' %}">DASHBOARD</a></li><div class="divider"></div>
-        <li><a href="{% url 'view_details' %}">MY PROFILE</a></li><div class="divider"></div>
-		 <li><a href="{%url 'user_logout' %}">LOG OUT</a></li><div class="divider"></div>
+       
+        <li><a href="{%url 'dashboard' %}"><i class="fa fa-briefcase fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;DASHBOARD</a></li><div class="divider"></div>
+        <li><a href="{% url 'view_details' %}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;MY PROFILE</a></li><div class="divider"></div>
+		 <li><a href="{%url 'user_logout' %}"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;LOG OUT</a></li><div class="divider"></div>
       </ul>
 				</div>
 				</nav>
@@ -112,19 +113,20 @@
        
    {%if request.user.gus_permission == 'ADMIN' %}  
     <div class="nav-wrapper" style="background-color:white">
-      <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons" style="color:black;">menu</i></a>
+      <a href="#" data-activates="mobile-demo1" class="button-collapse"><img style="margin-top:10px;    margin-left: -11px;
+    position: fixed;z-index:999" src="/media/images/unnamed.png"></a>
       
-      <ul class="side-nav" id="mobile-demo1">
+      <ul class="side-nav" id="mobile-demo1" style="top:60px!important">
       <form method="POST" action = "{%url 'admin_detail_search' %}">
       {% csrf_token %}
-        <li style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;Search by : <hr></li>
-        <li><input name="search_type" type="radio" value="journals" id="journal" />
+        <li style="color:black"><center>SEARCH BY :</center></li>
+        <li style="margin-top:-19px"><input name="search_type" type="radio" value="journals" id="journal" />
                     <label for="journal">Journals</label></li>
-        <li><input name="search_type" type="radio" value="conferences" id="conference" />
+        <li style="margin-top:-19px"><input name="search_type" type="radio" value="conferences" id="conference" />
                 <label for="conference">Conference</label></li>
 
-        <li><input name="search_data" type="text" id="search_data" /></li>
-        <li><input  type="submit"  value="search" /></li>
+        <li style="padding-left:8px;padding-right:8px;"><input style="border:solid 1px black;border-radius:5px" name="search_data" type="text" id="search_data" placeholder="&nbsp;&nbsp;&nbsp;Search"/></li>
+        <li><center><input  type="submit"  value="search" /></center></li>
 
         </form>
       </ul>
