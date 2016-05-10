@@ -36,4 +36,7 @@
 	width:301px !important;
 }
 
-
+.drag-target {
+   
+    z-index: 996 !important;
+}

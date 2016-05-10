@@ -11,46 +11,65 @@
 
 
 {% block base_content   %} 
-
 {% if request.user.gus_type = 'Student' %}
 <div class="row">
     
 
     <div class="container">
-
-   <div class="col s12 l12 m12">
+    <input type="text" class="search" id="myInput1" placeholder="search details by reg number">
+ <div id="panel1"></div>
+   <div class="col l3 s12 m12">
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="side-nav" id="mobile-demo1">
+        <li style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;Search by : <hr></li>
+        <li><input name="group" type="radio" id="test2" />
+                    <label for="test2">Journals</label></li>
+        <li><input name="group" type="radio" id="test1" />
+                <label for="test1">Conference</label></li>
+      </ul>
+    </div>
+  </nav>
+   </div>
+   <div class="col s12 l9 m12">
                 <h1 class="center-align"> Welcome </h1>
-          </div>
-          <div class="col s12 l12 m12">
-            <div class="row">
-              <div class="col s12 l12 m12 center-align">
-                <img alt="" class="circle" src="{{request.user.get_thumbnail}}" />
-                </div>
-              </div>
+                <center><img alt="" class="circle" src="{{request.user.get_thumbnail}}" /></center>
                 <h3 class="center-align"> {{request.user.gus_name}} </h3>
                 <h4 class="center-align"> {{request.user.gus_username}} </h4>
+                </div>
           </div>
 
   </div>
   <!--tabs ends-->
-  </div>
   {% endif %}
   {% if request.user.gus_type == 'Faculty' %}
       <div class="row">
-          <div class="col s12 l12 m12">
+       <input type="text" class="search" id="myInput1" placeholder="search details by reg number">
+ <div id="panel1"></div>
+      <div class="col l3 s12 m12" class="fac_sidebar">
+       <nav>
+    <div class="nav-wrapper" style="background-color:white">
+      <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons" style="color:black;">menu</i></a>
+      <ul class="side-nav" id="mobile-demo1">
+        <li style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;Search by : <hr></li>
+        <li><input name="group" type="radio" id="test2" />
+                    <label for="test2">Journals</label></li>
+        <li><input name="group" type="radio" id="test1" />
+                <label for="test1">Conference</label></li>
+      </ul>
+    </div>
+  </nav>
+      </div>
+          <div class="col s12 l9 m12">
+          <center>
                 <h1 class="center-align"> Welcome </h1>
-          </div>
-          <div class="col s12 l12 m12">
-            <div class="row">
-              <div class="col s12 l12 m12 center-align">
-                <img alt="" class="circle" src="{{request.user.get_thumbnail}}" />
-                </div>
-              </div>
+                <center><img alt="" class="circle" src="{{request.user.get_thumbnail}}" /></center>
                 <h3 class="center-align"> {{request.user.gus_name}} </h3>
                 <h4 class="center-align"> {{request.user.gus_username}} </h4>
           </div>
 
-
+          </center>
 
 
 
@@ -68,7 +87,44 @@
 
 
 {% block extrajs %}   
+<script>
+$(document).ready(function(){
+ $(".button-collapse").sideNav();
 
+$(document).on('input','#myInput1',function(e){
+
+        var x1 = $('#myInput1').val();
+        if (x1 == "")
+        {
+          $('#panel1').slideUp();
+        }
+        else
+        {
+        $('#panel1').slideDown();
+        $.ajax({
+            type: 'POST',
+              url:'user_profile_search/',
+              data:{searchdata: x1},              
+              success: function(data) {
+                alert('working');
+                data1=JSON.stringify(data);
+            var arr=JSON.parse(data1);
+            var len=arr.searchdata.length;
+                var inc;
+                var results='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[0].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[0].name+'-'+arr.searchdata[0].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[0].type+'</div>'+'</a></div>';
+                for(inc=1;inc<len;inc++)
+                {
+                  results+='<div class="row" style="margin-bottom:2px;height:40px;"><a href="foreign_profile/'+arr.searchdata[inc].id+'">'+'<div class="col s10 l10 m10">'+arr.searchdata[inc].name+'-'+arr.searchdata[inc].username+'</div>'+'<div class="col s2 l2 m2">'+arr.searchdata[inc].type+'</div>'+'</a></div>';
+                }
+                results+='<div class="row" style="margin-bottom:0px;height:10px;">&nbsp;</div>';
+                document.getElementById("panel1").innerHTML =results;
+              }
+            
+        });
+}
+ });
+});
+</script>
 
   {% endblock %}
 
