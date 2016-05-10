@@ -40,6 +40,33 @@
 					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_paper_published' %}">Conferences</a></li>
 					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'cand_software_development' %}">Software Development Details</a></li>
 					</ul>
+            {% endif %}    
+
+             {%if request.user.gus_type = 'Faculty' %}
+				 <ul style="margin-top:64px !important; width:273px !important;" id="dropdown3" class="dropdown-content">
+					  <li style="color:#17375e;"><a style="color:#17375e" href="{% url 'fac_natconf' %}">National Conference Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intconf' %}">Internatonal Conference Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_intjour' %}">International Journal Details</a></li>
+					   <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_natjour' %}">National Journal Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_consultancy' %}">Consultancy Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_pub' %}">Publication Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'fac_seminar' %}">Seminar Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_soft_dev' %}">Software Development Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'fac_awards' %}">Awards Details</a></li>
+					</ul>
+            {% endif %}         
+
+             {%if request.user.gus_type = 'Student' %}
+				 <ul style="margin-top:64px !important; width:273px !important;" id="dropdown4" class="dropdown-content">
+					  <li style="color:#17375e;"><a style="color:#17375e" href="{% url 'cand_activity' %}">Activities</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_performance' %}">Performances</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_nat_recog' %}">National Recognitions</a></li>
+					   <li style="color:#17375e"><a style="color:#17375e" href="{% url 'cand_initiatives' %}">Initiatives</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'cand_intern' %}">Internship Details</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_paper_presented' %}">Journals</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{%url 'cand_paper_published' %}">Conferences</a></li>
+					  <li style="color:#17375e"><a style="color:#17375e" href="{% url 'cand_software_development' %}">Software Development Details</a></li>
+					</ul>
             {% endif %}         
 			 <nav>
 				<div class="nav-wrapper">
@@ -68,6 +95,13 @@
 				  <ul class="side-nav" id="mobile-demo">
         <li><a href="#">WELCOME {{request.user.gus_name}}</a></li><div class="divider"></div>
         <div class="divider"></div>
+        {%if request.user.gus_type = 'Faculty' %}
+				    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">UPLOAD DETAILS&nbsp;&nbsp;</a></li>
+				    {% endif %}
+
+				     {%if request.user.gus_type = 'Student' %}
+				    <li><a class="dropdown-button" href="#!" data-activates="dropdown4">UPLOAD DETAILS&nbsp;&nbsp;</a></li>
+				    {% endif %}
         <li><a href="{%url 'dashboard' %}">DASHBOARD</a></li><div class="divider"></div>
         <li><a href="{% url 'view_details' %}">MY PROFILE</a></li><div class="divider"></div>
 		 <li><a href="{%url 'user_logout' %}">LOG OUT</a></li><div class="divider"></div>
@@ -76,7 +110,7 @@
 				</nav>
  <div class="row">
        
-     
+   {%if request.user.gus_permission == 'ADMIN' %}  
     <div class="nav-wrapper" style="background-color:white">
       <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons" style="color:black;">menu</i></a>
       
@@ -95,6 +129,7 @@
         </form>
       </ul>
     </div>
+    {%endif%}
 
 			{% block base_content   %}
 
