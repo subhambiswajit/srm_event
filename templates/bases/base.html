@@ -77,13 +77,22 @@
         <li><a href="{%url 'dashboard' %}">DASHBOARD</a></li><div class="divider"></div>
         <li><a href="{% url 'view_details' %}">MY PROFILE</a></li><div class="divider"></div>
 		 <li><a href="{%url 'user_logout' %}">LOG OUT</a></li><div class="divider"></div>
-		 <li><a href="#">
-				    	<input type="text" class="search" id="myInput1" placeholder="search details by reg number" >
-				    	<div id="panel1"></div>
-				    </a></li>
       </ul>
 				</div>
 				</nav>
+ <div class="row">
+       
+     
+    <div class="nav-wrapper" style="background-color:white">
+      <a href="#" data-activates="mobile-demo1" class="button-collapse"><i class="material-icons" style="color:black;">menu</i></a>
+      <ul class="side-nav" id="mobile-demo1">
+        <li style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;Search by : <hr></li>
+        <li><input name="group" type="radio" id="test2" />
+                    <label for="test2">Journals</label></li>
+        <li><input name="group" type="radio" id="test1" />
+                <label for="test1">Conference</label></li>
+      </ul>
+    </div>
 
 			{% block base_content   %}
 
