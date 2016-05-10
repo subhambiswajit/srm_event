@@ -76,6 +76,9 @@ urlpatterns = patterns('',
 	url(r'cand_paper_published/$', views.cand_paper_published, name='cand_paper_published'),
 	url(r'cand_software_development/$', views.cand_software_development, name='cand_software_development'),
 
+	# url for admin actions 
+	url(r'admin_detail_search/$', views.admin_detail_search, name='admin_detail_search'),
+
 
 	# faculty urls
 	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),

@@ -368,7 +368,7 @@ def user_details_search(request):
 	if request.method == 'POST':
 		if 'searchdata' in request.POST:
 			searchdata = request.POST['searchdata']
-			user_data = GlobalUsers.objects.filter(Q(gus_username__icontains = searchdata) | Q(gus_name__icontains = searchdata))
+			user_data = GlobalUsers.objects.filter(Q(gus_username__icontains = searchdata) | Q(gus_name__icontains = searchdata))[:5]
 			for t in user_data:
 				dat = {}
 				dat['id'] = t.gus_userid
@@ -377,7 +377,6 @@ def user_details_search(request):
 				dat['type'] = t.gus_type
 				filter_data.append(dat)
 			render_data['searchdata'] = filter_data
-			print render_data
 	return HttpResponse(json.dumps(render_data),content_type='application/json')
 
 @csrf_exempt
@@ -427,6 +426,28 @@ def foreign_profile_generation(request, user_id):
 			render_data['foreign_profile'] = True
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
+
+@login_required
+def admin_detail_search(request):
+	render_data = {}
+	if request.method == 'POST':
+		search_data = request.POST['search_data']
+		search_type = request.POST['search_type']
+		if search_type == 'conferences':
+			fac_int_conference_data = FacInternationalConference.objects.filter(Q(fac_int_conf_title__icontains = search_data) | Q(fac_int_conf_name__icontains = search_data))
+			fac_nat_conference_data = FacNationalConference.objects.filter(Q(fac_nat_conf_title__icontains = search_data) | Q(fac_nat_conf_name__icontains = search_data))
+			stu_int_conference_data = CandidatePaperConference.objects.filter(Q(cand_pap_conf_title__icontains = search_data) | Q(cand_pap_conf_cname__icontains = search_data))
+		if search_type == 'journals':
+			fac_int_jour_data = FacInternatonalJournals.objects.filter(Q(fac_int_jour_title__icontains = search_data) | Q(fac_int_jour_name__icontains = search_data))
+			fac_nat_jour_data = FacNationalJournals.objects.filter(Q(fac_nat_jour_title__icontains = search_data) | Q(fac_nat_jour_name__icontains = search_data))	
+			stu_jour_data = CandidateJournals.objects.filter(Q(cand_jour_title__icontains = search_data) | Q(cand_jour_name__icontains = search_data))
+		render_data['fac_int_conf'] = fac_int_conference_data
+		render_data['fac_nat_conf'] = fac_nat_conference_data
+		render_data['stu_conf'] = stu_int_conference_data
+		render_data['fac_int_jour'] = fac_int_jour_data
+		render_data['fac_nat_jour'] = fac_nat_jour_data
+		render_data['stu_jour'] = stu_jour_data
+	return render(request, 'utility/admin_search.html', render_data)
 
 @login_required
 def fac_national_conferences_edit(request,conf_id):
