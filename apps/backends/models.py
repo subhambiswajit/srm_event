@@ -25,6 +25,7 @@ class GlobalUsers(models.Model):
     gus_isused = models.IntegerField(blank=True, null=True)
     gus_modifiedon = models.DateTimeField(blank=True, null=True)
     gus_verify = models.CharField(max_length=10, blank=True)
+    gus_permission = models.CharField(max_length=20)
 
     class Meta:
         managed = False

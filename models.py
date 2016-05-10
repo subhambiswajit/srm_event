@@ -128,7 +128,7 @@ class CandidateInternship(models.Model):
     cand_int_start = models.DateTimeField(blank=True, null=True)
     cand_int_end = models.DateTimeField(blank=True, null=True)
     cand_int_stipend = models.CharField(max_length=100, blank=True)
-    cand_ini_isused = models.IntegerField()
+    cand_int_isused = models.IntegerField()
 
     class Meta:
         managed = False
@@ -400,6 +400,7 @@ class GlobalUsers(models.Model):
     gus_isused = models.IntegerField(blank=True, null=True)
     gus_modifiedon = models.DateTimeField(blank=True, null=True)
     gus_verify = models.CharField(max_length=10, blank=True)
+    gus_permission = models.CharField(max_length=20)
 
     class Meta:
         managed = False

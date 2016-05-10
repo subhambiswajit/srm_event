@@ -64,23 +64,122 @@
         </div>
         {%endfor%}
 
-        {%for fac_nat_conf in fac_nat_conf %}
+        {%for stu_conf in stu_conf %}
         <div class="col s12 m12 l12">
         
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <div class="row">
                  <div class="col l3 s3 m3">
-                    {{fac_nat_conf.fac_nat_conf_title}}
+                    {{stu_conf.cand_pap_conf_title}}
                  </div>
                   <div class="col l3 s3 m3">
-                    {{fac_nat_conf.fac_nat_conf_name}}
+                    {{stu_conf.cand_pap_conf_cname}}
                  </div>
                   <div class="col l3 s3 m3">
-                    {{fac_nat_conf.fac_nat_conf_gusid.gus_name}}
+                    {{stu_conf.cand_pap_conf_gusid.gus_name}}
                  </div>
                   <div class="col l3 s3 m3">
-                     {{fac_nat_conf.fac_nat_conf_gusid.gus_type}}
+                     {{stu_conf.cand_pap_conf_gusid.gus_type}}
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        {%endfor%}
+         {%for fac_int_jour in fac_int_jour %}
+        <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s3 m3">
+                    {{fac_int_jour.fac_int_jour_title}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_int_jour.fac_int_jour_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_int_jour.fac_int_jour_gusid.gus_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                     {{fac_int_jour.fac_int_jour_gusid.gus_type}}
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        {%endfor%}
+
+        {%for fac_nat_jour in fac_nat_jour %}
+        <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_title}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_gusid.gus_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                     {{fac_nat_jour.fac_nat_jour_gusid.gus_type}}
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        {%endfor%}
+
+         {%for fac_nat_jour in fac_nat_jour %}
+        <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_title}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{fac_nat_jour.fac_nat_jour_gusid.gus_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                     {{fac_nat_jour.fac_nat_jour_gusid.gus_type}}
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        {%endfor%}
+
+        {%for stu_jour in stu_jour %}
+        <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s3 m3">
+                    {{stu_jour.cand_jour_title}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{stu_jour.cand_jour_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                    {{stu_jour.cand_jour_gusid.gus_name}}
+                 </div>
+                  <div class="col l3 s3 m3">
+                     {{stu_jour.cand_jour_gusid.gus_type}}
                  </div>
               </div>
             </div>
