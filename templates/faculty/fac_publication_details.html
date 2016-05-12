@@ -12,7 +12,19 @@
 
 {% block base_content   %} 
 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container body_pub">
 <h4>Books/Monographs/Manuals Published</h4>
 <input type="hidden" id="manual_id" value="{{facpub.fac_man_pub_id}}">
 

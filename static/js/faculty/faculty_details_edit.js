@@ -1,4 +1,5 @@
 $('#fac_nat_conference_edit').click(function(){
+
     var national_conference_title=$('#national_conference_title').val();
     var national_conference_id=$('#national_onference_id').val();
     var national_conference_author=$('#national_conference_author').val();
@@ -46,6 +47,8 @@ else
 
 
  $('#international_conference_save').click(function(){
+   $('.preloader-wrapper').css("display","block");
+  $('.body_int_conf').css("display","none");
     var international_conference_title=$('#international_conference_title').val();
     var international_conference_id=$('#international_conference_id').val();
     var international_conference_author=$('#international_conference_author').val();
@@ -65,11 +68,14 @@ else
                        data:{international_conference_id: international_conference_id,international_conference_title: international_conference_title,international_conference_author: international_conference_author,international_conference_name :international_conference_name, international_conference_journal_name:international_conference_journal_name, international_conference_date: international_conference_date, international_conference_place: international_conference_place, international_conference_published: international_conference_published},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                         $('.body_int_conf').css("display","block");
                         Materialize.toast('International Conference details successfully added', 5000);
 
                        },
                     error: function() 
-                    { 
+                    {  $('.preloader-wrapper').css("display","none");
+                         $('.body_int_conf').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -77,12 +83,16 @@ else
 }
     else
   {
+     $('.preloader-wrapper').css("display","none");
+        $('.body_int_conf').css("display","block");
       Materialize.toast('Fill up all the Mandatory fields!', 4000);
   }
 
   });
 
 $('#fac_international_journal_update').click(function(){
+   $('.preloader-wrapper').css("display","block");
+     $('.body_int_jour').css("display","none");
     var international_journal_title=$('#international_journal_title').val();
     var international_journal_id=$('#international_journal_id').val();
     var international_journal_author=$('#international_journal_author').val();
@@ -117,11 +127,15 @@ $('#fac_international_journal_update').click(function(){
                       },              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_int_jour').css("display","block");
                         Materialize.toast('International Journal details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_int_jour').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -129,6 +143,8 @@ $('#fac_international_journal_update').click(function(){
  }
  else
  {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_int_jour').css("display","block");
    Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    });
@@ -186,6 +202,8 @@ $('#fac_international_journal_update').click(function(){
    });
 
 $('#fac_national_journal_update').click(function(){
+   $('.preloader-wrapper').css("display","block");
+     $('.body_nat_jour').css("display","none");
     var national_journal_title =$('#national_journal_title').val();
     var national_journal_id =$('#national_journal_id').val();
     var national_journal_author =$('#national_journal_author').val();
@@ -218,11 +236,15 @@ $('#fac_national_journal_update').click(function(){
                       },              
                        success: function(data) 
                        {
+                         $('.preloader-wrapper').css("display","none");
+                        $('.body_nat_jour').css("display","block");
                         Materialize.toast('National journal details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                       $('.preloader-wrapper').css("display","none");
+                        $('.body_nat_jour').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -231,12 +253,16 @@ $('#fac_national_journal_update').click(function(){
 
 else
 {
+   $('.preloader-wrapper').css("display","none");
+                        $('.body_nat_jour').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
 
 $('#consultancy_update').click(function(){
+   $('.preloader-wrapper').css("display","block");
+     $('.body_consultancy').css("display","none");
     var consultancy_nature=$('#consultancy_nature').val();
     var consultancy_id=$('#consultancy_id').val();
     var consultancy_client=$('#consultancy_client').val();
@@ -252,11 +278,15 @@ $('#consultancy_update').click(function(){
                        data:{consultancy_id:consultancy_id,consultancy_nature: consultancy_nature,consultancy_client: consultancy_client,consultancy_department: consultancy_department,consultancy_revenue:consultancy_revenue},              
                        success: function(data) 
                        {
+                         $('.preloader-wrapper').css("display","none");
+                        $('.body_consultancy').css("display","block");
                         Materialize.toast('Consultancy activity details Updated added', 5000);
 
                        },
                     error: function() 
                     { 
+                       $('.preloader-wrapper').css("display","none");
+                        $('.body_consultancy').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -264,12 +294,16 @@ $('#consultancy_update').click(function(){
 }
 else
 {
+   $('.preloader-wrapper').css("display","none");
+                        $('.body_consultancy').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
 
 $('#fac_publication_update').click(function(){
+   $('.preloader-wrapper').css("display","block");
+   $('.body_pub').css("display","none");
     var manual_title =$('#manual_title').val();
     var manual_id =$('#manual_id').val();
     var manual_author =$('#manual_author').val();
@@ -296,11 +330,15 @@ $('#fac_publication_update').click(function(){
                       },              
                        success: function(data) 
                        {
+                         $('.preloader-wrapper').css("display","none");
+                        $('.body_pub').css("display","block");
                         Materialize.toast('Publication Details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                       $('.preloader-wrapper').css("display","none");
+                        $('.body_pub').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -308,12 +346,16 @@ $('#fac_publication_update').click(function(){
 }
 else
 {
+   $('.preloader-wrapper').css("display","none");
+                        $('.body_pub').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
  });
 
 $('#fac_seminar_update').click(function(){
+   $('.preloader-wrapper').css("display","block");
+   $('.body_seminar').css("display","none");
     var seminars_conference_faculty =$('#seminars_conference_faculty').val();
     var seminars_conference_id =$('#seminars_conference_id').val();
     var seminars_conference_place =$('#seminars_conference_place').val();
@@ -334,11 +376,15 @@ $('#fac_seminar_update').click(function(){
                       },              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_seminar').css("display","block");
                         Materialize.toast('Seminar Details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_seminar').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -346,12 +392,16 @@ $('#fac_seminar_update').click(function(){
 }
 else
 {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_seminar').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
 });
 
 $('#fac_software_update').click(function(){
+  $('.preloader-wrapper').css("display","block");
+   $('.body_software').css("display","none");
     var software_project_name =$('#software_project_name').val();
     var software_project_id =$('#software_project_id').val();
     var software_student =$('#software_student').val();
@@ -368,11 +418,15 @@ $('#fac_software_update').click(function(){
                       },              
                        success: function(data) 
                        {
+                         $('.preloader-wrapper').css("display","none");
+                         $('.body_software').css("display","block");
                         Materialize.toast('Software Development Details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                       $('.preloader-wrapper').css("display","none");
+                         $('.body_software').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -380,12 +434,16 @@ $('#fac_software_update').click(function(){
 }
 else
 {
+   $('.preloader-wrapper').css("display","none");
+                         $('.body_software').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
 
  $('#fac_award_update').click(function(){
+  $('.preloader-wrapper').css("display","block");
+  $('.body_award').css("display","none");
     var award_fac_name=$('#awards_faculty_name').val();
     var award_fac_id=$('#awards_faculty_id').val();
     var award_fac_desc=$('#awards_description').val();
@@ -397,11 +455,14 @@ else
                        data:{award_fac_id: award_fac_id,award_fac_name: award_fac_name,award_fac_desc: award_fac_desc},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                         $('.body_award').css("display","block");
                         Materialize.toast('Award details successfully updated', 5000);
 
                        },
                     error: function() 
-                    { 
+                    { $('.preloader-wrapper').css("display","none");
+                         $('.body_award').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -409,6 +470,8 @@ else
  }
  else
  {
+  $('.preloader-wrapper').css("display","none");
+                         $('.body_award').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
 

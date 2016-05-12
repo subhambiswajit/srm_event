@@ -11,8 +11,19 @@
 
 
 {% block base_content   %} 
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
 
-<div class="container">
+<div class="container body_consultancy">
 <h4>Consultancy Activities</h4>
 <input type="hidden" id="consultancy_id" value="{{facconsultancy.fac_con_act_id}}">
 <div class="row">

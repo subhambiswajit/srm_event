@@ -10,28 +10,36 @@
 
 
 {% block base_content   %} 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container stud_body">
   <h4>Candidate Internship details</h4>
   <input type="hidden" id="internshipid" value="{{internship.cand_int_id}}">
       <div class="row">
 
     <div class="input-field col s12">
           <input id="comp" type="text" class="validate" value="{{internship.cand_int_name}}" autocomplete="off" required>
-           <label for="comp">Company name</label>
+           <label for="comp">Company name*</label>
         </div>
          <br><br>
          <div class="input-field col s12">
           <input id="sdate" type="date"  autocomplete="off" class= "datepicker" value="{{internship.cand_int_start |date:'Y-m-d'}}"  required>
           <label for="sdate">Start date of internship*</label>
         </div>
-         <div class="input-field col s12">
-          <input id="edate" type="date"  class= "datepicker"  autocomplete="off" value="{{internship.cand_int_end |date:'Y-m-d'}}" required>
-          <label for="edate">End date of internship*</label>
-        </div>
          <br><br>
          <div class="input-field col s12">
           <input id="stipend" type="text" class="validate" value="{{internship.cand_int_stipend}}" autocomplete="off" required>
-           <label for="stipend">Stipend</label>
+           <label for="stipend">Stipend*</label>
         </div>
         <br><br> 
         {%if not internship %}
