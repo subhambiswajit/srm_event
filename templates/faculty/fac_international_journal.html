@@ -11,8 +11,19 @@
 
 
 {% block base_content   %} 
-							
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+						
+<div class="container body_int_jour">
 <h4>International Journals</h4>
 
 <input type="hidden" id="international_journal_id" value="{{facintjour.fac_int_jour_id}}">

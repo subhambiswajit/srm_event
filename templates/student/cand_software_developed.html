@@ -10,18 +10,30 @@
 
 
 {% block base_content   %} 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container stud_body">
   <h4>Candidate Software developed (Societal applications/For University or any other) details</h4>
    <input type="hidden" id="devid" value="{{dev.cand_dev_id}}">
       <div class="row">
 
        <div class="input-field col s12">
           <input id="soft" type="text" class="validate" value="{{dev.cand_dev_name}}" autocomplete="off" required>
-           <label for="soft">Name of software developed</label>
+           <label for="soft">Name of software developed*</label>
         </div>
         <div class="input-field col s12">
           <input id="mentor" type="text" class="validate" value="{{dev.cand_dev_faculty}}" autocomplete="off" required>
-           <label for="mentor">Faculty mentor</label>
+           <label for="mentor">Faculty mentor*</label>
         </div>
         {%if not dev %}
           <center> <button class="btn waves-effect waves-light btn_send soft_dev_button" type="submit" name="action">Submit

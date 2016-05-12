@@ -10,18 +10,30 @@
 
 
 {% block base_content   %} 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container stud_body">
 	<h4>Candidate National Recognition details</h4>
   <input type="hidden" id="recognitionid" value="{{recognition.cand_nat_reg_id}}">
 		<div class="row">
 			<div class="input-field col s12">
           <input id="recognitions" type="text" class="validate" value="{{recognition.cand_nat_reg_details}}" autocomplete="off" required>
-           <label for="recognitions">International/ National recognitions received details</label>
+           <label for="recognitions">International/ National recognitions received details*</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="yr" type="text" class="validate" value="{{recognition.cand_nat_reg_year}}" autocomplete="off" required>
-           <label for="yr">Year/section</label>
+           <label for="yr">Year/section*</label>
         </div>
       <br><br>
       {%if not recognition %}

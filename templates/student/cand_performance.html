@@ -10,29 +10,41 @@
 
 
 {% block base_content   %} 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container stud_body">
 	<h4>Candidate Performance details</h4>
   <input type="hidden" id="performanceid" value="{{performance.cand_per_id}}">
 		<div class="row">
 			<div class="input-field col s12">
           <input id="nameofexam" type="text" class="validate" value="{{performance.cand_per_exam}}" autocomplete="off" required>
            <label for="nameofexam">Name of exam(ex:UPSC-IES, State PSC, GATE, CAT,TOFEL,GRE,GMAT, Others- specify
-)</label>
+)*</label>
         </div>
       <br><br>
        <div class="input-field col s12">
           <input id="yearofpassing" type="text" class="validate" value="{{performance.cand_per_ypass}}" autocomplete="off" required>
-           <label for="yearofpassing">Year of passing</label>
+           <label for="yearofpassing">Year of passing*</label>
         </div>
       <br><br>
       <div class="input-field col s12">
           <input id="marks" type="text" class="validate" value="{{performance.cand_per_marks}}" autocomplete="off" required>
-           <label for="marks">Marks obtained</label>
+           <label for="marks">Marks obtained*</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="y" type="text" class="validate" value="{{performance.cand_per_year}}" autocomplete="off" required>
-           <label for="y">Year/section</label>
+           <label for="y">Year/section*</label>
         </div>
       <br><br>
       {%if not performance %}

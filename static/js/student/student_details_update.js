@@ -1,4 +1,6 @@
  $('.activity_update_button').click(function(){
+  $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
    	var activity_name=$('#nameofevent').val();
     var activityid=$('#activityid').val();
    	var activity_date=$('#activitydate').val();
@@ -15,10 +17,14 @@
                        data:{activityid: activityid,activity_name: activity_name,activity_date: activity_date,activity_nature: activity_nature,activity_prize: activity_prize,activity_year: activity_year},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Activity details successfully updated', 5000);
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                
@@ -26,12 +32,16 @@
  }
  else
  {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
 
 
     $('.performance_update_button').click(function(){
+      $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var performance_exam=$('#nameofexam').val();
     var performanceid=$('#performanceid').val();
     var performance_pass=$('#yearofpassing').val();
@@ -48,10 +58,14 @@
                        data:{performanceid: performanceid,performance_exam: performance_exam,performance_pass: performance_pass,performance_marks: performance_marks,performance_year: performance_year},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Performance details successfully updated', 5000);
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -59,6 +73,8 @@
       }
       else
       {
+        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
         Materialize.toast('Fill up all the Mandatory fields!', 4000);
       }
    // //form2 ends
@@ -67,6 +83,8 @@
 
 
   $('.recognition_update_button').click(function(){
+    $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var recognition_recognitions=$('#recognitions').val();
     var recognitionid=$('#recognitionid').val();
     var recognition_year=$('#yr').val();
@@ -78,11 +96,15 @@
                        data:{recognitionid: recognitionid, recognition_recognitions: recognition_recognitions,recognition_year: recognition_year},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Recognition details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -90,12 +112,16 @@
 }
 else
 {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
    Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
 
 
 $('.initiatives_update_button').click(function(){
+  $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var initiatives_univ=$('#univ').val();
     var initiativeid=$('#initiativeid').val();
     var initiatives_seminar=$('#seminar').val();
@@ -111,11 +137,15 @@ $('.initiatives_update_button').click(function(){
                        data:{initiativeid: initiativeid, initiatives_univ: initiatives_univ, initiatives_seminar:  initiatives_seminar,initiatives_place: initiatives_place,initiatives_d: initiatives_d},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('initiatives details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -123,13 +153,16 @@ $('.initiatives_update_button').click(function(){
  }
  else
  {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
 
 
   $('.internship_update_button').click(function(){
-
+$('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var internship_comp=$('#comp').val();
     var internshipid=$('#internshipid').val();
     var internship_sdate=$('#sdate').val();
@@ -144,11 +177,15 @@ $('.initiatives_update_button').click(function(){
                        data:{internshipid: internshipid, internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('internship details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -156,6 +193,8 @@ $('.initiatives_update_button').click(function(){
 }
 else
 {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
@@ -163,6 +202,8 @@ else
 
 
   $('.conferences_update_button').click(function(){
+    $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var conferences_tt=$('#tt').val();
     var presentid=$('#presentid').val();
     var conferences_a=$('#a').val();
@@ -184,11 +225,15 @@ else
                          conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Paper conference details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -196,13 +241,16 @@ else
  }
  else
  {
+  $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
    Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
 
 
  $('.journels_update_button').click(function(){
-
+$('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var journels_title=$('#title').val();
     var publishid=$('#publishid').val();
     var journels_Fauthor=$('#Fauthor').val();
@@ -227,11 +275,15 @@ else
                         journels_Indexed: journels_Indexed},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Journel details successfully updated', 5000);
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -245,6 +297,8 @@ else
 });
 
 $('.soft_dev_update_button').click(function(){
+  $('.preloader-wrapper').css("display","block");
+  $('.body_stud').css("display","none");
     var devid=$('#devid').val();
     var activity_soft=$('#soft').val();
     var activity_mentor=$('#mentor').val();
@@ -256,11 +310,15 @@ $('.soft_dev_update_button').click(function(){
                        data:{devid: devid, Journel_soft: activity_soft,Journel_mentor: activity_mentor},              
                        success: function(data) 
                        {
+                        $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                         Materialize.toast('Development work details successfully updated', 5000)
 
                        },
                     error: function() 
                     { 
+                      $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -268,6 +326,8 @@ $('.soft_dev_update_button').click(function(){
   }
   else
   {
+    $('.preloader-wrapper').css("display","none");
+                        $('.body_stud').css("display","block");
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });

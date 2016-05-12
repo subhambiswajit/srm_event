@@ -10,24 +10,36 @@
 
 
 {% block base_content   %} 
-<div class="container">
+<center><div class="preloader-wrapper big active" style="display:none;margin-top:15%">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+</div></center>
+
+<div class="container stud_body">
   <h4>Candidate Papers Presented in  National/ International Conferences details</h4>
   <input type="hidden" id="presentid" value="{{present.cand_pap_conf_id}}">
       <div class="row">
 
       <div class="input-field col s12">
           <input id="tt" type="text" class="validate" value="{{present.cand_pap_conf_title}}" autocomplete="off" required>
-           <label for="tt">Title of paper</label>
+           <label for="tt">Title of paper**</label>
         </div>
        <br><br>
                <div class="input-field col s12">
           <input id="a" type="text" class="validate" value="{{present.cand_pap_conf_author}}" autocomplete="off" required>
-           <label for="a">Author</label>
+           <label for="a">Author**</label>
         </div>
         <br><br>
          <div class="input-field col s12">
           <input id="cname" type="text" class="validate" value="{{present.cand_pap_conf_cname}}" autocomplete="off" required>
-           <label for="cname">Conference name</label>
+           <label for="cname">Conference name**</label>
         </div>
         <div class="input-field col s12">
           <input id="dd" type="date"  autocomplete="off" value="{{present.cand_pap_conf_date}}" required>
@@ -35,19 +47,19 @@
         </div>
         <div class="input-field col s12">
           <input id="dr" type="text" class="validate" value="{{present.cand_pap_conf_duration}}" autocomplete="off" required>
-           <label for="dr">Duration</label>
+           <label for="dr">Duration**</label>
         </div>
         <div class="input-field col s12">
           <input id="ins" type="text" class="validate" value="{{present.cand_pap_conf_org}}" autocomplete="off" required>
-           <label for="ins">Institute organizing</label>
+           <label for="ins">Institute organizing*</label>
         </div>
          <div class="input-field col s12">
           <input id="pl" type="text" class="validate" value="{{present.cand_pap_conf_venue}}" autocomplete="off" required>
-           <label for="pl">Place</label>
+           <label for="pl">Place*</label>
         </div>
          <div class="input-field col s12">
           <input id="opt" type="text" class="validate" value="{{present.cand_pap_conf_status}}" autocomplete="off" required>
-           <label for="opt">Presented /Published/ Accepted</label>
+           <label for="opt">Presented /Published/ Accepted*</label>
         </div>
         {%if not present %}
           <center> <button class="btn waves-effect waves-light btn_send conferences_button" type="submit" name="action">Submit
