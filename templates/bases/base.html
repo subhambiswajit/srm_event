@@ -80,7 +80,7 @@
 				    </a></li>
 				    <li><a href="#">WELCOME {{request.user.gus_name}}&nbsp;&nbsp;|</a></li>
 				    {%if request.user.gus_type = 'Faculty' %}
-				    <li>UPLOAD DETAILS</li>
+				    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
 				    {% endif %}
 
 				     {%if request.user.gus_type = 'Student' %}
