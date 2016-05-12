@@ -30,7 +30,7 @@
            <label for="cname">Conference name</label>
         </div>
         <div class="input-field col s12">
-          <input id="dd" type="date"  autocomplete="off" value="{{present.cand_pap_conf_date}}" required>
+          <input id="dd" type="date"  autocomplete="off" class= "datepicker" value="{{present.cand_pap_conf_date |date:'Y-m-d'}}" required>
            
         </div>
         <div class="input-field col s12">

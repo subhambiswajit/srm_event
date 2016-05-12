@@ -1,3 +1,9 @@
+$('.datepicker').pickadate({
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 15,
+    format: 'yyyy-mm-dd' // Creates a dropdown of 15 years to control year
+  });
+
  $('.activity_update_button').click(function(){
    	var activity_name=$('#nameofevent').val();
     var activityid=$('#activityid').val();

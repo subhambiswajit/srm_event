@@ -34,10 +34,8 @@
 
 <div class="row">
    <div class="input-field col s12" required>
-       <input id="seminars_conference_date" value="{{facstaffact.fac_sem_date}}" type="date">
-        <label for="national_conference_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of Seminar*</label>
+       <input id="seminars_conference_date" class="datepicker"  value="{{facstaffact.fac_sem_date |date:'Y-m-d'}}" type="date">
+        <label for="national_conference_date">Date of Seminar*</label>
    </div>
 </div>
 <div class="row">

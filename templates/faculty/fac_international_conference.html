@@ -41,11 +41,9 @@
    </div>
 </div>
 <div class="row">
-   <div class="input-field col s12" value = "{{facintconf.fac_int_conf_date}}" required>
-       <input id="international_conference_date" type="date">
-        <label for="international_conference_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of conference*</label>
+   <div class="input-field col s12"  required>
+       <input id="international_conference_date"  value = "{{facintconf.fac_int_conf_date |date:'Y-m-d'}}" class="datepicker" type="date">
+        <label for="international_conference_date">Date of conference*</label>
    </div>
 </div>
 <div class="row">

@@ -21,18 +21,14 @@
         </div>
          <br><br>
          <div class="input-field col s12">
-          <input id="sdate" type="date"  autocomplete="off" value="{{internship.cand_int_start}}"  required>
+          <input id="sdate" type="date"  autocomplete="off" class= "datepicker" value="{{internship.cand_int_start |date:'Y-m-d'}}"  required>
           <label for="sdate">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          start date</label> 
+          Start date</label> 
         </div>
          <div class="input-field col s12">
-          <input id="edate" type="date"  autocomplete="off" value="{{internship.cand_int_end}}" required>
+          <input id="edate" type="date"  class= "datepicker"  autocomplete="off" value="{{internship.cand_int_end |date:'Y-m-d'}}" required>
           <label for="sdate">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          end date</label> 
+          End date</label> 
         </div>
          <br><br>
          <div class="input-field col s12">
