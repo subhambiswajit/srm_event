@@ -304,7 +304,8 @@
 
            <div class="input-field col s6">
            <i class="fa fa-calendar prefix"></i>
-          <input id="date" name="candidate_dob" id="date" type="date" placeholder="Date of birth" required>
+          <input id="date" name="candidate_dob" id="date" class="datepicker" type="date" placeholder="Date of birth" required>
+          <label for="date">Date of birth</label>
         </div>
 
           
@@ -356,9 +357,11 @@
 <script>
 $(document).ready(function(){
 $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 15,
+    format: 'yyyy-mm-dd' // Creates a dropdown of 15 years to control year
   });
+
 });
 </script>
 
