@@ -1,7 +1,7 @@
   
    $('.activity_button').click(function(){
     $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+   $('.stud_body').css("display","none");
    	var activity_name=$('#nameofevent').val();
    	var activity_date=$('#activitydate').val();
    	var activity_nature=$('#natureofparticipation').val();
@@ -18,13 +18,13 @@
                        success: function(data) 
                        {
                         $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Activity details successfully added', 5000);
                        },
                     error: function() 
                     { 
-                      $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                     $('.preloader-wrapper').css("display","none");
+                       $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                
@@ -32,15 +32,15 @@
  }
  else
  {
-  $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+  //$('.preloader-wrapper').css("display","none");
+                        //$('.stud_body').css("display","block");
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
    // //formtwo
         $('.performance_button').click(function(){
            $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var performance_exam=$('#nameofexam').val();
     var performance_pass=$('#yearofpassing').val();
     var performance_marks=$('#marks').val();
@@ -57,13 +57,13 @@
                        success: function(data) 
                        {
                          $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Performance details successfully added', 5000);
                        },
                     error: function() 
                     { 
                        $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -72,7 +72,7 @@
       else
       {
          $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
         Materialize.toast('Fill up all the Mandatory fields!', 4000);
       }
    // //form2 ends
@@ -80,7 +80,7 @@
    //   //form3
          $('.recognition_button').click(function(){
           $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var recognition_recognitions=$('#recognitions').val();
     var recognition_year=$('#yr').val();
     if(recognition_recognitions.length !=0 && recognition_year.length !=0)
@@ -91,13 +91,13 @@
                        data:{recognition_recognitions: recognition_recognitions,recognition_year: recognition_year},              
                        success: function(data) 
                        {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Recognition details successfully added', 5000);
 
                        },
                     error: function() 
                     { $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -105,7 +105,7 @@
 }
 else
 {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
    Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
@@ -115,7 +115,7 @@ else
 
     $('.initiatives_button').click(function(){
       $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var initiatives_univ=$('#univ').val();
     var initiatives_seminar=$('#seminar').val();
     var initiatives_event=$('#event').val();
@@ -132,13 +132,13 @@ else
                        data:{initiatives_univ: initiatives_univ, initiatives_seminar:  initiatives_seminar,initiatives_event: initiatives_event,initiatives_place: initiatives_place,initiatives_d: initiatives_d},              
                        success: function(data) 
                        {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('initiatives details successfully added', 5000);
 
                        },
                     error: function() 
                     { $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                  });
@@ -146,7 +146,7 @@ else
  }
  else
  {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
@@ -156,7 +156,7 @@ else
 
     $('.internship_button').click(function(){
 $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var internship_comp=$('#comp').val();
     var internship_sdate=$('#sdate').val();
     var internship_edate=$('#edate').val();
@@ -170,13 +170,13 @@ $('.preloader-wrapper').css("display","block");
                        data:{internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
                        success: function(data) 
                        {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('internship details successfully added', 5000);
 
                        },
                     error: function() 
                     { $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -184,7 +184,7 @@ $('.preloader-wrapper').css("display","block");
 }
 else
 {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 
@@ -195,7 +195,7 @@ else
    // //form 6.1
     $('.journels_button').click(function(){
 $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var journels_title=$('#title').val();
     var journels_Fauthor=$('#Fauthor').val();
     var journels_oauthors=$('#oauthors').val();
@@ -219,13 +219,13 @@ $('.preloader-wrapper').css("display","block");
                         journels_Indexed: journels_Indexed},              
                        success: function(data) 
                        {$('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Journel details successfully added', 5000);
 
                        },
                     error: function() 
                     { $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                  
@@ -234,7 +234,7 @@ $('.preloader-wrapper').css("display","block");
  else
  {
   $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
    // //form 6.1 ends
@@ -243,7 +243,7 @@ $('.preloader-wrapper').css("display","block");
 
     $('.conferences_button').click(function(){
       $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var conferences_tt=$('#tt').val();
     var conferences_a=$('#a').val();
     var conferences_cname=$('#cname').val();
@@ -265,14 +265,14 @@ $('.preloader-wrapper').css("display","block");
                        success: function(data) 
                        {
                         $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Paper conference details successfully added', 5000);
 
                        },
                     error: function() 
                     { 
                       $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -288,7 +288,7 @@ $('.preloader-wrapper').css("display","block");
    // //form 6.3
     $('.soft_dev_button').click(function(){
       $('.preloader-wrapper').css("display","block");
-  $('.body_stud').css("display","none");
+  $('.stud_body').css("display","none");
     var activity_soft=$('#soft').val();
     var activity_mentor=$('#mentor').val();
     if(activity_soft.length !=0 && activity_mentor.length !=0)
@@ -300,14 +300,14 @@ $('.preloader-wrapper').css("display","block");
                        success: function(data) 
                        {
                         $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                         Materialize.toast('Development work details successfully added', 5000)
 
                        },
                     error: function() 
                     { 
                       $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
                           alert("Error"); 
                      }   
                 
@@ -316,7 +316,7 @@ $('.preloader-wrapper').css("display","block");
   else
   {
     $('.preloader-wrapper').css("display","none");
-                        $('.body_stud').css("display","block");
+                        $('.stud_body').css("display","block");
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
