@@ -444,16 +444,16 @@ def admin_detail_search(request):
 		print search_type
 		print search_data
 		if search_type == 'conferences':
-			fac_int_conference_data = FacInternationalConference.objects.filter(Q(fac_int_conf_title__icontains = search_data) | Q(fac_int_conf_name__icontains = search_data))
-			fac_nat_conference_data = FacNationalConference.objects.filter(Q(fac_nat_conf_title__icontains = search_data) | Q(fac_nat_conf_name__icontains = search_data))
-			stu_int_conference_data = CandidatePaperConference.objects.filter(Q(cand_pap_conf_title__icontains = search_data) | Q(cand_pap_conf_cname__icontains = search_data))
+			fac_int_conference_data = FacInternationalConference.objects.filter(Q(fac_int_conf_title__icontains = search_data) | Q(fac_int_conf_name__icontains = search_data), fac_int_conf_isused= 0)
+			fac_nat_conference_data = FacNationalConference.objects.filter(Q(fac_nat_conf_title__icontains = search_data) | Q(fac_nat_conf_name__icontains = search_data), fac_nat_conf_isused =0)
+			stu_int_conference_data = CandidatePaperConference.objects.filter(Q(cand_pap_conf_title__icontains = search_data) | Q(cand_pap_conf_cname__icontains = search_data), cand_pap_conf_isused=0)
 			print fac_int_conference_data
 			print fac_nat_conference_data
 			print stu_int_conference_data
 		if search_type == 'journals':
-			fac_int_jour_data = FacInternatonalJournals.objects.filter(Q(fac_int_jour_title__icontains = search_data) | Q(fac_int_jour_name__icontains = search_data))
-			fac_nat_jour_data = FacNationalJournals.objects.filter(Q(fac_nat_jour_title__icontains = search_data) | Q(fac_nat_jour_name__icontains = search_data))	
-			stu_jour_data = CandidateJournals.objects.filter(Q(cand_jour_title__icontains = search_data) | Q(cand_jour_name__icontains = search_data))
+			fac_int_jour_data = FacInternatonalJournals.objects.filter(Q(fac_int_jour_title__icontains = search_data) | Q(fac_int_jour_name__icontains = search_data), fac_int_jour_isused = 0)
+			fac_nat_jour_data = FacNationalJournals.objects.filter(Q(fac_nat_jour_title__icontains = search_data) | Q(fac_nat_jour_name__icontains = search_data), fac_nat_jour_isused= 0)	
+			stu_jour_data = CandidateJournals.objects.filter(Q(cand_jour_title__icontains = search_data) | Q(cand_jour_name__icontains = search_data), cand_jour_name_isused=0)
 			print fac_int_jour_data
 			print fac_nat_jour_data
 			print stu_jour_data
