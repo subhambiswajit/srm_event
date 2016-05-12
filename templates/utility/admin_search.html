@@ -14,6 +14,24 @@
 
 <div class="container">
    <div class="row">
+    {%if not fac_int_conf and not fac_nat_conf and not stu_conf and not fac_int_jour and not fac_int_jour and not fac_nat_jour and not stu_jour %}
+       <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s3 m3">
+                    <p style="text-align:center">No records found </p>
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+
+
+    {%else%}
     {%for fac_int_conf in fac_int_conf %}
         <div class="col s12 m12 l12">
         
@@ -29,8 +47,11 @@
                   <div class="col l3 s3 m3">
                     {{fac_int_conf.fac_int_conf_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s1 m1">
                      {{fac_int_conf.fac_int_conf_gusid.gus_type}}
+                 </div>
+                 <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' fac_int_conf.fac_int_conf_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -54,8 +75,11 @@
                   <div class="col l3 s3 m3">
                     {{fac_nat_conf.fac_nat_conf_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s1 m1">
                      {{fac_nat_conf.fac_nat_conf_gusid.gus_type}}
+                 </div>
+                  <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' fac_nat_conf.fac_nat_conf_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -79,8 +103,11 @@
                   <div class="col l3 s3 m3">
                     {{stu_conf.cand_pap_conf_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s12 m1">
                      {{stu_conf.cand_pap_conf_gusid.gus_type}}
+                 </div>
+                  <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' stu_conf.cand_pap_conf_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -103,8 +130,11 @@
                   <div class="col l3 s3 m3">
                     {{fac_int_jour.fac_int_jour_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s12 m1">
                      {{fac_int_jour.fac_int_jour_gusid.gus_type}}
+                 </div>
+                 <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' fac_int_jour.fac_int_jour_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -128,8 +158,11 @@
                   <div class="col l3 s3 m3">
                     {{fac_nat_jour.fac_nat_jour_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s12 m1">
                      {{fac_nat_jour.fac_nat_jour_gusid.gus_type}}
+                 </div>
+                 <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' fac_nat_jour.fac_nat_jour_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -138,30 +171,7 @@
         </div>
         {%endfor%}
 
-         {%for fac_nat_jour in fac_nat_jour %}
-        <div class="col s12 m12 l12">
-        
-          <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-              <div class="row">
-                 <div class="col l3 s3 m3">
-                    {{fac_nat_jour.fac_nat_jour_title}}
-                 </div>
-                  <div class="col l3 s3 m3">
-                    {{fac_nat_jour.fac_nat_jour_name}}
-                 </div>
-                  <div class="col l3 s3 m3">
-                    {{fac_nat_jour.fac_nat_jour_gusid.gus_name}}
-                 </div>
-                  <div class="col l3 s3 m3">
-                     {{fac_nat_jour.fac_nat_jour_gusid.gus_type}}
-                 </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        {%endfor%}
+
 
         {%for stu_jour in stu_jour %}
         <div class="col s12 m12 l12">
@@ -178,8 +188,11 @@
                   <div class="col l3 s3 m3">
                     {{stu_jour.cand_jour_gusid.gus_name}}
                  </div>
-                  <div class="col l3 s3 m3">
+                  <div class="col l1 s12 m1">
                      {{stu_jour.cand_jour_gusid.gus_type}}
+                 </div>
+                  <div class="col l2 s12 m2">
+                     <a class="waves-effect waves-light btn" style="background-color: white;color:#17375E" href="{%url 'foreign_profile' stu_jour.cand_jour_gusid.gus_userid %}">View Profile</a>
                  </div>
               </div>
             </div>
@@ -187,6 +200,7 @@
           
         </div>
         {%endfor%}
+        {%endif%}
       </div>
 </div>
 
