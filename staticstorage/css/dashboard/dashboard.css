@@ -29,5 +29,14 @@
 	margin-top:52px;
 	width:187px!important;
 }
+.dropdown-content .active{
+	width:301px !important;
+}
+.dropdown-content {
+	width:301px !important;
+}
 
-
+.drag-target {
+   
+    z-index: 996 !important;
+}

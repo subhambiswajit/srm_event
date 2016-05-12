@@ -1,5 +1,6 @@
-   $('.activity_button').click(function(){
+ $('.activity_update_button').click(function(){
    	var activity_name=$('#nameofevent').val();
+    var activityid=$('#activityid').val();
    	var activity_date=$('#activitydate').val();
    	var activity_nature=$('#natureofparticipation').val();
    	var activity_prize=$('#prize').val();
@@ -11,10 +12,10 @@
           $.ajax ({
                        type: 'POST',
                        url:'candidate_activity/',
-                       data:{activity_name: activity_name,activity_date: activity_date,activity_nature: activity_nature,activity_prize: activity_prize,activity_year: activity_year},              
+                       data:{activityid: activityid,activity_name: activity_name,activity_date: activity_date,activity_nature: activity_nature,activity_prize: activity_prize,activity_year: activity_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Activity details successfully added', 5000);
+                        Materialize.toast('Activity details successfully updated', 5000);
                        },
                     error: function() 
                     { 
@@ -28,9 +29,11 @@
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
-   // //formtwo
-        $('.performance_button').click(function(){
+
+
+    $('.performance_update_button').click(function(){
     var performance_exam=$('#nameofexam').val();
+    var performanceid=$('#performanceid').val();
     var performance_pass=$('#yearofpassing').val();
     var performance_marks=$('#marks').val();
     var performance_year=$('#y').val();
@@ -42,10 +45,10 @@
           $.ajax ({
                        type: 'POST',
                        url:'candidate_performance/',
-                       data:{performance_exam: performance_exam,performance_pass: performance_pass,performance_marks: performance_marks,performance_year: performance_year},              
+                       data:{performanceid: performanceid,performance_exam: performance_exam,performance_pass: performance_pass,performance_marks: performance_marks,performance_year: performance_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Performance details successfully added', 5000);
+                        Materialize.toast('Performance details successfully updated', 5000);
                        },
                     error: function() 
                     { 
@@ -60,19 +63,22 @@
       }
    // //form2 ends
 });
-   //   //form3
-         $('.recognition_button').click(function(){
+
+
+
+  $('.recognition_update_button').click(function(){
     var recognition_recognitions=$('#recognitions').val();
+    var recognitionid=$('#recognitionid').val();
     var recognition_year=$('#yr').val();
     if(recognition_recognitions.length !=0 && recognition_year.length !=0)
     {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_nat_reg/',
-                       data:{recognition_recognitions: recognition_recognitions,recognition_year: recognition_year},              
+                       data:{recognitionid: recognitionid, recognition_recognitions: recognition_recognitions,recognition_year: recognition_year},              
                        success: function(data) 
                        {
-                        Materialize.toast('Recognition details successfully added', 5000);
+                        Materialize.toast('Recognition details successfully updated', 5000);
 
                        },
                     error: function() 
@@ -87,28 +93,25 @@ else
    Materialize.toast('Fill up all the Mandatory fields!', 4000);
 }
 });
-   // //form3 ends
 
-   // //form 4
 
-    $('.initiatives_button').click(function(){
+$('.initiatives_update_button').click(function(){
     var initiatives_univ=$('#univ').val();
+    var initiativeid=$('#initiativeid').val();
     var initiatives_seminar=$('#seminar').val();
-    var initiatives_event=$('#event').val();
     var initiatives_place=$('#place').val();
     var initiatives_d=$('#d').val();
 
-    if(initiatives_univ.length !=0 && initiatives_seminar.length !=0 &&
-      initiatives_event.length !=0 && initiatives_place.length !=0 &&
+    if(initiatives_univ.length !=0 && initiatives_seminar.length !=0 && initiatives_place.length !=0 &&
       initiatives_d.length !=0)
     {
           $.ajax ({
                        type: 'POST',
                        url:'candidate_initiatives/',
-                       data:{initiatives_univ: initiatives_univ, initiatives_seminar:  initiatives_seminar,initiatives_event: initiatives_event,initiatives_place: initiatives_place,initiatives_d: initiatives_d},              
+                       data:{initiativeid: initiativeid, initiatives_univ: initiatives_univ, initiatives_seminar:  initiatives_seminar,initiatives_place: initiatives_place,initiatives_d: initiatives_d},              
                        success: function(data) 
                        {
-                        Materialize.toast('initiatives details successfully added', 5000);
+                        Materialize.toast('initiatives details successfully updated', 5000);
 
                        },
                     error: function() 
@@ -123,13 +126,12 @@ else
   Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
  });
-   // //form 4 ends
 
-   // //form 5
 
-    $('.internship_button').click(function(){
+  $('.internship_update_button').click(function(){
 
     var internship_comp=$('#comp').val();
+    var internshipid=$('#internshipid').val();
     var internship_sdate=$('#sdate').val();
     var internship_edate=$('#edate').val();
     var internship_stipend=$('#stipend').val();
@@ -139,10 +141,10 @@ else
           $.ajax ({
                        type: 'POST',
                        url:'candidate_internship/',
-                       data:{internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
+                       data:{internshipid: internshipid, internship_comp: internship_comp,internship_sdate: internship_sdate,internship_edate: internship_edate,internship_stipend: internship_stipend},              
                        success: function(data) 
                        {
-                        Materialize.toast('internship details successfully added', 5000);
+                        Materialize.toast('internship details successfully updated', 5000);
 
                        },
                     error: function() 
@@ -158,13 +160,51 @@ else
 }
 
  });
-   // //form 5 ends
 
 
-   // //form 6.1
-    $('.journels_button').click(function(){
+  $('.conferences_update_button').click(function(){
+    var conferences_tt=$('#tt').val();
+    var presentid=$('#presentid').val();
+    var conferences_a=$('#a').val();
+    var conferences_cname=$('#cname').val();
+    var conferences_dd=$('#dd').val();
+    var conferences_dr=$('#dr').val();
+    var conferences_ins=$('#ins').val();
+    var conferences_pl=$('#pl').val();
+    var conferences_opt=$('#opt').val();
+    if(conferences_tt.length !=0 && conferences_a.length !=0 && conferences_cname.length !=0 &&
+      conferences_dd.length !=0 && conferences_dr.length !=0 && conferences_ins.length !=0 &&
+      conferences_pl.length !=0 && conferences_opt.length !=0)
+    {
+          $.ajax ({
+                       type: 'POST',
+                       url:'candidate_paper_conference/',
+                       data:{presentid:presentid, conferences_tt: conferences_tt,conferences_a:conferences_a,conferences_cname:conferences_cname,
+                        conferences_dd: conferences_dd,conferences_dr: conferences_dr,conferences_ins: conferences_ins,
+                         conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
+                       success: function(data) 
+                       {
+                        Materialize.toast('Paper conference details successfully updated', 5000);
+
+                       },
+                    error: function() 
+                    { 
+                          alert("Error"); 
+                     }   
+                
+   });
+ }
+ else
+ {
+   Materialize.toast('Fill up all the Mandatory fields!', 4000);
+ }
+ });
+
+
+ $('.journels_update_button').click(function(){
 
     var journels_title=$('#title').val();
+    var publishid=$('#publishid').val();
     var journels_Fauthor=$('#Fauthor').val();
     var journels_oauthors=$('#oauthors').val();
     var journels_jname=$('#jname').val();
@@ -181,13 +221,13 @@ else
           $.ajax ({
                        type: 'POST',
                        url:'candidate_journals/',
-                       data:{journels_title: journels_title,journels_Fauthor: journels_Fauthor,journels_oauthors: journels_oauthors,
+                       data:{publishid: publishid,journels_title: journels_title,journels_Fauthor: journels_Fauthor,journels_oauthors: journels_oauthors,
                         journels_jname: journels_jname,journels_dt: journels_dt,journels_vol: journels_vol,
                         journels_ifactor: journels_ifactor,journels_Citationindex: journels_Citationindex,
                         journels_Indexed: journels_Indexed},              
                        success: function(data) 
                        {
-                        Materialize.toast('Journel details successfully added', 5000);
+                        Materialize.toast('Journel details successfully updated', 5000);
 
                        },
                     error: function() 
@@ -203,48 +243,9 @@ else
  }
    // //form 6.1 ends
 });
-   // //form 6.2
 
-    $('.conferences_button').click(function(){
-    var conferences_tt=$('#tt').val();
-    var conferences_a=$('#a').val();
-    var conferences_cname=$('#cname').val();
-    var conferences_dd=$('#dd').val();
-    var conferences_dr=$('#dr').val();
-    var conferences_ins=$('#ins').val();
-    var conferences_pl=$('#pl').val();
-    var conferences_opt=$('#opt').val();
-    if(conferences_tt.length !=0 && conferences_a.length !=0 && conferences_cname.length !=0 &&
-      conferences_dd.length !=0 && conferences_dr.length !=0 && conferences_ins.length !=0 &&
-      conferences_pl.length !=0 && conferences_opt.length !=0)
-    {
-          $.ajax ({
-                       type: 'POST',
-                       url:'candidate_paper_conference/',
-                       data:{conferences_tt: conferences_tt,conferences_a:conferences_a,conferences_cname:conferences_cname,
-                        conferences_dd: conferences_dd,conferences_dr: conferences_dr,conferences_ins: conferences_ins,
-                         conferences_pl: conferences_pl,conferences_opt: conferences_opt},              
-                       success: function(data) 
-                       {
-                        Materialize.toast('Paper conference details successfully added', 5000);
-
-                       },
-                    error: function() 
-                    { 
-                          alert("Error"); 
-                     }   
-                
-   });
- }
- else
- {
-   Materialize.toast('Fill up all the Mandatory fields!', 4000);
- }
- });
-   // //form 6.2 ends
-
-   // //form 6.3
-    $('.soft_dev_button').click(function(){
+$('.soft_dev_update_button').click(function(){
+    var devid=$('#devid').val();
     var activity_soft=$('#soft').val();
     var activity_mentor=$('#mentor').val();
     if(activity_soft.length !=0 && activity_mentor.length !=0)
@@ -252,10 +253,10 @@ else
           $.ajax ({
                        type: 'POST',
                        url:'candidate_development/',
-                       data:{Journel_soft: activity_soft,Journel_mentor: activity_mentor},              
+                       data:{devid: devid, Journel_soft: activity_soft,Journel_mentor: activity_mentor},              
                        success: function(data) 
                        {
-                        Materialize.toast('Development work details successfully added', 5000)
+                        Materialize.toast('Development work details successfully updated', 5000)
 
                        },
                     error: function() 
@@ -270,5 +271,3 @@ else
     Materialize.toast('Fill up all the Mandatory fields!', 4000);
  }
   });
-
-   //form 6.3 ends
