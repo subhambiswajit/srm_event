@@ -80,7 +80,7 @@
 				    </a></li>
 				    <li><a href="#">WELCOME {{request.user.gus_name}}&nbsp;&nbsp;|</a></li>
 				    {%if request.user.gus_type = 'Faculty' %}
-				    <li><a class="dropdown-button" href="#!" data-activates="dropdown1">UPLOAD DETAILS&nbsp;&nbsp;|</a></li>
+				    <li>UPLOAD DETAILS</li>
 				    {% endif %}
 
 				     {%if request.user.gus_type = 'Student' %}
@@ -96,7 +96,27 @@
         <li style="padding-top:10px"><a href="#"><img class="circle responsive-img" src="https://scontent.fmaa1-2.fna.fbcdn.net/v/t1.0-1/c27.0.160.160/p160x160/10301525_435909603217636_6616425518403483625_n.jpg?oh=608d6009b94c31e3bb7ef4b7cab20c77&oe=57DE9D78" height="40px" width="40px">&nbsp;&nbsp;<div style=" white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden;margin-top:-78px;margin-left:48px">{{request.user.gus_name}}</div></a></li><div class="divider"></div>
         <div class="divider"></div>
         {%if request.user.gus_type = 'Faculty' %}
-				    <li><a class="dropdown-button" href="#!" data-activates="dropdown3">UPLOAD DETAILS&nbsp;&nbsp;</a></li>
+       
+        <ul class="collapsible" data-collapsible="accordion" style="color:black">
+    <li>
+      <div class="collapsible-header"><i class="fa fa-suitcase fa-2x" aria-hidden="true"></i>UPLOAD DETAILS</div><div class="divider"></div>
+      <div class="collapsible-body">
+          <ul>
+             <li style="color:#17375e;"><a style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden" href="{% url 'fac_natconf' %}">National Conference Details</a></li><hr>
+             <li style="color:#17375e"><a style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden" href="{%url 'fac_intconf' %}">Internatonal Conference Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{%url 'fac_intjour' %}">International Journal Details</a></li><hr>
+					   <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{% url 'fac_natjour' %}">National Journal Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{% url 'fac_consultancy' %}">Consultancy Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{%url 'fac_pub' %}">Publication Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{%url 'fac_seminar' %}">Seminar Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{% url 'fac_soft_dev' %}">Software Development Details</a></li><hr>
+					  <li style="color:#17375e;white-space: nowrap; width: 12em;text-overflow: ellipsis;overflow:hidden"><a style="color:#17375e" href="{% url 'fac_awards' %}">Awards Details</a></li><hr>
+          </ul>
+      </div>
+    </li>
+  </ul>
+			
+				    <!--<li><a class="dropdown-button" href="#!" data-activates="dropdown3">UPLOAD DETAILS&nbsp;&nbsp;</a></li>-->
 				    {% endif %}
 
 				     {%if request.user.gus_type = 'Student' %}
@@ -156,7 +176,9 @@
         //$("#panel").slideDown();
         $(document).ready(function(){
         	$(".button-collapse").sideNav();
-
+             $('.collapsible').collapsible({
+      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
         $(document).on('input','#myInput',function(e){
         var x = $('#myInput').val();
         if (x == "")
