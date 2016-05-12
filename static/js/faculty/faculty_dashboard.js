@@ -1,4 +1,9 @@
 
+$('.datepicker').pickadate({
+    selectMonths: false, // Creates a dropdown to control month
+    selectYears: 15,
+    format: 'yyyy-mm-dd' // Creates a dropdown of 15 years to control year
+  });
 
  $('#fac_award_submit').click(function(){
 
@@ -262,10 +267,14 @@ else
                       },              
                        success: function(data) 
                        {
+<<<<<<< HEAD
                         
                         $('.preloader-wrapper').css("display","none");
                         $('.body_nat_jour').css("display","block");
                         Materialize.toast('Award details successfully added', 5000);
+=======
+                        Materialize.toast('National journal details successfully added', 5000);
+>>>>>>> ca8902d1b09856a352787e46dc8a5a3b9b03190f
 
 
                        },

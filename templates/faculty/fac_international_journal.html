@@ -53,11 +53,9 @@
    </div>
 </div>
 <div class="row">
-   <div class="input-field col s12" value="{{facintjour.fac_int_jour_date}}" required>
-       <input id="international_journal_date" type="date">
-        <label for="international_journal_date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date of journal*</label>
+   <div class="input-field col s12" >
+       <input id="international_journal_date" class="datepicker" value="{{facintjour.fac_int_jour_date |date:'Y-m-d'}}" type="date">
+        <label for="international_journal_date">Date of journal*</label>
    </div>
 </div>
 <div class="row">

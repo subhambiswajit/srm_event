@@ -43,7 +43,7 @@
         </div>
         <br><br>
          <div class="input-field col s12">
-          <input id="d" type="date"  autocomplete="off" value="{{initiative.cand_ini_date}}" required>
+          <input id="d" type="date"  autocomplete="off"class= "datepicker" value="{{initiative.cand_ini_date |date:'Y-m-d'}}" required>
         </div>
          <br><br>
          {%if not initiative %}
