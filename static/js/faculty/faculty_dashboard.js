@@ -1,3 +1,4 @@
+ $('.preloader-wrapper').hide();
  $('#fac_award_submit').click(function(){
    	var award_fac_name=$('#awards_faculty_name').val();
    	var award_fac_desc=$('#awards_description').val();

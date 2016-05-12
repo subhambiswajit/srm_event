@@ -1,3 +1,4 @@
+  
    $('.activity_button').click(function(){
    	var activity_name=$('#nameofevent').val();
    	var activity_date=$('#activitydate').val();
