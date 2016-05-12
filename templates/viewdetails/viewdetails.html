@@ -16,6 +16,7 @@
 {%ifequal gus_type  "Student" %}
 
  <br>
+ {% if not foreign_profile %}
  <div class="row card">
     <div class="col l4 s12">
        <center><img class="circle responsive-img" src ="{{request.user.get_thumbnail}}">
@@ -32,6 +33,26 @@
       <b>Designation</b> : {{request.user.gus_type}}</center>
     </div>
  </div>
+ {%else%}
+ <div class="row card">
+    <div class="col l4 s12">
+       <center><img style="width:142px"class="circle responsive-img" src ="{{gus_data.get_thumbnail}}">
+    </center>
+    </div>
+    <div class="col offset-l1 l3 s12">
+    <br><br>
+     <center> <b>Name</b> : {{gus_data.gus_name}} <br><br>
+      <b>Register Number</b> : {{gus_data.gus_username}} </center>
+    </div>
+    <div class="col offset-l1 l3 s12">
+    <br><br>
+      <b>Designation</b> : {{gus_data.gus_type}}</center>
+    </div>
+ </div>
+
+
+
+ {%endif%}
 
 
 <!--activities-->
@@ -361,9 +382,10 @@ Software Developed<hr>
 {%ifequal gus_type  "Faculty" %}
  
  <br>
+ {% if not foreign_profile %}
  <div class="row card">
     <div class="col l4 s12">
-       <center><img class="circle responsive-img" src="{{request.user.get_thumbnail}}">
+       <center><img class="circle responsive-img" src ="{{request.user.get_thumbnail}}">
     </center>
     </div>
     <div class="col offset-l1 l3 s12">
@@ -373,9 +395,31 @@ Software Developed<hr>
     </div>
     <div class="col offset-l1 l3 s12">
     <br><br>
-      <b>Designation</b> : {{request.user.gus_type}} </center>
+      <center><b>Gender</b> : Male <br><br>
+      <b>Designation</b> : {{request.user.gus_type}}</center>
     </div>
  </div>
+ {%else%}
+ <div class="row card">
+    <div class="col l4 s12">
+       <center><img style="width:142px"class="circle responsive-img" src ="{{gus_data.get_thumbnail}}">
+    </center>
+    </div>
+    <div class="col offset-l1 l3 s12">
+    <br><br>
+     <center> <b>Name</b> : {{gus_data.gus_name}} <br><br>
+      <b>Register Number</b> : {{gus_data.gus_username}} </center>
+    </div>
+    <div class="col offset-l1 l3 s12">
+    <br><br>
+      <b>Designation</b> : {{gus_data.gus_type}}</center>
+    </div>
+ </div>
+
+
+
+ {%endif%}
+
 
 
 <h4> National Conferences </h4>

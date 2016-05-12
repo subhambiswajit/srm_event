@@ -386,6 +386,8 @@ def foreign_profile_generation(request, user_id):
 	render_data ={}
 	user_data = GlobalUsers.objects.get(gus_userid = user_check_id)
 	render_data['gus_type'] = user_data.gus_type
+	render_data['foreign_profile'] = True
+	render_data['gus_data'] = user_data
 	if request.method == 'GET':
 		if user_data.gus_type == 'Student':
 			activity = CandidateActivity.objects.filter(cand_act_gusid__gus_userid = user_check_id, cand_act_isused = 0)
@@ -423,7 +425,7 @@ def foreign_profile_generation(request, user_id):
 			render_data['facstaffact'] = facstaffact
 			facsoftdev = FacSoftwareDevelopment.objects.filter(fac_soft_dev_gusid__gus_userid = user_check_id,  fac_soft_dev_isused = 0)
 			render_data['facsoftdev'] = facsoftdev
-			render_data['foreign_profile'] = True
+			
 
 	return render (request,'viewdetails/viewdetails.html',render_data)
 
@@ -437,7 +439,6 @@ def admin_detail_search(request):
 	fac_nat_jour_data ={}
 	stu_jour_data = {}
 	if request.method == 'POST':
-		print 'hello'
 		search_data = request.POST['search_data']
 		search_type = request.POST['search_type']
 		print search_type
