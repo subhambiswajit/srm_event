@@ -1038,6 +1038,12 @@ def minutes_meeting_admin(request):
 	return render(request,'minutesofmeetings/minutesofmeetings.html')
 
 
+def minutes_meeting_view(request):
+
+
+	return render(request,'minutesofmeetings/momview.html')
+
+
 
 
 
