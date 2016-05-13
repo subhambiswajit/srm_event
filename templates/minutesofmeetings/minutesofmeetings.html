@@ -1,0 +1,119 @@
+{% extends 'bases/base.html' %}
+{% load staticfiles %}
+
+
+{% block page_title %}     National Conference Details            {% endblock %}
+
+{% block extracss %}
+
+{% endblock %}
+
+
+
+{% block base_content   %} 
+
+
+<center><h4>Minutes Of Meeting</h4></center>
+
+<div class="container">
+
+<form action="" method="POST">
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="desc" type="text">
+     <label for="desc">Description</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="moved" type="text">
+     <label for="moved">Moved By</label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="discuss" type="text">
+     <label for="discuss">Discussion</label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="desc" type="text">
+     <label for="desc">Description</label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="follow" type="text">
+     <label for="follow">Follow Up</label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="deadline" type="text">
+     <label for="deadline">Deadline</label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="input-field col l12 m12 s12">
+    <input id="date" type="date">
+     <label for="date">
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date Of Meeting</label>
+  </div>
+</div>
+
+<center> <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button></center>
+
+
+
+
+</form>
+
+</div>
+
+
+
+<div class="row">
+
+<li>hello1</li>
+<li>hello2</li>
+<li>hello3</li>
+<li>hello4</li>
+<li>hello5</li>
+<li>hello6</li>
+<li>hello7</li>
+
+</div>
+
+{% endblock %}
+
+
+{% block extrajs %}  
+
+<script type="text/javascript">
+	
+$('#demo2').scrollbox({
+  linear: true,
+  step: 1,
+  delay: 0,
+  speed: 100
+});
+
+</script>
+
+
+{% endblock %}

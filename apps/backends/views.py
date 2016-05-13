@@ -1031,6 +1031,17 @@ def fac_soft_dev_save(request):
 
 
 
+# function for minutes of meeting
+def minutes_meeting_admin(request):
+
+
+	return render(request,'minutesofmeetings/minutesofmeetings.html')
+
+
+
+
+
+
 
 
 

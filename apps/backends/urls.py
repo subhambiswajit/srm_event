@@ -79,6 +79,9 @@ urlpatterns = patterns('',
 	# url for admin actions 
 	url(r'admin_detail_search/$', views.admin_detail_search, name='admin_detail_search'),
 
+	# url for minutes of meeting 
+	url(r'minutes_meeting_admin/$', views.minutes_meeting_admin, name='minutes_meeting_admin'),
+
 
 	# faculty urls
 	url(r'fac_awards/$', views.fac_awards, name='fac_awards'),
