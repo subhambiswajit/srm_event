@@ -17,41 +17,41 @@
 
 <div class="container">
 
-<form action="" method="POST">
-
+<form action="{%url 'minutes_meeting_save' %}" method="POST">
+{% csrf_token %}
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="desc" type="text">
+    <input id="desc" name="description" type="text">
      <label for="desc">Description</label>
   </div>
 </div>
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="moved" type="text">
+    <input id="moved" name="movedby" type="text">
      <label for="moved">Moved By</label>
   </div>
 </div>
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="discuss" type="text">
-     <label for="discuss">Discussion</label>
+    <input id="venue" name="venue" type="text">
+     <label for="venue">Venue</label>
   </div>
 </div>
 
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="desc" type="text">
-     <label for="desc">Description</label>
+    <input id="discussion" name="discussion" type="text">
+     <label for="discussion">Discussion</label>
   </div>
 </div>
 
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="follow" type="text">
+    <input id="follow" name="follow" type="text">
      <label for="follow">Follow Up</label>
   </div>
 </div>
@@ -59,7 +59,7 @@
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="deadline" type="text">
+    <input id="deadline" name="deadline" type="date">
      <label for="deadline">Deadline</label>
   </div>
 </div>
@@ -67,7 +67,7 @@
 
 <div class="row">
   <div class="input-field col l12 m12 s12">
-    <input id="date" type="date">
+    <input id="date" name="meetingdate" type="date">
      <label for="date">Date Of Meeting</label>
   </div>
 </div>

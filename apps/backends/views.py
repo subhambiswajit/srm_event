@@ -1043,6 +1043,29 @@ def minutes_meeting_view(request):
 
 	return render(request,'minutesofmeetings/momview.html')
 
+def minutes_meeting_save(request):
+	if request.method == 'POST':
+		mom = MinutesOfMeeting()
+		mom.mom_gus = request.user
+		if 'description' in request.POST:
+			mom.mom_description = request.POST['description']
+		if 'movedby' in request.POST:
+			mom.mom_movedby = request.POST['movedby']
+		if 'venue' in request.POST:
+			mom.mom_venue = request.POST['venue']
+		if 'discussion' in request.POST:
+			mom.mom_discussion = request.POST['discussion']
+		if 'follow' in request.POST:
+			mom.mom_followup = request.POST['follow']
+		if 'deadline' in request.POST:
+			mom.mom_deadline = request.POST['deadline']
+		if 'meetingdate' in request.POST:
+			mom.mom_date = request.POST['meetingdate']
+		if ''
+
+
+	return render(request,'minutesofmeetings/momview.html')
+
 
 
 

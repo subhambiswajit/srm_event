@@ -61,8 +61,10 @@
 <div class="row">
 {%for activity in activity%}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_activity_edit' activity.candidate_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_activity_delete' activity.candidate_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
       <div class="row">
          <div class="col l6">
             <b>Name of event</b> : {{activity.cand_act_name}}
@@ -107,8 +109,10 @@
  <div class="row">
  {%for performance in performance %}
     <div class="col s12 m12 l12  card">
+        {%if not foreign_profile %}
      <a href="{%url 'student_performance_edit' performance.cand_per_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_performance_delete' performance.cand_per_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
 <div class="row">
    <div class="col l12">
       <b>Name of exam</b> : {{performance.cand_per_exam}}
@@ -147,8 +151,10 @@
 <div class="row">
     {%for nationalrecognition in nationalrecognition %}
    <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
     <a href="{%url 'student_natreg_edit' nationalrecognition.cand_nat_reg_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_nat_recog_delete' nationalrecognition.cand_nat_reg_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
       <div class="row">
          <div class="col l12">
             <b> International/national recognitions recieved </b> : {{nationalrecognition.cand_nat_reg_details}}
@@ -174,8 +180,10 @@
 <div class="row">
   {%for initiatives in initiatives %}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_initiatives_edit' initiatives.cand_ini_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_initiatives_delete' initiatives.cand_ini_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
       <div class="row">
          <div class="col l6">
             <b> International/national/state/university </b> : {{initiatives.cand_ini_level}}
@@ -215,8 +223,10 @@
 <div class="row">
    {%for internships in internship %}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_internship_edit' internships.cand_int_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_intern_delete' internships.cand_int_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
      
     <div class="row">
        <div class="col l6">
@@ -248,8 +258,10 @@ Papers Published in National/ International Journals<hr>
 <div class="row">
   {%for candidatejournals in candidatejournals %}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_paper_publish_edit' candidatejournals.cand_jour_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_paper_published_delete' candidatejournals.cand_jour_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
     <div class="row">
      <div class="col l6">
        <b>Title of paper</b> : {{candidatejournals.cand_jour_title}}
@@ -304,8 +316,10 @@ Papers Presented in in National/ International Conferences<hr>
 <div class="row">
   {% for candidatepaperconference in candidatepaperconference %}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_paper_present_edit' candidatepaperconference.cand_pap_conf_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_paper_presented_delete' candidatepaperconference.cand_pap_conf_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
     <div class="row">
      <div class="col l6">
        <b>Title of paper</b> : {{candidatepaperconference.cand_pap_conf_title}}
@@ -354,8 +368,10 @@ Software Developed<hr>
 <div class="row">
   {% for candidatedev in candidatedev %}
   <div class="col s12 m12 l12 card">
+      {%if not foreign_profile %}
    <a href="{%url 'student_software_dev_edit' candidatedev.cand_dev_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="edit" style="float:right;color:black"></i></a>
    <a href="{%url 'cand_software_development_delete' candidatedev.cand_dev_id %}"><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="delete" style="float:right;padding-right:8px;color:black"></i></a>
+   {%endif%}
     <div class="row">
      <div class="col l12">
        <b>Name of software</b> : {{candidatedev.cand_dev_name}}
