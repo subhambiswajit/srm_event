@@ -12,9 +12,72 @@
 
 {% block base_content   %} 
 
+<div class="container">
+
+ <div class="row">
+
+ <div class="col l12">
+             <center class="heading bar">Upcoming events</center>
+             <br>
+             <marquee BEHAVIOR="alternate" direction="up" scrolldelay="200" style="height:500px" onmouseover="this.stop();"
+             onmouseout="this.start();">
+             <br><br>
 
 
 
+             <ul class="collection">
+
+             <div class="row">  
+
+
+              <li class="collection-item avatar">
+                <img src="/media/images/srm.jpg" alt="" class="circle">
+
+                <div class="row">
+                <div class="col l12">
+                      <center><span class="title">Description</span></center>
+                </div>
+                </div>
+
+                <div class="row">
+                <div class="col l3">
+                      <span class="title">Moved By</span>
+                </div>
+                <div class="col l3">
+                      <span class="title">Date</span>
+                </div>
+                <div class="col l3">
+                      <span class="title">Deadline</span>
+                </div>
+                <div class="col l3">
+                      <span class="title">Venue</span>
+                </div>
+                </div>
+
+              <p>Follow up <br><br>
+               Discussion....
+              </p>
+              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              </li>
+
+
+
+             </div>
+            
+
+
+
+
+
+
+
+             </ul>
+
+
+             </marquee>
+   </div>
+   </div>
+   </div>
 
 
 {% endblock %}
