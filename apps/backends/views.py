@@ -1109,6 +1109,12 @@ def minutes_meeting_edit(request, mom_id):
 	render_data['mom'] = mom
 	return render(request,'minutesofmeetings/minutesofmeetings.html', render_data)
 
+def minutes_meeting_delete(request, mom_id):
+	mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
+	mom.mom_isused = 1
+	mom.save()
+	return redirect('apps.backends.views.minutes_meeting_view')
+
 
 
 
