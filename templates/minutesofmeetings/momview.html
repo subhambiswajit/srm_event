@@ -11,16 +11,42 @@
 
 
 {% block base_content   %} 
-<div id="demo2" class="scroll-text">
-      <ul>
-        <li><a href="http://news.yahoo.com/exclusive-u-directs-agents-cover-program-used-investigate-091643729.html" target="_blank">DEA Mines "National Security" Data To Spy On Americans, Now Concealing Program</a></li>
-        <li><a href="http://www.theguardian.com/science/2013/aug/05/google-sergey-brin-synthetic-beef-hamburger" target="_blank">Sergey Brin invests in synthetic beef</a></li>
-        <li><a href="http://darling.dolezel.info/en/Darling" target="_blank">OS X emulation layer for Linux</a></li>
-        <li><a href="http://www.infinum.co/the-capsized-eight/articles/is-your-android-emulator-just-too-slow" target="_blank">Fast android emulator using Virtualbox</a></li>
-        <li><a href="http://nakedsecurity.sophos.com/2013/08/05/latvia-blocking-extradition-of-gozi-writer-thanks-to-disproportionate-us-sentencing/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+nakedsecurity+%28Naked+Security+-+Sophos%29" target="_blank">Latvia blocking extradition of Gozi writer due to disproportionate US sentencing</a></li>
-        <li><a href="https://groups.google.com/forum/#!topic/google-tasks-api/T4kKnEDl6so" target="_blank">Please let me know if I should Stop developing apps for Google</a></li>
-      </ul>
-    </div>
+<div class="container">
+  <h4> <center> List of minutes of meetings </center> </h4>
+   <div class="row">
+{% for mom in mom %}
+     <div class="col s12 m12 l12">
+        
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <div class="row">
+                 <div class="col l3 s6 m3">
+                    <center>{{mom.mom_description}}</center>
+                 </div>
+                  <div class="col l3 s6 m3">
+                    <center>{{mom.mom_movedby}}</center>
+                 </div>
+                  <div class="col l2 s6 m2">
+                    <center>{{mom.mom_venue}}</center>
+                 </div>
+                  <div class="col l2 s6 m2">
+                    <center>{{mom.mom_date |date:'M d, Y'}}</center>
+                 </div>
+                 <div class="col l2 s12 m2">
+                    <a href="{%url 'minutes_meeting_edit' mom.mom_id %}"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true" title="Edit" style="float:right;color:white"></i></a>
+                    <a href=""><i class="fa fa-trash-o fa-2x" aria-hidden="true" title="Remove" style="float:right;padding-right:8px;color:white"></i></a>
+                 </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+{%endfor%}
+
+
+   </div>
+</div>
 
 
 
