@@ -405,3 +405,23 @@ class GlobalUsers(models.Model):
     class Meta:
         managed = False
         db_table = 'global_users'
+
+
+class MinutesOfMeeting(models.Model):
+    mom_id = models.IntegerField(primary_key=True)
+    mom_gus = models.ForeignKey(GlobalUsers, blank=True, null=True)
+    mom_description = models.CharField(max_length=1000, blank=True)
+    mom_movedby = models.CharField(max_length=50, blank=True)
+    mom_discussion = models.CharField(max_length=500, blank=True)
+    mom_venue = models.CharField(max_length=50, blank=True)
+    mom_date = models.DateTimeField(blank=True, null=True)
+    mom_followup = models.CharField(max_length=100, blank=True)
+    mom_deadline = models.DateTimeField(blank=True, null=True)
+    mom_broadcast = models.IntegerField(blank=True, null=True)
+    mom_status = models.CharField(max_length=20, blank=True)
+    mom_new = models.IntegerField(blank=True, null=True)
+    mom_isused = models.IntegerField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'minutes_of_meeting'

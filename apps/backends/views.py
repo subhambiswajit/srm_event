@@ -1039,9 +1039,82 @@ def minutes_meeting_admin(request):
 
 
 def minutes_meeting_view(request):
+	render_data = {}
+	mom_view = MinutesOfMeeting.objects.filter(mom_isused = 0, mom_gus_id = request.user)
+	render_data['mom'] = mom_view
+	return render(request,'minutesofmeetings/momview.html',render_data)
 
+def minutes_meeting_save(request):
+	if request.method == 'POST':
+		mom = MinutesOfMeeting()
+		mom.mom_gus_id = request.user
+		if 'description' in request.POST:
+			mom.mom_description = request.POST['description']
+		if 'movedby' in request.POST:
+			mom.mom_movedby = request.POST['movedby']
+		if 'venue' in request.POST:
+			mom.mom_venue = request.POST['venue']
+		if 'discussion' in request.POST:
+			mom.mom_discussion = request.POST['discussion']
+		if 'follow' in request.POST:
+			mom.mom_followup = request.POST['follow']
+		if 'deadline' in request.POST:
+			mom.mom_deadline = request.POST['deadline']
+		if 'meetingdate' in request.POST:
+			mom.mom_date = request.POST['meetingdate']
+		if 'category' in request.POST:
+			mom.mom_new = request.POST['category']
+		if 'broadcast' in request.POST:
+			if request.POST['broadcast'] == 'broadcast':
+				mom.mom_broadcast = 0
+		else:
+			mom.mom_broadcast = 1
+		mom.mom_isused = 0
+		mom.save()
+		messages.warning(request,"Minutes of meeting details added")
+	return render(request,'minutesofmeetings/minutesofmeetings.html')
 
-	return render(request,'minutesofmeetings/momview.html')
+def minutes_meeting_update(request, mom_id):
+	if request.method == 'POST':
+		mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
+		print request.POST['description']
+		if 'description' in request.POST:
+			mom.mom_description = request.POST['description']
+		if 'movedby' in request.POST:
+			mom.mom_movedby = request.POST['movedby']
+		if 'venue' in request.POST:
+			mom.mom_venue = request.POST['venue']
+		if 'discussion' in request.POST:
+			mom.mom_discussion = request.POST['discussion']
+		if 'follow' in request.POST:
+			mom.mom_followup = request.POST['follow']
+		if 'deadline' in request.POST:
+			mom.mom_deadline = request.POST['deadline']
+		if 'meetingdate' in request.POST:
+			mom.mom_date = request.POST['meetingdate']
+		if 'category' in request.POST:
+			mom.mom_new = request.POST['category']
+		if 'broadcast' in request.POST:
+			if request.POST['broadcast'] == 'broadcast':
+				mom.mom_broadcast = 0
+		else:
+			mom.mom_broadcast = 1
+		mom.save()
+		messages.warning(request,"Minutes of meeting details updated")
+	return render(request,'minutesofmeetings/minutesofmeetings.html')
+
+def minutes_meeting_edit(request, mom_id):
+	render_data = {}
+	mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
+	render_data['mom'] = mom
+	return render(request,'minutesofmeetings/minutesofmeetings.html', render_data)
+
+def minutes_meeting_delete(request, mom_id):
+	mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
+	mom.mom_isused = 1
+	mom.save()
+	return redirect('apps.backends.views.minutes_meeting_view')
+
 
 
 
