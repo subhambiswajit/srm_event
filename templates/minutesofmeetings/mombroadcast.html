@@ -26,7 +26,7 @@
 
 
              <ul class="collection">
-
+              {%for mom in mom %}
              <div class="row">  
 
 
@@ -35,29 +35,31 @@
 
                 <div class="row">
                 <div class="col l12">
-                      <center><span class="title">Description</span></center>
+                      <center><span class="title">{{mom.mom_description}}</span></center>
                 </div>
                 </div>
 
                 <div class="row">
                 <div class="col l3">
-                      <span class="title">Moved By</span>
+                      <span class="title">{{mom.mom_movedby}}</span>
                 </div>
                 <div class="col l3">
-                      <span class="title">Date</span>
+                      <span class="title">{{mom.mom_date |date:'M d, Y'}}</span>
                 </div>
                 <div class="col l3">
-                      <span class="title">Deadline</span>
+                      <span class="title">{{mom.mom_deadline |date:'M d, Y'}}</span>
                 </div>
                 <div class="col l3">
-                      <span class="title">Venue</span>
+                      <span class="title">{{mom.mom_venue}}</span>
                 </div>
                 </div>
 
-              <p>Follow up <br><br>
-               Discussion....
+              <p>{{mom.mom_followup}} <br><br>
+              {{mom.mom_discussion}}
               </p>
+              {%if mom.mom_new == 0 %}
               <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              {%endif%}
               </li>
 
 
@@ -70,7 +72,7 @@
 
 
 
-
+             {%endfor%}
              </ul>
 
 

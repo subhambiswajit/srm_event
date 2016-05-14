@@ -1123,9 +1123,10 @@ def minutes_meeting_delete(request, mom_id):
 
 @login_required
 def minutes_meeting(request):
-
-
-	return render(request,'minutesofmeetings/mombroadcast.html')
+	render_data = {}
+	mom = MinutesOfMeeting.objects.filter(mom_isused= 0, mom_broadcast = 0)
+	render_data['mom'] = mom
+	return render(request,'minutesofmeetings/mombroadcast.html',render_data)
 
 
 
