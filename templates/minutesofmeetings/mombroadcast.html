@@ -17,7 +17,7 @@
  <div class="row">
 
  <div class="col l12">
-             <center class="heading bar">Upcoming events</center>
+             <center class="heading bar">Depart Meetings</center>
              <br>
              <marquee BEHAVIOR="alternate" direction="up" scrolldelay="200" style="height:500px" onmouseover="this.stop();"
              onmouseout="this.start();">
@@ -28,7 +28,6 @@
              <ul class="collection">
               {%for mom in mom %}
              <div class="row">  
-
 
               <li class="collection-item avatar">
                 <img src="/media/images/srm.jpg" alt="" class="circle">
@@ -55,10 +54,10 @@
                 </div>
 
               <p>{{mom.mom_followup}} <br><br>
-              {{mom.mom_discussion}}
+              <center>{{mom.mom_discussion}}</center>
               </p>
               {%if mom.mom_new == 0 %}
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+              <a href="#!" class="secondary-content"><img height="30px" src="/media/images/new.gif"></a>
               {%endif%}
               </li>
 
@@ -69,7 +68,7 @@
 
 
 
-
+                <hr>
 
 
              {%endfor%}
