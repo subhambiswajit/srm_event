@@ -1121,6 +1121,12 @@ def minutes_meeting_delete(request, mom_id):
 	return redirect('apps.backends.views.minutes_meeting_view')
 
 
+@login_required
+def minutes_meeting(request):
+
+
+	return render(request,'minutesofmeetings/mombroadcast.html')
+
 
 
 

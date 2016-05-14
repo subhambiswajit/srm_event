@@ -67,9 +67,11 @@
 				    <li><a class='dropdown-button btndropdown-content' data-activates='dropdown_dash' href="#">DASHBOARD&nbsp;&nbsp;|</a></li>
                     <ul id='dropdown_dash' style="margin-top:64px !important; width:273px !important;" class='dropdown-content'>
                       <li><a style="color:#17375e" href="{%url 'dashboard' %}">profile</a></li><div class="divider"></div>
-                      <li><a style="color:#17375e" href="#!">Minutes of meeting</a></li><div class="divider"></div>
-                      <li><a style="color:#17375e" href="#!">Edit minutes of meeting</a></li><div class="divider"></div>
-                      <li><a style="color:#17375e" href="#!">Upload meeting details</a></li>
+                     {%if request.user.gus_permission == 'CONTENT' %} 
+                      <li><a style="color:#17375e" href="{%url 'minutes_meeting' %}">Minutes of meeting</a></li><div class="divider"></div>
+                      <li><a style="color:#17375e" href="{%url 'minutes_meeting_view' %}">Edit minutes of meeting</a></li><div class="divider"></div>
+                      <li><a style="color:#17375e" href="{%url 'minutes_meeting_admin' %}">Upload meeting details</a></li>
+                      {%endif%}
   </ul>
 
 

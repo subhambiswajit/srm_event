@@ -86,6 +86,8 @@ urlpatterns = patterns('',
 	url(r'minutes_meeting_edit/(\d+)$', views.minutes_meeting_edit, name='minutes_meeting_edit'),
 	url(r'minutes_meeting_update/(\d+)$', views.minutes_meeting_update, name='minutes_meeting_update'),
 	url(r'minutes_meeting_delete/(\d+)$', views.minutes_meeting_delete, name='minutes_meeting_delete'),
+	url(r'minutes_meeting/$', views.minutes_meeting, name='minutes_meeting'),
+
 
 
 	# faculty urls
