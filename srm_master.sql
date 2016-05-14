@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 14, 2016 at 11:18 AM
+-- Generation Time: May 14, 2016 at 05:34 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -501,6 +501,7 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('01pltcndw0afsws6m23igmv2wzeihskb', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-24 04:13:13'),
 ('1bcp8j7oqgzovawajdsf1s8sn8seyggg', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-22 10:53:19'),
 ('46xrjlsg0uq5fbv9v9adyoy5ifq07qab', 'N2FiMGYyNTY3NTlmYWM3MTYwNWIzNTM0ZjE0YzY1NmRkZmRiYWMxODp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE1fQ==', '2016-05-23 11:11:18'),
+('498o0lsersq92lqdmw9tg8m1ro5qrk4b', 'YTRkY2Y1MGY2MDc2MjcyMTYwNzFmNDc0MjgwODdiZDUwY2U0ZmI4Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE5fQ==', '2016-05-28 09:24:58'),
 ('4x1to4lqy8nwbktpuk3c1hna48jkw3ma', 'YzE3N2ZiY2U2YzczZmVjMWE2Nzg2NTdkMzY1NTAxNDY3YzNmZWJhMTp7fQ==', '2016-05-21 04:23:17'),
 ('a6tue05j7d7zvedccztl9lnrfhhfvte9', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-24 04:43:39'),
 ('atxs01cbl2foqff0rjekotffykb95v0p', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 06:23:29'),
@@ -798,7 +799,20 @@ INSERT INTO `global_users` (`gus_userid`, `gus_picture`, `gus_username`, `gus_na
 (16, 'uploads/banner-05_CCumVtq.png', '1031310388', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-12 12:10:06', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:42:46', '83873', 'USER'),
 (17, 'uploads/10301525_435909603217636_6616425518403483625_n.jpg', '1031310365', 'Suvojit Kar', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 05:24:34', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu35@gmail.com', 1, '2016-05-08 04:52:35', '88661', 'USER'),
 (18, 'uploads/himanshu.jpe', '1031310586', 'himanshu kumar ', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-13 07:56:23', 'Student', NULL, '2016-05-25 18:30:00', 'digu35@gmail.com', 1, '2016-05-13 07:50:48', '79243', ''),
-(19, 'uploads/profile-pics-10.jpg', '99999', 'Kiruthika Devi S', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-14 05:46:26', 'Faculty', NULL, '2016-04-30 18:30:00', 'digu35@gmail.com', 1, '2016-05-14 05:46:09', '72996', 'CONTENT');
+(19, 'uploads/profile-pics-10.jpg', '99999', 'Kiruthika Devi S', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-14 09:24:58', 'Faculty', NULL, '2016-04-30 18:30:00', 'digu35@gmail.com', 1, '2016-05-14 05:46:09', '72996', 'CONTENT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gus_permissions`
+--
+
+CREATE TABLE IF NOT EXISTS `gus_permissions` (
+`perm_id` int(11) NOT NULL,
+  `perm_gusid` int(11) NOT NULL,
+  `perm_admin` int(11) DEFAULT NULL,
+  `perm_mom_admin` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -828,7 +842,7 @@ CREATE TABLE IF NOT EXISTS `minutes_of_meeting` (
 
 INSERT INTO `minutes_of_meeting` (`mom_id`, `mom_gus_id`, `mom_description`, `mom_movedby`, `mom_discussion`, `mom_venue`, `mom_date`, `mom_followup`, `mom_deadline`, `mom_broadcast`, `mom_status`, `mom_new`, `mom_isused`) VALUES
 (4, 19, 'updated', 'sample', 'sample', 'sample', '2016-05-12 18:30:00', 'sample', '2016-05-06 18:30:00', 0, '', 0, 1),
-(5, 19, 'hello', 'akak', 'jsjs', 'jsjs', '2016-05-24 18:30:00', 'jsjs', '1995-04-12 18:30:00', 0, '', 0, 0),
+(5, 19, 'Updated ', 'akak', 'jsjs', 'jsjs', '2016-05-24 18:30:00', 'jsjs', '1995-04-12 18:30:00', 0, '', 0, 0),
 (6, 19, 'hello', 'helo', 'sample', 'sample', '2016-05-10 18:30:00', 'sample', '2016-05-02 18:30:00', 0, '', 0, 0);
 
 --
@@ -1004,6 +1018,12 @@ ALTER TABLE `global_users`
  ADD PRIMARY KEY (`gus_userid`);
 
 --
+-- Indexes for table `gus_permissions`
+--
+ALTER TABLE `gus_permissions`
+ ADD PRIMARY KEY (`perm_id`), ADD KEY `fk_perm_gusid` (`perm_gusid`);
+
+--
 -- Indexes for table `minutes_of_meeting`
 --
 ALTER TABLE `minutes_of_meeting`
@@ -1149,6 +1169,11 @@ MODIFY `fac_soft_dev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 ALTER TABLE `global_users`
 MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
+-- AUTO_INCREMENT for table `gus_permissions`
+--
+ALTER TABLE `gus_permissions`
+MODIFY `perm_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `minutes_of_meeting`
 --
 ALTER TABLE `minutes_of_meeting`
@@ -1292,6 +1317,12 @@ ADD CONSTRAINT `fk_fac_sem_gusid` FOREIGN KEY (`fac_sem_gusid`) REFERENCES `glob
 --
 ALTER TABLE `fac_software_development`
 ADD CONSTRAINT `fk_fac_soft_dev_gusid` FOREIGN KEY (`fac_soft_dev_gusid`) REFERENCES `global_users` (`gus_userid`);
+
+--
+-- Constraints for table `gus_permissions`
+--
+ALTER TABLE `gus_permissions`
+ADD CONSTRAINT `fk_perm_gusid` FOREIGN KEY (`perm_gusid`) REFERENCES `global_users` (`gus_userid`);
 
 --
 -- Constraints for table `minutes_of_meeting`
