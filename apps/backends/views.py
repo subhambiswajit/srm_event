@@ -1032,18 +1032,20 @@ def fac_soft_dev_save(request):
 
 
 # function for minutes of meeting
+@login_required
 def minutes_meeting_admin(request):
 
 
 	return render(request,'minutesofmeetings/minutesofmeetings.html')
 
-
+@login_required
 def minutes_meeting_view(request):
 	render_data = {}
 	mom_view = MinutesOfMeeting.objects.filter(mom_isused = 0, mom_gus_id = request.user)
 	render_data['mom'] = mom_view
 	return render(request,'minutesofmeetings/momview.html',render_data)
 
+@login_required
 def minutes_meeting_save(request):
 	if request.method == 'POST':
 		mom = MinutesOfMeeting()
@@ -1074,6 +1076,7 @@ def minutes_meeting_save(request):
 		messages.warning(request,"Minutes of meeting details added")
 	return render(request,'minutesofmeetings/minutesofmeetings.html')
 
+@login_required
 def minutes_meeting_update(request, mom_id):
 	if request.method == 'POST':
 		mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
@@ -1103,12 +1106,14 @@ def minutes_meeting_update(request, mom_id):
 		messages.warning(request,"Minutes of meeting details updated")
 	return render(request,'minutesofmeetings/minutesofmeetings.html')
 
+@login_required
 def minutes_meeting_edit(request, mom_id):
 	render_data = {}
 	mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
 	render_data['mom'] = mom
 	return render(request,'minutesofmeetings/minutesofmeetings.html', render_data)
 
+@login_required
 def minutes_meeting_delete(request, mom_id):
 	mom = MinutesOfMeeting.objects.get(mom_id = mom_id, mom_gus_id = request.user, mom_isused = 0)
 	mom.mom_isused = 1
