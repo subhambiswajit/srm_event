@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2016 at 09:55 PM
+-- Generation Time: May 14, 2016 at 11:18 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.5.19
 
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `candidate_activity` (
   `cand_act_nature` text,
   `cand_act_year` varchar(100) DEFAULT NULL,
   `cand_act_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `candidate_activity`
@@ -214,7 +214,8 @@ INSERT INTO `candidate_activity` (`candidate_id`, `cand_act_name`, `cand_act_gus
 (26, 'Aaruush16', 6, '2016-04-09 18:30:00', 'Certification', 'Volunteer', '2nd year', 0),
 (27, 'checked updation', 15, '2016-05-05 18:30:00', 'sample', 'sample', 'sample', 1),
 (28, 'Aaruush 16 ', 15, '2016-02-09 18:30:00', 'volunteer', 'certification ', '2nd year ', 1),
-(29, 'Aaruush 15', 15, '2016-05-03 18:30:00', 'Volunteer', 'Certification', '2nd year ', 1);
+(29, 'Aaruush 15', 15, '2016-05-03 18:30:00', 'Volunteer', 'Certification', '2nd year ', 1),
+(30, 'aaruush 16', 18, '2016-05-01 18:30:00', 'coder ', 'coder ', '3rd year ', 1);
 
 -- --------------------------------------------------------
 
@@ -276,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `candidate_internship` (
   `cand_int_end` datetime DEFAULT NULL,
   `cand_int_stipend` varchar(100) DEFAULT NULL,
   `cand_int_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `candidate_internship`
@@ -286,7 +287,8 @@ INSERT INTO `candidate_internship` (`cand_int_id`, `cand_int_gusid`, `cand_int_n
 (7, 3, 'PlanMyTour', '2016-04-28 18:30:00', '2016-04-23 18:30:00', '2500', 0),
 (8, 3, 'xz', '2016-04-09 18:30:00', '2016-04-21 18:30:00', 'lzlzlz', 0),
 (9, 4, 'Microsoft Corp ', '2012-05-31 18:30:00', '2016-04-09 18:30:00', '15-16 lakhs', 0),
-(10, 15, 'checked', '2016-05-12 18:30:00', '2016-05-07 18:30:00', 'got nothing ', 1);
+(10, 15, 'checked', '2016-05-12 18:30:00', '2016-05-07 18:30:00', 'got nothing ', 1),
+(11, 15, 'planmytour', '2016-05-19 18:30:00', '2016-05-11 18:30:00', '5000', 0);
 
 -- --------------------------------------------------------
 
@@ -366,7 +368,6 @@ CREATE TABLE IF NOT EXISTS `candidate_paper_conference` (
 --
 
 INSERT INTO `candidate_paper_conference` (`cand_pap_conf_id`, `cand_pap_conf_gusid`, `cand_pap_conf_title`, `cand_pap_conf_author`, `cand_pap_conf_cname`, `cand_pap_conf_date`, `cand_pap_conf_duration`, `cand_pap_conf_org`, `cand_pap_conf_venue`, `cand_pap_conf_status`, `cand_pap_conf_isused`) VALUES
-(9, 3, 'The internet of things', 'Subham Biswajit', 'IOT in Chennai', '2016-03-31 18:30:00', '1 day', 'SRM university ', 'Chennai', 'Presented', 0),
 (10, 15, 'sample checked', 'sample', 'sample', '2016-05-11 18:30:00', 'sample', 'sample', 'sample', 'sample', 1);
 
 -- --------------------------------------------------------
@@ -383,7 +384,7 @@ CREATE TABLE IF NOT EXISTS `candidate_performance` (
   `cand_per_marks` varchar(30) DEFAULT NULL,
   `cand_per_year` varchar(30) DEFAULT NULL,
   `cand_per_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `candidate_performance`
@@ -392,7 +393,8 @@ CREATE TABLE IF NOT EXISTS `candidate_performance` (
 INSERT INTO `candidate_performance` (`cand_per_id`, `cand_per_gusid`, `cand_per_exam`, `cand_per_ypass`, `cand_per_marks`, `cand_per_year`, `cand_per_isused`) VALUES
 (2, 3, 'GRE', '2015', '12%', '3rd year', 0),
 (6, 3, 'National Science Olympiad', '2010', '93%', '11th grade', 0),
-(7, 15, 'samdle checked', 'sample checked', 'sample', 'sample', 1);
+(7, 15, 'samdle checked', 'sample checked', 'sample', 'sample', 1),
+(8, 18, 'sample checked ', 'sample ', 'sample ', 'sample ', 0);
 
 -- --------------------------------------------------------
 
@@ -503,12 +505,15 @@ INSERT INTO `django_session` (`session_key`, `session_data`, `expire_date`) VALU
 ('a6tue05j7d7zvedccztl9lnrfhhfvte9', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-24 04:43:39'),
 ('atxs01cbl2foqff0rjekotffykb95v0p', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 06:23:29'),
 ('bp8hoqb0p13q9c2jbdx7x47s2zx3hdqs', 'OTg2NGUyZTUzZjY4NjQ2ZTliZjNiZGQ0NjY4OWRlNmU5NzA3NDhjYTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfaWQiOjMsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCJ9', '2016-04-23 15:06:10'),
+('czxcl03yq0h9nxe0o42nac2qjcb8l4az', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-26 05:36:26'),
 ('jhlfw4gfodk8p9n0mxv9x421yve5i7n6', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 06:23:30'),
 ('mm40wef50phrqi30g83icltfv1tonxy7', 'ZTBiYTRkOWY2ZDRmMDA1YzdjNjk0MGI3NmMzMWI4NDY3OTIxNWFjMTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjZ9', '2016-05-22 06:16:28'),
+('oy25dzrwttsl2jc3gvqhuffo2w80r34h', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-26 15:07:26'),
 ('pw9f3qc9j5maa8bxtxlhae2y3f8k3k1m', 'ZjM4Nzg1MWYxNTE0MWNkNTkzZGE0ZjI0NmI2MTgyY2E4Nzc1NTU4NTp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE2fQ==', '2016-05-21 20:55:10'),
 ('sz53sc2e544utlh17qrmytrx1ck34ixz', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-22 05:50:57'),
-('whinfmik8cz0yc2ijt7wmr2vijxl9etk', 'YzE3N2ZiY2U2YzczZmVjMWE2Nzg2NTdkMzY1NTAxNDY3YzNmZWJhMTp7fQ==', '2016-05-22 04:54:45'),
-('yxayfx497yqyqbxu7blt2myafwawzcrb', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-24 18:32:30');
+('u2wzntf3a71kp9lcpebhpcoi5hcybl3l', 'YTRkY2Y1MGY2MDc2MjcyMTYwNzFmNDc0MjgwODdiZDUwY2U0ZmI4Zjp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjE5fQ==', '2016-05-28 05:46:26'),
+('u7tqvrt2mainrolc7i6rx0ocu4cl5886', 'NmU2NzY4NDRhYzAxZjE3NWVlOTM3NmNhZWQxNTE2Yjc3NTBhYTY2Mzp7Il9hdXRoX3VzZXJfaGFzaCI6IiIsIl9hdXRoX3VzZXJfYmFja2VuZCI6ImN1c3RvbWJhY2tlbmRzLmJhY2tlbmRzLlNybUV2ZW50QmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOjN9', '2016-05-24 20:06:14'),
+('whinfmik8cz0yc2ijt7wmr2vijxl9etk', 'YzE3N2ZiY2U2YzczZmVjMWE2Nzg2NTdkMzY1NTAxNDY3YzNmZWJhMTp7fQ==', '2016-05-22 04:54:45');
 
 -- --------------------------------------------------------
 
@@ -530,7 +535,7 @@ CREATE TABLE IF NOT EXISTS `fac_awards` (
 
 INSERT INTO `fac_awards` (`fac_awards_id`, `fac_awards_gusid`, `fac_awards_name`, `fac_awards_details`, `fac_awards_isused`) VALUES
 (5, 3, 'Subham Biswajit', 'Uniwip Project ', 1),
-(6, 3, '', '', 0),
+(6, 3, '', '', 1),
 (7, 16, '', '', 0);
 
 -- --------------------------------------------------------
@@ -574,7 +579,7 @@ CREATE TABLE IF NOT EXISTS `fac_international_conference` (
   `fac_int_conf_venue` varchar(100) DEFAULT NULL,
   `fac_int_conf_status` varchar(100) DEFAULT NULL,
   `fac_int_conf_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_international_conference`
@@ -582,7 +587,8 @@ CREATE TABLE IF NOT EXISTS `fac_international_conference` (
 
 INSERT INTO `fac_international_conference` (`fac_int_conf_id`, `fac_int_conf_gusid`, `fac_int_conf_title`, `fac_int_conf_author`, `fac_int_conf_name`, `fac_int_conf_journame`, `fac_int_conf_date`, `fac_int_conf_venue`, `fac_int_conf_status`, `fac_int_conf_isused`) VALUES
 (1, 3, 'Fundamentals of coding ', 'Arthur Ken', 'Coding session', 'IEEE version 9.0', '2016-04-06 18:30:00', 'Indian Institute of Science and Technology, Chennai', 'Presented', 1),
-(2, 3, 'bigdata', 'bigdata', 'bigdata', 'bigdata', '2016-05-03 18:30:00', 'srm', 'presented', 0);
+(2, 3, 'bigdata', 'bigdata', 'bigdata', 'bigdata', '2016-05-03 18:30:00', 'srm', 'presented', 1),
+(3, 3, 'sample', 'sample', 'sample', 'sample', '2016-05-02 18:30:00', 'suvojit', 'sample', 1);
 
 -- --------------------------------------------------------
 
@@ -603,7 +609,7 @@ CREATE TABLE IF NOT EXISTS `fac_internatonal_journals` (
   `fac_int_jour_citation` varchar(100) DEFAULT NULL,
   `fac_int_jour_status` varchar(100) DEFAULT NULL,
   `fac_int_jour_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_internatonal_journals`
@@ -611,7 +617,8 @@ CREATE TABLE IF NOT EXISTS `fac_internatonal_journals` (
 
 INSERT INTO `fac_internatonal_journals` (`fac_int_jour_id`, `fac_int_jour_gusid`, `fac_int_jour_title`, `fac_int_jour_author`, `fac_int_jour_oauthor`, `fac_int_jour_name`, `fac_int_jour_date`, `fac_int_jour_vol`, `fac_int_jour_impact`, `fac_int_jour_citation`, `fac_int_jour_status`, `fac_int_jour_isused`) VALUES
 (1, 3, 'jddjj', 'jjd', 'jdjd', 'jddj', '2016-05-05 18:30:00', 'kdkd', 'kk', 'ksks', 'kdkd', 1),
-(2, 3, 'IOT ', 'sample ', 'sample ', 'sample ', '2016-05-06 18:30:00', 'sample', 'sample', 'sample', 'sample', 0);
+(2, 3, 'IOT ', 'sample ', 'sample ', 'sample ', '2016-05-06 18:30:00', 'sample', 'sample', 'sample', 'sample', 1),
+(3, 3, 'after date ', 'sample samo', 'sample', 'sample', '2016-05-02 18:30:00', 'date', 'date', 'sate', 'date', 1);
 
 -- --------------------------------------------------------
 
@@ -655,7 +662,7 @@ CREATE TABLE IF NOT EXISTS `fac_national_conference` (
   `fac_nat_conf_date` datetime DEFAULT NULL,
   `fac_nat_conf_venue` varchar(100) DEFAULT NULL,
   `fac_nat_conf_status` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_national_conference`
@@ -667,7 +674,13 @@ INSERT INTO `fac_national_conference` (`fac_nat_conf_id`, `fac_nat_conf_isused`,
 (4, 0, 7, 'Something', 'jsjsj', 'jsjssj', 'jssjs', '2016-04-05 18:30:00', 'ksksk', 'kdkddk'),
 (5, 1, 3, 'Srm sheet', 'subham', 'iot', 'journal', '2016-05-06 18:30:00', 'SRM university', 'presented'),
 (6, 1, 3, 'Srm sheet', 'subham', 'iot', 'journal', '2016-05-06 18:30:00', 'SRM university', 'presented'),
-(7, 0, 3, 'bigdata', 'bigdata', 'bigdata', 'bidata', '2016-05-04 18:30:00', 'sample', 'sample');
+(7, 1, 3, 'bigdata', 'bigdata', 'bigdata', 'bidata', '2016-05-04 18:30:00', 'sample', 'sample'),
+(8, 1, 3, 'Sample', 'Sample', 'Sample', 'Sample', '2016-05-11 18:30:00', 'Sample', 'Accepted'),
+(9, 1, 3, 'Sample', 'Sample', 'Sample', 'Sample', '2016-05-11 18:30:00', 'Sample', 'Accepted'),
+(10, 1, 3, 'Sample', 'Sample', 'Sample', 'Sample', '2016-05-11 18:30:00', 'Sample', 'Accepted'),
+(11, 1, 3, 'subham', 'au', 'ss', 'ss', '2016-05-12 18:30:00', 'k', 'ks'),
+(12, 1, 3, 'sample', 'sas', 'saa', 'aas', '2016-05-09 18:30:00', 'sds', 'dssd'),
+(13, 0, 3, 'sample', 'sample', 'sample', 'sample', '2016-05-02 18:30:00', 'sample', 'sample');
 
 -- --------------------------------------------------------
 
@@ -688,7 +701,7 @@ CREATE TABLE IF NOT EXISTS `fac_national_journals` (
   `fac_nat_jour_citation` varchar(100) DEFAULT NULL,
   `fac_nat_jour_status` varchar(100) DEFAULT NULL,
   `fac_nat_jour_isused` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_national_journals`
@@ -696,7 +709,8 @@ CREATE TABLE IF NOT EXISTS `fac_national_journals` (
 
 INSERT INTO `fac_national_journals` (`fac_nat_jour_id`, `fac_nat_jour_gusid`, `fac_nat_jour_title`, `fac_nat_jour_author`, `fac_nat_jour_oauthor`, `fac_nat_jour_name`, `fac_nat_jour_date`, `fac_nat_jour_volume`, `fac_nat_jour_impact`, `fac_nat_jour_citation`, `fac_nat_jour_status`, `fac_nat_jour_isused`) VALUES
 (1, 3, 'Internet of Things', 'Simran Kaur Deol', 'Subham Biswajit, Anusha T ', 'IEEE version 8.0', '2016-04-09 18:30:00', 'Page no:10', 'Something', 'Something', 'Indexed', 1),
-(2, 3, 'Amarnath', 'jwjw', 'wkwk', 'kwkw', '2016-04-08 18:30:00', '9sksks', 'kssks', 'sjsjs', 'ksks', 0);
+(2, 3, 'update it ', 'jwjw', 'wkwk', 'kwkw', '2016-04-08 18:30:00', '9sksks', 'kssks', 'sjsjs', 'ksks', 1),
+(3, 3, 'subham', 'date', 'date', 'dated', '2016-05-04 18:30:00', 'date', 'date', 'date', 'date', 0);
 
 -- --------------------------------------------------------
 
@@ -712,14 +726,18 @@ CREATE TABLE IF NOT EXISTS `fac_seminars` (
   `fac_sem_date` datetime DEFAULT NULL,
   `fac_sem_nature` text,
   `fac_sem_isused` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fac_seminars`
 --
 
 INSERT INTO `fac_seminars` (`fac_sem_id`, `fac_sem_gusid`, `fac_sem_facname`, `fac_sem_name`, `fac_sem_date`, `fac_sem_nature`, `fac_sem_isused`) VALUES
-(1, 3, 'sample', 'sample', '2016-05-08 18:30:00', 'sample', 1);
+(1, 3, 'sample', 'sample', '2016-05-08 18:30:00', 'sample', 1),
+(2, 3, 'subham', 'subha', '2016-05-01 18:30:00', 's', 0),
+(3, 3, 'Fhh', 'Ghh', '2016-05-24 18:30:00', 'Ghj', 0),
+(4, 3, 'Fhh', 'Ghh', '2016-05-24 18:30:00', 'Ghj', 0),
+(5, 3, 'subham', 'subha', '2016-05-01 18:30:00', 's', 0);
 
 -- --------------------------------------------------------
 
@@ -764,21 +782,54 @@ CREATE TABLE IF NOT EXISTS `global_users` (
   `gus_modifiedon` datetime DEFAULT NULL,
   `gus_verify` varchar(10) DEFAULT NULL,
   `gus_permission` varchar(20) NOT NULL DEFAULT 'USER'
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `global_users`
 --
 
 INSERT INTO `global_users` (`gus_userid`, `gus_picture`, `gus_username`, `gus_name`, `gus_password`, `gus_lastlogin`, `gus_type`, `gus_createdby`, `gus_dob`, `gus_email`, `gus_isused`, `gus_modifiedon`, `gus_verify`, `gus_permission`) VALUES
-(3, NULL, '1031310363', 'Dr B. Amutha', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-10 18:32:29', 'Faculty', NULL, '2016-04-08 18:30:00', 'digu35@gmail.com', 1, '2016-04-08 09:28:53', '25605', 'ADMIN'),
+(3, NULL, '1031310363', 'Dr B. Amutha', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-13 15:29:48', 'Faculty', NULL, '2016-04-08 18:30:00', 'digu35@gmail.com', 1, '2016-04-08 09:28:53', '25605', 'ADMIN'),
 (4, NULL, '1031310371', 'Simran Kaur Deol', 'pbkdf2_sha256$50000$salt$HBVwmlw4KLm+L/ru97nLCUkRsjKzGrghHeMqa8yrUtQ=', '2016-04-10 14:18:02', 'Student', NULL, '2016-04-19 18:30:00', 'simrandeol05@gmail.com', 1, '2016-04-10 14:17:28', '51245', 'USER'),
 (6, NULL, '1031310330', 'Anusha T', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 06:16:28', 'Student', NULL, '2016-04-11 18:30:00', 'digu35@gmail.com', 1, '2016-04-12 02:13:07', '57606', 'USER'),
 (7, NULL, '101304', 'S. Priya', 'pbkdf2_sha256$50000$salt$ANauMFo9VjWNi+EPPJBYvlbZP/QhH9kZ/kCINeJM9g8=', '2016-04-16 06:19:38', 'Faculty', NULL, '2016-04-05 18:30:00', 'priya@gmail.com', 1, '2016-04-16 05:35:17', '83847', 'USER'),
 (11, '', '1031310361', 'subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', NULL, 'Student', NULL, '2016-05-06 18:30:00', 'digu35@gmail.com', 1, '2016-05-07 20:04:31', '25188', 'USER'),
-(15, 'uploads/banner-05.png', '1031310377', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-10 18:21:30', 'Student', NULL, '2016-05-06 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:39:50', '99930', 'USER'),
-(16, 'uploads/banner-05_CCumVtq.png', '1031310388', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-09 10:41:07', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:42:46', '83873', 'USER'),
-(17, 'uploads/10301525_435909603217636_6616425518403483625_n.jpg', '1031310365', 'Suvojit Kar', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 05:24:34', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu35@gmail.com', 1, '2016-05-08 04:52:35', '88661', 'USER');
+(15, 'uploads/banner-05.png', '1031310377', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-12 12:27:24', 'Student', NULL, '2016-05-06 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:39:50', '99930', 'USER'),
+(16, 'uploads/banner-05_CCumVtq.png', '1031310388', 'Subham', 'pbkdf2_sha256$50000$salt$tAH/DSifn4t5LkrV2K6tk2WOTcgUFlpVbsx9FQcZ53A=', '2016-05-12 12:10:06', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu@gmail.com', 1, '2016-05-07 20:42:46', '83873', 'USER'),
+(17, 'uploads/10301525_435909603217636_6616425518403483625_n.jpg', '1031310365', 'Suvojit Kar', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-08 05:24:34', 'Faculty', NULL, '2016-05-11 18:30:00', 'digu35@gmail.com', 1, '2016-05-08 04:52:35', '88661', 'USER'),
+(18, 'uploads/himanshu.jpe', '1031310586', 'himanshu kumar ', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-13 07:56:23', 'Student', NULL, '2016-05-25 18:30:00', 'digu35@gmail.com', 1, '2016-05-13 07:50:48', '79243', ''),
+(19, 'uploads/profile-pics-10.jpg', '99999', 'Kiruthika Devi S', 'pbkdf2_sha256$50000$salt$Gaqvc7+vwzm2KUP3L1nA+5ATtyCrWSKukywRjMKBAkE=', '2016-05-14 05:46:26', 'Faculty', NULL, '2016-04-30 18:30:00', 'digu35@gmail.com', 1, '2016-05-14 05:46:09', '72996', 'CONTENT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `minutes_of_meeting`
+--
+
+CREATE TABLE IF NOT EXISTS `minutes_of_meeting` (
+`mom_id` int(11) NOT NULL,
+  `mom_gus_id` int(11) DEFAULT NULL,
+  `mom_description` varchar(1000) DEFAULT NULL,
+  `mom_movedby` varchar(50) DEFAULT NULL,
+  `mom_discussion` varchar(500) DEFAULT NULL,
+  `mom_venue` varchar(50) DEFAULT NULL,
+  `mom_date` datetime DEFAULT NULL,
+  `mom_followup` varchar(100) DEFAULT NULL,
+  `mom_deadline` datetime DEFAULT NULL,
+  `mom_broadcast` int(11) DEFAULT '0',
+  `mom_status` varchar(20) DEFAULT NULL,
+  `mom_new` int(11) DEFAULT '0',
+  `mom_isused` int(11) DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `minutes_of_meeting`
+--
+
+INSERT INTO `minutes_of_meeting` (`mom_id`, `mom_gus_id`, `mom_description`, `mom_movedby`, `mom_discussion`, `mom_venue`, `mom_date`, `mom_followup`, `mom_deadline`, `mom_broadcast`, `mom_status`, `mom_new`, `mom_isused`) VALUES
+(4, 19, 'updated', 'sample', 'sample', 'sample', '2016-05-12 18:30:00', 'sample', '2016-05-06 18:30:00', 0, '', 0, 1),
+(5, 19, 'hello', 'akak', 'jsjs', 'jsjs', '2016-05-24 18:30:00', 'jsjs', '1995-04-12 18:30:00', 0, '', 0, 0),
+(6, 19, 'hello', 'helo', 'sample', 'sample', '2016-05-10 18:30:00', 'sample', '2016-05-02 18:30:00', 0, '', 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -953,6 +1004,12 @@ ALTER TABLE `global_users`
  ADD PRIMARY KEY (`gus_userid`);
 
 --
+-- Indexes for table `minutes_of_meeting`
+--
+ALTER TABLE `minutes_of_meeting`
+ ADD PRIMARY KEY (`mom_id`), ADD KEY `mom_gus_id_6` (`mom_gus_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -990,7 +1047,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `candidate_activity`
 --
 ALTER TABLE `candidate_activity`
-MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+MODIFY `candidate_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
 --
 -- AUTO_INCREMENT for table `candidate_development`
 --
@@ -1005,7 +1062,7 @@ MODIFY `cand_ini_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT for table `candidate_internship`
 --
 ALTER TABLE `candidate_internship`
-MODIFY `cand_int_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `cand_int_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `candidate_journals`
 --
@@ -1025,7 +1082,7 @@ MODIFY `cand_pap_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 -- AUTO_INCREMENT for table `candidate_performance`
 --
 ALTER TABLE `candidate_performance`
-MODIFY `cand_per_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `cand_per_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `django_admin_log`
 --
@@ -1055,12 +1112,12 @@ MODIFY `fac_con_act_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `fac_international_conference`
 --
 ALTER TABLE `fac_international_conference`
-MODIFY `fac_int_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `fac_int_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `fac_internatonal_journals`
 --
 ALTER TABLE `fac_internatonal_journals`
-MODIFY `fac_int_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `fac_int_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `fac_manual_publications`
 --
@@ -1070,17 +1127,17 @@ MODIFY `fac_man_pub_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT for table `fac_national_conference`
 --
 ALTER TABLE `fac_national_conference`
-MODIFY `fac_nat_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `fac_nat_conf_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `fac_national_journals`
 --
 ALTER TABLE `fac_national_journals`
-MODIFY `fac_nat_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `fac_nat_jour_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `fac_seminars`
 --
 ALTER TABLE `fac_seminars`
-MODIFY `fac_sem_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `fac_sem_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `fac_software_development`
 --
@@ -1090,7 +1147,12 @@ MODIFY `fac_soft_dev_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `global_users`
 --
 ALTER TABLE `global_users`
-MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `gus_userid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `minutes_of_meeting`
+--
+ALTER TABLE `minutes_of_meeting`
+MODIFY `mom_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --
@@ -1230,6 +1292,12 @@ ADD CONSTRAINT `fk_fac_sem_gusid` FOREIGN KEY (`fac_sem_gusid`) REFERENCES `glob
 --
 ALTER TABLE `fac_software_development`
 ADD CONSTRAINT `fk_fac_soft_dev_gusid` FOREIGN KEY (`fac_soft_dev_gusid`) REFERENCES `global_users` (`gus_userid`);
+
+--
+-- Constraints for table `minutes_of_meeting`
+--
+ALTER TABLE `minutes_of_meeting`
+ADD CONSTRAINT `fk_mom_gus_id` FOREIGN KEY (`mom_gus_id`) REFERENCES `global_users` (`gus_userid`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
