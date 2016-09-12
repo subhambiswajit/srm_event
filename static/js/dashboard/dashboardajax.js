@@ -161,8 +161,7 @@ $('.preloader-wrapper').css("display","block");
     var internship_sdate=$('#sdate').val();
     var internship_edate=$('#edate').val();
     var internship_stipend=$('#stipend').val();
-    if(internship_comp.length !=0 && internship_sdate.length !=0 &&
-       internship_edate.length !=0 && internship_stipend.length !=0)
+    if(internship_comp.length !=0 && internship_sdate.length !=0 && internship_stipend.length !=0)
     {
           $.ajax ({
                        type: 'POST',
